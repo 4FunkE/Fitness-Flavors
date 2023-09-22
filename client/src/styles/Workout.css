@@ -1,0 +1,58 @@
+/* Style the List of Workouts */
+.workout-container {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .workout-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .workout-list li {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  /* Style Headings and Text: */
+  .workout-list h3 {
+    color: #333;
+  }
+  
+  .workout-list p {
+    color: #666;
+  }
+
+/* Style Notes Preview */
+.workout-notes {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 3px;
+  }
+  
+  .workout-notes ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .workout-notes li {
+    margin-bottom: 5px;
+  }
+
+  /* Add Hover Effects: */
+  .workout-list li:hover {
+    background-color: #f9f9f9;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  /* Responsive Design: */
+  @media (max-width: 768px) {
+    .workout-list li {
+      /* Adjust styles for smaller screens */
+    }
+  }
