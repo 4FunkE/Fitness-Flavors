@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Profile.css'; // Import your CSS file for styling
 
 function Profile() {
     const [profileExercises, setProfileExercises] = useState([]); // Store the user's saved Exercises
@@ -34,41 +35,42 @@ function Profile() {
       // Send a request to your server to update the exercise's notes
       // Update the notes state and include a timestamp
     };
-  
+
     return (
-      <div>
-        <h2>My Profile</h2>
-        <section>
-          <h3>My Exercises</h3>
-          <ul>
-            {profileExercises.map((exercise) => (
-              <li key={exercise._id}>
-                {exercise.name}
-                <button onClick={() => removeFromProfile(exercise._id)}>Remove</button>
-              </li>
-            ))}
-          </ul>
-        </section>
-        <section>
-          <h3>Selected Exercise</h3>
-          <div>
-            <p>Name: {selectedExercise?.name}</p>
-            <p>Description: {selectedExercise?.description}</p>
-            <button onClick={() => addToProfile(selectedExercise)}>Add to My Exercises</button>
-          </div>
-          <div>
-            <h4>Notes</h4>
-            <textarea
-              value={notes}
-              onChange={(e) => setNotes(e.target.value)}
-              placeholder="Add your notes here..."
-            ></textarea>
-            <button onClick={addNote}>Add Note</button>
-          </div>
-        </section>
-        {/* Add other sections for tracking progress, marking as favorite, adjusting intensity, and viewing history */}
-      </div>
-    );
-  }
-  
-  export default Profile;
+        <div className="profile-container">
+          <h2>My Profile</h2>
+          <section className="exercises-section">
+            <h3>My Exercises</h3>
+            <ul className="exercise-list">
+              {profileExercises.map((exercise) => (
+                <li key={exercise._id} className="exercise-item">
+                  {exercise.name}
+                  <button onClick={() => removeFromProfile(exercise._id)}>Remove</button>
+                </li>
+              ))}
+            </ul>
+          </section>
+          <section className="selected-exercise-section">
+            <h3>Selected Exercise</h3>
+            <div className="selected-exercise-details">
+              <p>Name: {selectedExercise?.name}</p>
+              <p>Description: {selectedExercise?.description}</p>
+              <button onClick={() => addToProfile(selectedExercise)}>Add to My Exercises</button>
+            </div>
+            <div className="notes-section">
+              <h4>Notes</h4>
+              <textarea
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                placeholder="Add your notes here..."
+                className="notes-input"
+              ></textarea>
+              <button onClick={addNote} className="add-note-button">Add Note</button>
+            </div>
+          </section>
+          {/* Add other styled sections and elements for tracking progress, marking as favorite, adjusting intensity, and viewing history */}
+        </div>
+      );
+    }
+    
+    export default Profile;
