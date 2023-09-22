@@ -1,1 +1,1 @@
-//this is where the pages will be imported to for conditional rendering
+//this is where the pages will be imported from for conditional rendering
