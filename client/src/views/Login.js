@@ -1,6 +1,7 @@
 //login page for app
 import React, { useState } from "react";
-import  { SignUp } from '../views/SignUp'
+import  { SignUp } from '../views/SignUp';
+import './App.css';
 
 
 export default function makeNewUser() {
