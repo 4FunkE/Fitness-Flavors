@@ -1,6 +1,8 @@
 //sign up for app
 import React, { useState } from 'react';
-
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 export default function Signup() {
   // JSX code for login form
