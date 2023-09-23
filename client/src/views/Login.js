@@ -25,7 +25,7 @@ export default function makeNewUser() {
         </form>
         <p>Let's get an account set up for you! <a href="/SignUp"> Signup </a></p>
       </div>
-
+      
     </div>
   </div>
   );
