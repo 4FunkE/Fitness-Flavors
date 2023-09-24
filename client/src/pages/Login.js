@@ -5,7 +5,7 @@ import './App.css';
 
 
 export default function makeNewUser() {
-  // JSX code for login form
+  //code for login form
   const login = (
     <div id="login" className="container">
     <div className="row justify-content-center">
