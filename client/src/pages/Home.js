@@ -1,6 +1,4 @@
 import "../styles/Home.css";
-import logo from "../components/images/Fitness Flavors Logo.png";
-
 function Home() {
   return (
     <div className="homepage">
