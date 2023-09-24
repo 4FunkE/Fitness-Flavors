@@ -1,37 +1,32 @@
-import React, { useEffect, useState } from "react";
-import '../styles/Home.css';
-import logo from "../components/images/Fitness Flavors Logo.png"; 
+import "../styles/Home.css";
+import logo from "../components/images/Fitness Flavors Logo.png";
 
-function Navbar() {
-
-
+function Home() {
   return (
-    <nav className="navbar">
-      <div className="navbar-brand">
-        <a href="/">
-          <img src={logo} alt="Fitness Flavors Logo" /> {}
-        </a>
-      </div>
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <a href="/">Search</a> 
-          {/* placeholders until we know whats actually going to get used */}
-        </li>
-        <li className="nav-item">
-          <a href="/about">Login</a>
-        </li>
-        <li className="nav-item">
-          <a href="/contact">Contact</a>
-        </li>
-      </ul>
-    </nav>
+    <div className="homepage">
+      {/* Navbar */}
+      <nav className="navbar">{/* ... Navbar content  */}</nav>
+
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1 className="animated fadeInDownBig">Welcome to Fitness Flavors</h1>
+          <p className="animated fadeInUpBig">Motto </p>
+          <a href="/about" className="btn animated fadeInLeftBig">
+            Learn More
+          </a>
+        </div>
+      </section>
+
+      {/* Additional Content */}
+      <section className="additional-content">
+        {/* more sections/content here with animations */}
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">{/* footer content */}</footer>
+    </div>
   );
 }
 
-export default Navbar;
-
-
-
-
-
-
+export default Home;
