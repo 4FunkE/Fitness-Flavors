@@ -8,7 +8,7 @@ function Profile() {
   
     useEffect(() => {
       // Fetch and update the user's saved Exercises from the server
-      fetch('/api/user/exercises') // Replace with your API endpoint
+      fetch('/api/user/exercises')
         .then((response) => response.json())
         .then((data) => {
           setProfileExercises(data); // Assuming the API response is an array of exercises
@@ -19,9 +19,30 @@ function Profile() {
     }, []);
   
     const addToProfile = (exercise) => {
-      // Add a exercise to the user's profile
-      // Send a request to your server to update the user's profile with the selected exercise
-      // Update profileexercises with the new exercise
+      // API endpoint for adding exercises to a user's profile
+      const endpoint = '/api/user/exercises';
+
+      // Make a POST request to add the exercise to the user's profile
+      fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ exerciseId: exercise._id }), // Send the exercise ID or relevant data
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to add exercise to profile');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // updated user's profile
+        setProfileExercises(data.profileExercises);
+      })
+      .catch((error) => {
+        console.error('Error adding exercise to profile:', error);
+      });
     };
   
     const removeFromProfile = (exerciseId) => {
