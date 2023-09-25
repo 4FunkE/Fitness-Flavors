@@ -14,7 +14,7 @@ function Profile() {
           setProfileExercises(data); // Assuming the API response is an array of exercises
         })
         .catch((error) => {
-          console.error('Error fetching user exercises:', error);
+          console.error('Error fetching user exercises: file: Profile.js ~ line 17', error);
         });
     }, []);
   
@@ -32,7 +32,7 @@ function Profile() {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Failed to add exercise to profile');
+          throw new Error('Failed to add exercise to profile: file: Profile.js ~ line 35');
         }
         return response.json();
       })
@@ -41,14 +41,31 @@ function Profile() {
         setProfileExercises(data.profileExercises);
       })
       .catch((error) => {
-        console.error('Error adding exercise to profile:', error);
+        console.error('Error adding exercise to profile: file: Profile.js ~ line 44', error);
       });
     };
   
     const removeFromProfile = (exerciseId) => {
-      // Remove a exercise from the user's profile
-      // Send a request to your server to remove the exercise from the user's profile
-      // Update profileexercises without the removed exercise
+      // API endpoint for removing exercises from a user's profile
+      const endpoint = `/api/user/exercises/${exerciseId}`;
+    
+      // Make a DELETE request to remove the exercise from the user's profile
+      fetch(endpoint, {
+        method: 'DELETE',
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Failed to remove exercise from profile: file: Profile.js ~ line 58');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Update profileExercises with the updated user's profile (excluding the removed exercise)
+          setProfileExercises(data.profileExercises);
+        })
+        .catch((error) => {
+          console.error('Error removing exercise from profile: file: Profile.js ~ line 67', error);
+        });
     };
   
     const addNote = () => {
