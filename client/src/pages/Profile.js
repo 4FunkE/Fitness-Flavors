@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Profile.css'; // Import your CSS file for styling
+import ExerciseCard from '../components/views/ExerciseCard'; // Import the ExerciseCard component
 
 function Profile() {
     const [profileExercises, setProfileExercises] = useState([]); // Store the user's saved Exercises
@@ -109,7 +110,7 @@ function Profile() {
             <ul className="exercise-list">
               {profileExercises.map((exercise) => (
                 <li key={exercise._id} className="exercise-item">
-                  {exercise.name}
+                  <ExerciseCard exercise={exercise} /> {/* ExerciseCard component here */}
                   <button onClick={() => removeFromProfile(exercise._id)}>Remove</button>
                 </li>
               ))}
