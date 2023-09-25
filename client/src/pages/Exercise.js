@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Exercise.css';
+import '../styles/Exercise.css';
 import ExerciseCard from '../components/views/ExerciseCard'; // ExerciseCard component in veiws
 
 function Exercise() {
@@ -32,5 +32,5 @@ function Exercise() {
         </div>
       );
     }
-    
+
   export default Exercise;
