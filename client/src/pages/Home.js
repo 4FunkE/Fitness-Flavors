@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
-import { GET_MESSAGE, UPDATE_MESSAGE } from "./graphql";
+// import { GET_MESSAGE, UPDATE_MESSAGE } from "./graphql";
 import "../styles/Home.css";
 
 function HomePage() {
@@ -8,10 +8,10 @@ function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Define  GraphQL query
-  const { loading, error, data } = useQuery(GET_MESSAGE);
+  // const { loading, error, data } = useQuery(GET_MESSAGE);
 
   // Define  GraphQL mutation
-  const [updateMessage] = useMutation(UPDATE_MESSAGE);
+  // const [updateMessage] = useMutation(UPDATE_MESSAGE);
 
   // Handle mobile menu toggle
   const toggleMobileMenu = () => {

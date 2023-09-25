@@ -1,13 +1,13 @@
 //sign up for app
 import React, { useState } from 'react';
 // import './App.css';
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/Mutations.js'
+// import { useMutation } from '@apollo/client';
+// import { ADD_USER } from '../utils/Mutations.js'
 
 
 export default function Signup() {
   const [formData, setFormData] = useState({ username: '', password: '' })
-  const [ addUser ] = useMutation(ADD_USER);
+  // const [ addUser ] = useMutation(ADD_USER);
   const handleInputChange = (event) => {
     const {name, value} = event.target;
     setFormData ({ ...formData, [name]: value });
@@ -18,7 +18,7 @@ export default function Signup() {
     try {
       console.log('test submitted', formData);
       //inseert sign up mutation here
-      const { data } = await addUser({ variables: { ...formData } });
+      // const { data } = await addUser({ variables: { ...formData } });
       // front end auth token here
     } catch(error) {
       console.error('error')
