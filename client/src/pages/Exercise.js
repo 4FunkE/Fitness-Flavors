@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './Exercise.css';
+import ExerciseCard from '../components/views/ExerciseCard'; // ExerciseCard component in veiws
 
 function Exercise() {
-    const [Exercises, setExercises] = useState([]);
+    const [exercises, setExercises] = useState([]);
 
     useEffect(() => {
         // Fetch Exercises from the API
@@ -12,33 +13,24 @@ function Exercise() {
             setExercises(data); // API response is an array of Exercises
         })
         .catch((error) => {
-            console.error('Error fetching Exercises:', error);
+            console.error('Error fetching Exercises: ~ file: Exervies.js ~ line 16', error);
         });
     }, []); // Empty dependency array means this effect runs once on component mount
 
     return (
-        <div className="Exercise-container">
-          <h2>Exercise Details</h2>
-          <ul className="Exercise-list">
-            {Exercises.map((Exercise) => (
-              <li key={Exercise._id}>
-                <h3>{Exercise.name}</h3>
-                <p>Description: {Exercise.description}</p>
-                {Exercise.notes && (
-                  <div>
-                    <p>Notes Preview:</p>
-                    <ul className='Exercise-notes'>
-                      {Exercise.notes.slice(0, 3).map((note, index) => (
-                        <li key={index}>{note}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </li>
-            ))}
-          </ul>
+        <div className="exercise-container">
+          <h2>Exercises</h2>
+          <section className="exercise-list-section">
+            <ul className="exercise-list">
+              {exercises.map((exercise) => (
+                <li key={exercise._id} className="exercise-item">
+                  <ExerciseCard exercise={exercise} /> {/* Use ExerciseCard component here */}
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
       );
     }
-
+    
   export default Exercise;

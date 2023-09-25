@@ -15,7 +15,7 @@ function Profile() {
           setProfileExercises(data); // Assuming the API response is an array of exercises
         })
         .catch((error) => {
-          console.error('Error fetching user exercises: file: Profile.js ~ line 17', error);
+          console.error('Error fetching user exercises: file: Profile.js ~ line 18', error);
         });
     }, []);
   
@@ -33,7 +33,7 @@ function Profile() {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Failed to add exercise to profile: file: Profile.js ~ line 35');
+          throw new Error('Failed to add exercise to profile: file: Profile.js ~ line 36');
         }
         return response.json();
       })
@@ -42,7 +42,7 @@ function Profile() {
         setProfileExercises(data.profileExercises);
       })
       .catch((error) => {
-        console.error('Error adding exercise to profile: file: Profile.js ~ line 44', error);
+        console.error('Error adding exercise to profile: file: Profile.js ~ line 45', error);
       });
     };
   
@@ -56,7 +56,7 @@ function Profile() {
       })
         .then((response) => {
           if (!response.ok) {
-            throw new Error('Failed to remove exercise from profile: file: Profile.js ~ line 58');
+            throw new Error('Failed to remove exercise from profile: file: Profile.js ~ line 59');
           }
           return response.json();
         })
@@ -65,7 +65,7 @@ function Profile() {
           setProfileExercises(data.profileExercises);
         })
         .catch((error) => {
-          console.error('Error removing exercise from profile: file: Profile.js ~ line 67', error);
+          console.error('Error removing exercise from profile: file: Profile.js ~ line 68', error);
         });
     };
   
@@ -86,7 +86,7 @@ function Profile() {
       })
         .then((response) => {
           if (!response.ok) {
-            throw new Error('Failed to add note to exercise ~ file: Profile.js ~ line 88');
+            throw new Error('Failed to add note to exercise ~ file: Profile.js ~ line 89');
           }
           return response.json();
         })
@@ -98,7 +98,7 @@ function Profile() {
           setNotes('');
         })
         .catch((error) => {
-          console.error('Error adding note to exercise: ~ file: Profile.js ~ line 100', error);
+          console.error('Error adding note to exercise: ~ file: Profile.js ~ line 101', error);
         });
     };
 
