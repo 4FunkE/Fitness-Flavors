@@ -31,6 +31,7 @@ const typeDefs = gql`
 
     type Mutation {
         addWorkout(input: WorkoutInput!): Workout!
+        deleteWorkout(id: ID!): Workout
     }
 `;
 

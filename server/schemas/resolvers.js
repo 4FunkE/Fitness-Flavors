@@ -17,7 +17,7 @@ const resolvers = {
         workouts: async (_, args, context) => {
             // check if authenticated
             if(!context.user) {
-                throw a Error('Not logged in');
+                throw new Error('Not logged in');
             }
             // fetch and return workouts
             const workouts = await Workout.find({ user: context.user.id });
@@ -44,6 +44,26 @@ const resolvers = {
 
             // return workout
             return savedWorkout;
+        },
+        // delete workout
+        deleteWorkout: async(_, args, context) => {
+            // check if authenticated
+            if (!context.user) {
+                throw new Error('Not logged in');
+            }
+
+            try {
+                // find by id
+                const deletedWorkout = await Workout.findByIdAndRemove(args.id);
+
+                if (!deletedWorkout) {
+                    throw new Error('Workout not found or cannot be deleted');
+                }
+
+                return deletedWorkout;
+            } catch (error) {
+                throw new Error('Error deleting workout: ${error.message');
+            }
         },
     },
 };
