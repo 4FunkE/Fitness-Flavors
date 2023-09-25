@@ -69,9 +69,36 @@ function Profile() {
     };
   
     const addNote = () => {
-      // Add a note to the selected exercise
-      // Send a request to your server to update the exercise's notes
-      // Update the notes state and include a timestamp
+      // API endpoint for updating exercise notes
+      const endpoint = `/api/exercises/${selectedExercise._id}/notes`;
+    
+      // Create a timestamp for the note
+      const timestamp = new Date().toISOString();
+    
+      // Make a POST request to add the note to the selected exercise
+      fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ note: notes, timestamp }), // Send the note content and timestamp
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Failed to add note to exercise ~ file: Profile.js ~ line 88');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Update the notes state with the newly added note and timestamp
+          const updatedNotes = [...selectedExercise.notes, { content: notes, timestamp }];
+          setSelectedExercise({ ...selectedExercise, notes: updatedNotes });
+          // Optionally, clear the notes input field if needed
+          setNotes('');
+        })
+        .catch((error) => {
+          console.error('Error adding note to exercise: ~ file: Profile.js ~ line 100', error);
+        });
     };
 
     return (
