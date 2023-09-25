@@ -6,10 +6,10 @@ function Exercise() {
 
     useEffect(() => {
         // Fetch Exercises from the API
-        fetch('/api/Exercises') // Replace with your API endpoint
+        fetch('/api/exercises') // API endpoint
         .then((response) => response.json())
         .then((data) => {
-            setExercises(data); // Assuming the API response is an array of Exercises
+            setExercises(data); // API response is an array of Exercises
         })
         .catch((error) => {
             console.error('Error fetching Exercises:', error);
