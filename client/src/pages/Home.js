@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { GET_MESSAGE, UPDATE_MESSAGE } from "./graphql";
-import "../styles/Home.css";
+import { useInView } from "react-intersection-observer"; // Import the in-view hook
+
+import "../styles/tailwind.css"; // Import Tailwind CSS
+import "../styles/animate.css"; // Import Animate.css for animations
 
 function HomePage() {
   // Define state for the mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Define  GraphQL query
+  // Define your GraphQL query
   const { loading, error, data } = useQuery(GET_MESSAGE);
 
-  // Define  GraphQL mutation
+  // Define your GraphQL mutation
   const [updateMessage] = useMutation(UPDATE_MESSAGE);
 
   // Handle mobile menu toggle
@@ -18,11 +21,16 @@ function HomePage() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Use the in-view hook to detect when the sliding images section is in view
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
   return (
     <div className="bg-gray-100 font-sans">
       <nav className="bg-blue-500 p-4">
         <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl text-white font-semibold">Fitness Hub</h1>
+          <h1 className="text-2xl text-white font-semibold">Fitness Flavors</h1>
           {/* Hamburger Menu for Mobile */}
           <div className="sm:hidden">
             <button
@@ -46,6 +54,7 @@ function HomePage() {
             </button>
           </div>
           {/* Desktop Menu */}
+          {/* all of the following nav bar options are just place holders atm */}
           <ul className="hidden sm:flex space-x-4">
             <li>
               <a href="#" className="text-white hover:underline">
@@ -99,7 +108,36 @@ function HomePage() {
         </div>
       )}
 
-      {/* Rest of  content */}
+      <div className="container mx-auto mt-8">
+        <p>Your content goes here.</p>
+      </div>
+
+      {/* Sliding Images Section */}
+      <div
+        className="container mx-auto mt-8"
+        ref={ref} // Attach the ref to the sliding images section
+      >
+        <div className="flex flex-wrap">
+          {/* Check if the section is in view, and apply animations */}
+          {inView && (
+            <>
+              <div className="w-full md:w-1/2 animation-container animate__animated animate__slideInLeft">
+                <img src="image1.jpg" alt="Image 1" />
+              </div>
+              <div className="w-full md:w-1/2 animation-container animate__animated animate__slideInRight">
+                <img src="image2.jpg" alt="Image 2" />
+              </div>
+              <div className="w-full md:w-1/2 animation-container animate__animated animate__slideInLeft">
+                <img src="image3.jpg" alt="Image 3" />
+              </div>
+              <div className="w-full md:w-1/2 animation-container animate__animated animate__slideInRight">
+                <img src="image4.jpg" alt="Image 4" />
+              </div>
+              {/* Add more images as needed */}
+            </>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
