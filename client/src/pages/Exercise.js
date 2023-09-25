@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Exercise.css';
+// import './Exercise.css';
 
 function Exercise() {
     const [Exercises, setExercises] = useState([]);
