@@ -29,18 +29,23 @@ Provide a short description explaining the what, why, and how of your project. U
 What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
 
 1. **Clone the Repository from GitHub:** Alternatively, you can download the ZIP folder from the repository's GitHub page.
+
 ```bash
 git clone https://github.com/{username}/{nameOfRepo}.git
 ```
+
 2. **Open the Repository in a Source Code Editor:**
-Open your preferred source code editor (e.g., Visual Studio Code, Sublime Text) and navigate to the cloned repository's directory.
+   Open your preferred source code editor (e.g., Visual Studio Code, Sublime Text) and navigate to the cloned repository's directory.
 
 ### Additional Resources
+
 - [Deployed Application Link](#deployed-application-link) Check out our live application
 - [GitHub Repository](#github-repository) For more details and to explore the code
 
-## Usage Instruction: 
+## Usage Instruction:
+
 #### Follow these steps to effectively utilize our application:
+
 Provide instructions and examples for use.
 
 1. step 1
@@ -52,16 +57,21 @@ Provide instructions and examples for use.
 By following these steps, you'll be seamlessly...
 
 ## Deployed Application Link:
+
 [Deployed Application Link](...)
 
 ## GitHub Repository:
+
 [GitHub Repository](...)
 
 ## Screenshot
+
 ![image](./path/to/image.png)
 
 ## Built With:
+
 This project was developed using the following technologies and tools:(please input your code below, examples provided)
+
 - [JSON](https://www.npmjs.com/package/json)
 - [Node.js](https://nodejs.org/en/blog/release/v16.18.1/)
 - [Dotenv](https://www.npmjs.com/package/dotenv)
@@ -73,10 +83,12 @@ This project was developed using the following technologies and tools:(please in
 - [Sequelize](https://www.npmjs.com/package/connect-session-sequelize)
 - [Express Handlebars](https://www.npmjs.com/package/express-handlebars)
 - [Express-Session](https://www.npmjs.com/package/express-session)
+
 ### Technologies and Tools Overview
+
 - JSON: Used for data representation and exchange.
 - Node.js: The runtime environment for executing JavaScript code on the server.
-- Dotenv:  Enables the usage of environment variables to manage configuration.
+- Dotenv: Enables the usage of environment variables to manage configuration.
 - Express: A fast and minimal web application framework for Node.js.
 - Node MySql2: A MySQL driver for Node.js.
 - Inquirer: Facilitates user interactions in the command-line interface.
@@ -91,7 +103,8 @@ If you used any third-party assets that require attribution, list the creators w
 
 If you followed tutorials, include links to those here as well.
 
-Collaborators: 
+Collaborators:
+
 - Andrew Bautista-Instructor
 - Will-TA
 - Starter code provided by [username](...)
@@ -100,7 +113,6 @@ Collaborators:
 - Jaldhara Patel-[jaldhara21](...)
 - Joseph Rudasill- [TheWiseSailor](...)
 - Emily Funk- [4FunkE](...)
-
 
 ## License
 
@@ -114,11 +126,11 @@ This application is covered under the MIT license. [![License](https://img.shiel
 
 If your project has a lot of features, list them here. Communicate the capabilities of your project. Here's a guide you can use to structure your features section:
 
-- **Feature Name:** 
+- **Feature Name:**
   - Description: A brief description of what this feature accomplishes.
   - Usage Instructions: How users can interact with this feature.
   - Example (if applicable): A simple example of how the feature works.
-- **Feature Name:** 
+- **Feature Name:**
   - Description: A brief description of what this feature accomplishes.
   - Usage Instructions: How users can interact with this feature.
   - Example (if applicable): A simple example of how the feature works.
@@ -133,23 +145,31 @@ To contribute to our project, follow these steps:
 
 1. Fork the Repository: Fork our repository to your own GitHub account by clicking the "Fork" button.
 2. Clone the Repository: Clone the forked repository to your local machine using:
+
 ```bash
 git clone https://github.com/{username}/{nameOfRepo}.git
 ```
+
 3. Create a New Branch: Create a new branch to work on your contribution using:
+
 ```bash
-git checkout -b your-feature-branch 
+git checkout -b your-feature-branch
 ```
+
 4. Make Changes: Make your desired changes or additions to the codebase.
 5. Test Your Changes: Test your changes thoroughly to ensure they work as expected.
 6. Commit Your Changes: Commit your changes with a clear and concise commit message:
+
 ```bash
-git commit -m "Add: Brief description of your changes" 
+git commit -m "Add: Brief description of your changes"
 ```
+
 7. Push to Your Fork: Push your changes to your forked repository:
+
 ```bash
-git push origin your-feature-branch 
+git push origin your-feature-branch
 ```
+
 8. Open a Pull Request: Open a pull request from your feature branch to our main repository. Provide a clear title and description for your pull request, outlining the changes you've made.
 9. Review and Feedback: Participate in the discussion, address any feedback, and iterate on your changes as needed.
 
@@ -162,15 +182,42 @@ If you're unsure about where to start or need assistance at any point, feel free
 We have implemented a comprehensive testing suite to ensure the stability and functionality of our application. Our testing includes unit tests, integration tests, and end-to-end tests to cover various scenarios. To run the tests, follow these steps:
 
 1. Ensure you have all dependencies installed by running:
+
 ```bash
-npm i 
+npm i
 ```
+
 2. Run the tests using the following command:
+
 ```bash
-npm test 
+npm test
 ```
 
 Our testing suite provides confidence in the quality of our code and ensures that any changes made to the codebase don't introduce regressions.
 
 ## Questions
+
 If you have any questions or need further assistance, feel free to reach out. You can contact us through our GitHub profiles [](...), [](...), [](...), [](...), [](...), [](...) or via email at 4funkecodes@gmail.com, , , , , , . We are here to help and support you in any way we can.
+
+## Technologies Used
+
+[![concurrently](https://badgen.net/badge/icon/concurrently?icon=npm&label)](https://www.npmjs.com/package/concurrently)
+[![eslint](https://badgen.net/badge/icon/eslint?icon=npm&label)](https://www.npmjs.com/package/eslint)
+[![eslint-config-prettier](https://badgen.net/badge/icon/eslint-config-prettier?icon=npm&label)](https://www.npmjs.com/package/eslint-config-prettier)
+[![prettier](https://badgen.net/badge/icon/prettier?icon=npm&label)](https://www.npmjs.com/package/prettier)
+[![tailwindcss](https://badgen.net/badge/icon/tailwindcss?icon=npm&label)](https://www.npmjs.com/package/tailwindcss)
+[![@testing-library/jest-dom](https://badgen.net/badge/icon/jest-dom?icon=npm&label)](https://www.npmjs.com/package/@testing-library/jest-dom)
+[![@testing-library/react](https://badgen.net/badge/icon/testing-library?icon=npm&label)](https://www.npmjs.com/package/@testing-library/react)
+[![@testing-library/user-event](https://badgen.net/badge/icon/testing-library?icon=npm&label)](https://www.npmjs.com/package/@testing-library/user-event)
+[![animate.css](https://badgen.net/badge/icon/animate.css?icon=npm&label)](https://www.npmjs.com/package/animate.css)
+
+[![apollo-client](https://badgen.net/badge/icon/apollo-client?icon=npm&label)](https://www.npmjs.com/package/apollo-client)
+[![dotenv](https://badgen.net/badge/icon/dotenv?icon=npm&label)](https://www.npmjs.com/package/dotenv)
+[![graphql](https://badgen.net/badge/icon/graphql?icon=npm&label)](https://www.npmjs.com/package/graphql)
+[![jwt-decode](https://badgen.net/badge/icon/jwt-decode?icon=npm&label)](https://www.npmjs.com/package/jwt-decode)
+[![react](https://badgen.net/badge/icon/react?icon=npm&label)](https://www.npmjs.com/package/react)
+[![react-bootstrap](https://badgen.net/badge/icon/react-bootstrap?icon=npm&label)](https://www.npmjs.com/package/react-bootstrap)
+[![react-dom](https://badgen.net/badge/icon/react-dom?icon=npm&label)](https://www.npmjs.com/package/react-dom)
+[![react-router-dom](https://badgen.net/badge/icon/react-router-dom?icon=npm&label)](https://www.npmjs.com/package/react-router-dom)
+[![react-scripts](https://badgen.net/badge/icon/react-scripts?icon=npm&label)](https://www.npmjs.com/package/react-scripts)
+[![bootstrap](https://badgen.net/badge/icon/bootstrap?icon=npm&label)](https://www.npmjs.com/package/bootstrap)
