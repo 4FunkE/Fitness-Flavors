@@ -9,6 +9,8 @@ import Home from './pages/Home.js';
 import Login from "./pages/Login.js";
 import Profile from './pages/Profile.js'
 import Signup from "./pages/SignUp.js";
+import Header from './pages/Header';
+import Footer from './pages/Footer';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
