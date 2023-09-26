@@ -19,19 +19,19 @@ function Exercise() {
     }, []); // Empty dependency array means this effect runs once on component mount
 
     return (
-        <div className="exercise-container">
-          <h2>Exercises</h2>
-          <section className="exercise-list-section">
-            <ul className="exercise-list">
-              {exercises.map((exercise) => (
-                <li key={exercise._id} className="exercise-item">
-                  <ExerciseCard exercise={exercise} /> {/* Use ExerciseCard component here */}
-                </li>
-              ))}
-            </ul>
-          </section>
-        </div>
-      );
-    }
+      <div className="exercise-container">
+        <h2>Exercises</h2>
+        <section className="exercise-list-section">
+          <ul className="exercise-list">
+            {exercises.map((exercise) => (
+              <li key={exercise._id} className="exercise-item">
+                <ExerciseCard exercise={exercise} /> {/* Use ExerciseCard component here */}
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+    );
+  }
 
   export default Exercise;
