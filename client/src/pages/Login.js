@@ -1,32 +1,48 @@
 //login page for app
 import React, { useState } from "react";
 // import './App.css';
-// import { useMutation } from '@apollo/client';
-// import { LOGIN_USER } from '../utils/Mutations.js';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/Mutations';
+
+import Auth from '../utils/auth';
 
 
 
-
-export default function Login() {
+const Login = (props) => {
   const [formData, setFormData] = useState({ username: '', password: '' })
-  // const [ loginUser ] = useMutation(LOGIN_USER);
+  const [login, { error, data }] = useMutation(LOGIN_USER);
+
+  // update state based on form input changes
   const handleInputChange = (event) => {
     const {name, value} = event.target;
-    setFormData ({ ...formData, [name]: value });
+    
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   }
 
+  // submit form
   const handleInputSubmit = async (event) => {
     event.preventDefault()
+    console.log(formData);
     try {
       console.log('test submitted', formData);
-      //inseert sign up mutation here
-      // const { data } = await loginUser({ variables: { ...formData } });
-      // front end auth token here
-    } catch(error) {
-      console.error('error')
+      const { data } = await login({
+        variables: { ...formData }
+      });
+
+      Auth.login(data.login.token);
+    } catch (error) {
+      console.error('error login.js, line 37')
     }
 
-  }
+    // clear form values
+    setFormData({
+      username: '',
+      password: '',
+    });
+  };
   
 
   //code for login form
