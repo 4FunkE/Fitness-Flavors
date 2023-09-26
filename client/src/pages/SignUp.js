@@ -1,6 +1,6 @@
 //sign up for app
 import React, { useState } from 'react';
-import './App.css';
+// import './App.css';
 
 export default function Signup() {
   // JSX code for login form

@@ -1,10 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch } from "react-router";
 
-import Home from "../component/pages/Home";
-import Exercise from "../component/pages/Exercise";
-import Login from "../component/pages/Login";
-import Profile from "../component/pages/Profile";
+import Home from "../pages/Home";
+import Exercise from "../pages/Exercise";
+import Login from "../pages/Login";
+import Profile from "../pages/Profile";
 
 function RenderPages() {
   return (

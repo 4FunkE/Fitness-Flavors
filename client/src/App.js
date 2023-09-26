@@ -1,6 +1,6 @@
 import React from "react";
-import "./src/app.css"; // Import your global styles
-import RenderPages from "./src/components/RenderPages"; // Import the RenderPages component
+import "./App.css"; // Import your global styles
+import RenderPages from "./components/Renderpages"; // Import the RenderPages component
 
 function App() {
   return (
