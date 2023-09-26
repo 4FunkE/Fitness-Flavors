@@ -1,6 +1,7 @@
 // import authentication error and
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
+const bcrypt = require('bcrypt');
 
 // import the User and Workout models
 const { User, Workout } = require('../models');
@@ -68,23 +69,50 @@ const resolvers = {
                 throw new Error('Error deleting workout: ${error.message');
             }
         },
-        // login: async (parent, { username, password }) => {
-        //     const user = await User.findOne({ username });
-      
-        //     if (!user) {
-        //       throw new AuthenticationError('Incorrect credentials');
-        //     }
-      
-        //     const correctPw = await user.isCorrectPassword(password);
-      
-        //     if (!correctPw) {
-        //       throw new AuthenticationError('Incorrect credentials');
-        //     }
-      
-        //     const token = signToken(user);
-      
-        //     return { token, user };
-        //   }
+        // register user
+        registerUser: async (_, { input }) => {
+            const { username, password } = input;
+
+            // check if user exists
+            const existingUser = await User.findOne({ username});
+            if (existingUser) {
+                throw new AuthenticationError('User already exists');
+            }
+
+            // hash password
+            const hashedPassword = await bcrypt.hash(password, 10);
+
+            // create user instance
+            const newUser = new User({
+                username,
+                password: hashedPassword,
+            });
+
+            await newUser.save();
+
+            // generate authentication token
+            const token = signToken({ username, _id: newUser._id});
+
+            return { token, user: newUser };
+        },
+        // login user
+        login: async (_, { username, password}) => {
+            const user = await User.findOne({ username});
+
+            if (!user) {
+                throw new AuthenticationError('Wrong username or password');
+            }
+
+            const correctPw = await bcrypt.compare(password, user.password);
+
+            if (!correctPw) {
+                throw new AuthenticationError('Wrong username or password');
+            }
+
+            const token = signToken({ username, _id: user._id });
+
+            return { token, user};
+        }
     },
 };
 
