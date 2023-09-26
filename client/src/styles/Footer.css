@@ -1,0 +1,10 @@
+#footer {
+    background-color: #333; /* Background color for the footer */
+    color: #fff; /* Text color */
+    padding: 20px 0; /* Add some spacing inside the footer */
+    text-align: center; /* Center-align the text */
+  }
+  
+  #footerText {
+    font-size: 14px; /* Adjust the font size to your preference */
+  }
