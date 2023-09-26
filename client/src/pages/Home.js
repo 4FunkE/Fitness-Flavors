@@ -1,17 +1,14 @@
-import React, { useState } from "react";
-import { useQuery, useMutation } from "@apollo/client";
-// import { GET_MESSAGE, UPDATE_MESSAGE } from "./graphql";
+import React, { useState, useEffect } from "react";
+import "animate.css"; // Import animate.css
+import image1 from "../components/images/image1.jpg";
+import image2 from "../components/images/image2.jpg";
+import image3 from "../components/images/image3.jpg";
+import image4 from "../components/images/image4.jpg";
 import "../styles/Home.css";
 
 function HomePage() {
   // Define state for the mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // Define  GraphQL query
-  // const { loading, error, data } = useQuery(GET_MESSAGE);
-
-  // Define  GraphQL mutation
-  // const [updateMessage] = useMutation(UPDATE_MESSAGE);
 
   // Handle mobile menu toggle
   const toggleMobileMenu = () => {
@@ -19,9 +16,18 @@ function HomePage() {
   };
 
   // Use the in-view hook to detect when the sliding images section is in view
-  // const [ref, inView] = inView({
-  //   triggerOnce: true,
-  // });
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.href =
+      "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+
+    // Clean up the link element when the component unmounts
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
 
   return (
     <div>
@@ -30,29 +36,22 @@ function HomePage() {
       </div>
 
       {/* Sliding Images Section */}
-      <div
-        className="container mx-auto mt-8"
-        // ref={/} // Attach the ref to the sliding images section
-      >
+      <div className="container mx-auto mt-8">
         <div className="flex flex-wrap">
-          {/* Check if the section is in view, and apply animations */}
-          {
-            <>
-              <div className="w-full md:w-1/2 animation-container animate__animated animate__slideInLeft">
-                <img src="image1.jpg" alt="Image 1" />
-              </div>
-              <div className="w-full md:w-1/2 animation-container animate__animated animate__slideInRight">
-                <img src="image2.jpg" alt="Image 2" />
-              </div>
-              <div className="w-full md:w-1/2 animation-container animate__animated animate__slideInLeft">
-                <img src="image3.jpg" alt="Image 3" />
-              </div>
-              <div className="w-full md:w-1/2 animation-container animate__animated animate__slideInRight">
-                <img src="image4.jpg" alt="Image 4" />
-              </div>
-              {/* Add more images as needed */}
-            </>
-          }
+          {/* Apply animation classes */}
+          <div className="w-64 md:w-1/5 animate__animated animate__fadeInLeft img1">
+            <img src={image1} alt="Image 1" />
+          </div>
+          <div className="w-full md:w-1/5 animate__animated animate__fadeInRight img2">
+            <img src={image2} alt="Image 2" />
+          </div>
+          <div className="w-full md:w-1/5 animate__animated animate__fadeInLeft img3">
+            <img src={image3} alt="Image 3" />
+          </div>
+          <div className="w-full md:w-1/5 animate__animated animate__fadeInRight img4">
+            <img src={image4} alt="Image 4" />
+          </div>
+          {/* Add more images as needed */}
         </div>
       </div>
     </div>
