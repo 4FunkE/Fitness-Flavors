@@ -9,8 +9,8 @@ import Home from './pages/Home.js';
 import Login from "./pages/Login.js";
 import Profile from './pages/Profile.js'
 import Signup from "./pages/SignUp.js";
-import Header from './pages/Header';
-import Footer from './pages/Footer';
+import Header from './pages/Header.js';
+import Footer from './pages/Footer.js';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -39,7 +39,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Route>
+      <Routes>
         <div className="App">
           <Header />
           <div className="appContainer">
@@ -54,7 +54,7 @@ function App() {
           </div>
           <Footer />
         </div>
-      </Route>
+      </Routes>
      </ApolloProvider>
   );
 }
