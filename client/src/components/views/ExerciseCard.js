@@ -1,5 +1,5 @@
 import React from 'react';
-import './ExerciseCard.css'; // CSS file for styling
+// import './ExerciseCard.css'; // CSS file for styling
 
 function ExerciseCard({ exercise }) {
   return (
