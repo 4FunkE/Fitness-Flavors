@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useInView } from "react-intersection-observer"; // Import the useInView hook
+// import { useInView } from "react-intersection-observer"; // Import the useInView hook
 import "../styles/Home.css";
 
 function HomePage() {
@@ -7,9 +7,9 @@ function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Use the in-view hook to detect when the sliding images section is in view
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-  });
+  // const [ref, inView] = useInView({
+  //   triggerOnce: true,
+  // });
 
   // Handle mobile menu toggle
   const toggleMobileMenu = () => {
