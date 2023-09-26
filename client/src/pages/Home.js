@@ -19,7 +19,7 @@ function HomePage() {
   };
 
   // Use the in-view hook to detect when the sliding images section is in view
-  const [ref, inView] = useInView({
+  const [ref, inView] = inView({
     triggerOnce: true,
   });
 
