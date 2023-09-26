@@ -48,6 +48,11 @@
   /* Responsive Design: */
   @media (max-width: 768px) {
     .exercise-list li {
-      /* Adjust styles for smaller screens */
+      padding: 10px; /* Reduce padding for smaller screens */
+      margin-bottom: 10px; /* Reduce margin for smaller screens */
+    }
+  
+    .exercise-list-section h2 {
+      font-size: 20px; /* Reduce font size for heading on smaller screens */
     }
   }
