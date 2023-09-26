@@ -1,10 +1,9 @@
 // import authentication error and
 const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
 
 // import the User and Workout models
-const User = require('../models/User');
-const Workout = require('../models/Workout');
-
+const { User, Workout } = require('../models');
 
 const resolvers = {
     Query: {
@@ -20,7 +19,7 @@ const resolvers = {
         // resolver for workouts query
         workouts: async (_, args, context) => {
             // check if authenticated
-            if(!context.user) {
+            if (!context.user) {
                 throw new AuthenticationError('Not logged in');
             }
             // fetch and return workouts
@@ -32,7 +31,7 @@ const resolvers = {
         // resolver for addWorkout mutation
         addWorkout: async (_, args, context) => {
             // check if authenticated
-            if(!context.user) {
+            if (!context.user) {
                 throw new AuthenticationError('Not logged in');
             }
             // create workout instance
@@ -50,7 +49,7 @@ const resolvers = {
             return savedWorkout;
         },
         // delete workout
-        deleteWorkout: async(_, args, context) => {
+        deleteWorkout: async (_, args, context) => {
             // check if authenticated
             if (!context.user) {
                 throw new AuthenticationError('Not logged in');
@@ -69,6 +68,23 @@ const resolvers = {
                 throw new Error('Error deleting workout: ${error.message');
             }
         },
+        // login: async (parent, { username, password }) => {
+        //     const user = await User.findOne({ username });
+      
+        //     if (!user) {
+        //       throw new AuthenticationError('Incorrect credentials');
+        //     }
+      
+        //     const correctPw = await user.isCorrectPassword(password);
+      
+        //     if (!correctPw) {
+        //       throw new AuthenticationError('Incorrect credentials');
+        //     }
+      
+        //     const token = signToken(user);
+      
+        //     return { token, user };
+        //   }
     },
 };
 

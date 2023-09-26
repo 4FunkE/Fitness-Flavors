@@ -24,6 +24,11 @@ const typeDefs = gql`
         sets: Int
     }
 
+    type Auth {
+        token: ID
+        user: User
+      }
+
     type Query {
         user: User!
         workouts: [Workout!]!
