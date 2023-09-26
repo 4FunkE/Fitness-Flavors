@@ -1,0 +1,59 @@
+.container {
+    max-width: 400px; /* Set a maximum width for the form container */
+    margin: 0 auto; /* Center the form container horizontally */
+    padding: 20px; /* Add some padding around the form */
+    background-color: #f7f7f7; /* Background color for the form container */
+    border-radius: 8px; /* Add a border radius to the form container */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow to the form container */
+  }
+  
+  /* Styling for the Form Heading */
+  h2 {
+    text-align: center; /* Center the heading text */
+    margin-bottom: 20px; /* Add some space below the heading */
+    color: #333; /* Text color for the heading */
+  }
+  
+  /* Styling for the Form Groups (Username and Password) */
+  .form-group {
+    margin-bottom: 20px; /* Add some space between form groups */
+  }
+  
+  /* Styling for Labels */
+  label {
+    display: block; /* Display labels as blocks (one below the other) */
+    font-weight: bold; /* Make labels bold */
+    margin-bottom: 5px; /* Add some space below labels */
+    color: #333; /* Text color for labels */
+  }
+  
+  /* Styling for Input Fields */
+  .form-control {
+    width: 100%; /* Set input fields to take up 100% of container width */
+    padding: 10px; /* Add some padding to input fields */
+    border: 1px solid #ccc; /* Add a border to input fields */
+    border-radius: 5px; /* Add a border radius to input fields */
+  }
+  
+  /* Styling for the Login Button */
+  .btn {
+    width: 100%; /* Make the button take up 100% of container width */
+    padding: 10px; /* Add some padding to the button */
+    background-color: #007bff; /* Background color for the button */
+    color: #fff; /* Text color for the button */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Add a border radius to the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  /* Hover Effect for the Login Button */
+  .btn:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+  }
+  
+  /* Styling for Error Messages */
+  .error-message {
+    color: #ff0000; /* Text color for error messages (red) */
+    margin-top: 10px; /* Add some space above error messages */
+    text-align: center; /* Center error messages */
+  }
