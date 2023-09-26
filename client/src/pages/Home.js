@@ -1,33 +1,30 @@
 import React, { useState } from "react";
-// import { useInView } from "react-intersection-observer"; // Import the useInView hook
+import { useQuery, useMutation } from "@apollo/client";
+// import { GET_MESSAGE, UPDATE_MESSAGE } from "./graphql";
 import "../styles/Home.css";
 
 function HomePage() {
   // Define state for the mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Use the in-view hook to detect when the sliding images section is in view
-  // const [ref, inView] = useInView({
-  //   triggerOnce: true,
-  // });
+  // Define  GraphQL query
+  // const { loading, error, data } = useQuery(GET_MESSAGE);
+
+  // Define  GraphQL mutation
+  // const [updateMessage] = useMutation(UPDATE_MESSAGE);
 
   // Handle mobile menu toggle
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Use the in-view hook to detect when the sliding images section is in view
+  const [ref, inView] = inView({
+    triggerOnce: true,
+  });
+
   return (
     <div>
-      {/* Add Tailwind CSS and Animate.css links here */}
-      <link
-        href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-        rel="stylesheet"
-      />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-      />
-
       <div className="container mx-auto mt-8">
         <p>Your content goes here.</p>
       </div>
