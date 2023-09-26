@@ -6,7 +6,7 @@
   }
   
   /* Styling for the unordered list */
-  ul {
+  .navUl {
     list-style: none; /* Remove default list styles */
     padding: 0; /* Remove default list padding */
     display: flex; /* Display list items horizontally */

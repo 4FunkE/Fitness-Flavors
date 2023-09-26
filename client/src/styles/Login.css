@@ -10,7 +10,7 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow to the login card */
   }
   
-  h2 {
+  .loginH {
     font-size: 24px; /* Adjust the font size for the title */
   }
   

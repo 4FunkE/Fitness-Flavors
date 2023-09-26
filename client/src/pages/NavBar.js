@@ -6,7 +6,7 @@ export default function NavBar() {
   return (
     <div id="navBar" className="container">
       <div id="navBarText">
-        <ul>
+        <ul className="navUl">
           <li>Profile</li>
           <li>SignIn</li>
           <li>Profile</li>

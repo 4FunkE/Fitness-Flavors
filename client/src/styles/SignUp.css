@@ -1,4 +1,4 @@
-.container {
+.signUpContainer {
     max-width: 400px; /* Set a maximum width for the form container */
     margin: 0 auto; /* Center the form container horizontally */
     padding: 20px; /* Add some padding around the form */
@@ -8,7 +8,7 @@
   }
   
   /* Styling for the Form Heading */
-  h2 {
+  .signUpH {
     text-align: center; /* Center the heading text */
     margin-bottom: 20px; /* Add some space below the heading */
     color: #333; /* Text color for the heading */
@@ -36,7 +36,7 @@
   }
   
   /* Styling for the Login Button */
-  .btn {
+  .signupBtn {
     width: 100%; /* Make the button take up 100% of container width */
     padding: 10px; /* Add some padding to the button */
     background-color: #007bff; /* Background color for the button */
@@ -47,7 +47,7 @@
   }
   
   /* Hover Effect for the Login Button */
-  .btn:hover {
+  .signupBtn:hover {
     background-color: #0056b3; /* Darker background color on hover */
   }
   

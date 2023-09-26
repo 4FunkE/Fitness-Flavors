@@ -50,7 +50,7 @@ return (
   <div id="login" className="container">
     <div className="row justify-content-center">
       <div className="col-md-6">
-        <h2>Welcome back!</h2>
+        <h2 className='loginH'>Welcome back!</h2>
         <div className="card-body">
             {data ? (
               <p>
