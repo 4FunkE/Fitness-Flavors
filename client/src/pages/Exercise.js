@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../styles/Exercise.css';
 import ExerciseCard from '../components/views/ExerciseCard'; // ExerciseCard component in veiws
 
+
 function Exercise() {
     const [exercises, setExercises] = useState([]);
 
