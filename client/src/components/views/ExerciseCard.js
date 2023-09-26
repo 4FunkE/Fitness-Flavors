@@ -1,6 +1,5 @@
-import React from 'react';
-// import '../../styles/ExerciseCard.css'; // CSS file for styling
-
+import React from "react";
+// import './ExerciseCard.css'; // CSS file for styling
 
 function ExerciseCard({ exercise }) {
   return (
