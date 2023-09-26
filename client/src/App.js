@@ -5,10 +5,10 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from "@a
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Exercise from './pages/Exercise.js';
-import Home from './pages/Home.js';
+import Exercise from "./pages/Exercise.js";
+import Home from "./pages/Home.js";
 import Login from "./pages/Login.js";
-import Profile from './pages/Profile.js'
+import Profile from "./pages/Profile.js";
 import Signup from "./pages/SignUp.js";
 import Header from './pages/Header.js';
 import Footer from './pages/Footer.js';

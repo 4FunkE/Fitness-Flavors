@@ -4,19 +4,22 @@ import ExerciseCard from '../components/views/ExerciseCard'; // ExerciseCard com
 
 
 function Exercise() {
-    const [exercises, setExercises] = useState([]);
+  const [exercises, setExercises] = useState([]);
 
-    useEffect(() => {
-        // Fetch Exercises from the API
-        fetch('/api/exercises') // API endpoint
-        .then((response) => response.json())
-        .then((data) => {
-            setExercises(data); // API response is an array of Exercises
-        })
-        .catch((error) => {
-            console.error('Error fetching Exercises: ~ file: Exervies.js ~ line 16', error);
-        });
-    }, []); // Empty dependency array means this effect runs once on component mount
+  useEffect(() => {
+    // Fetch Exercises from the API
+    fetch("/api/exercises") // API endpoint
+      .then((response) => response.json())
+      .then((data) => {
+        setExercises(data); // API response is an array of Exercises
+      })
+      .catch((error) => {
+        console.error(
+          "Error fetching Exercises: ~ file: Exervies.js ~ line 16",
+          error
+        );
+      });
+  }, []); // Empty dependency array means this effect runs once on component mount
 
     return (
       <div className="exercise-container">
