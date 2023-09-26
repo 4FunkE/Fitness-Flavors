@@ -50,7 +50,6 @@ return (
     <div className="row justify-content-center">
       <div className="col-md-6">
         <h2>Welcome back!</h2>
-        {/* if signed in show success message otherwise... */}
         <div className="card-body">
             {data ? (
               <p>

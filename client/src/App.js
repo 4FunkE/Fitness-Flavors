@@ -1,8 +1,9 @@
 // import logo from './logo.svg';
 // import './App.css';
+import React from "react";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Exercise from './pages/Exercise.js';
 import Home from './pages/Home.js';
@@ -39,11 +40,12 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Routes>
+      {/* Use 'Router' as the top-level routing component */}
+      <Router>
         <div className="App">
           <Header />
           <div className="appContainer">
-            {/* header or nav bar here */}
+            {/* Define your routes */}
             <Routes>
               <Route path="/home" element={<Home />} />
               <Route path="/exercise" element={<Exercise />} />
@@ -54,8 +56,8 @@ function App() {
           </div>
           <Footer />
         </div>
-      </Routes>
-     </ApolloProvider>
+      </Router>
+    </ApolloProvider>
   );
 }
 
