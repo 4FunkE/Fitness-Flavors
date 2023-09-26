@@ -1,13 +1,17 @@
+// import authentication error and
+const { AuthenticationError } = require('apollo-server-express');
+
 // import the User and Workout models
 const User = require('../models/User');
 const Workout = require('../models/Workout');
+
 
 const resolvers = {
     Query: {
         user: async (_, args, context) => {
             // check if authenticated
             if (!context.user) {
-                throw new Error('Not logged in');
+                throw new AuthenticationError('Not logged in');
             }
 
             // return user
@@ -17,7 +21,7 @@ const resolvers = {
         workouts: async (_, args, context) => {
             // check if authenticated
             if(!context.user) {
-                throw new Error('Not logged in');
+                throw new AuthenticationError('Not logged in');
             }
             // fetch and return workouts
             const workouts = await Workout.find({ user: context.user.id });
@@ -29,7 +33,7 @@ const resolvers = {
         addWorkout: async (_, args, context) => {
             // check if authenticated
             if(!context.user) {
-                throw new Error('Not logged in');
+                throw new AuthenticationError('Not logged in');
             }
             // create workout instance
             const newWorkout = new Workout({
@@ -49,7 +53,7 @@ const resolvers = {
         deleteWorkout: async(_, args, context) => {
             // check if authenticated
             if (!context.user) {
-                throw new Error('Not logged in');
+                throw new AuthenticationError('Not logged in');
             }
 
             try {
