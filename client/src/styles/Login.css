@@ -1,0 +1,63 @@
+#login {
+    background-color: #f7f7f7; /* Background color for the login page */
+    padding: 20px; /* Add padding to the login page */
+  }
+  
+  .col-md-6 {
+    background-color: #fff; /* Background color for the login card */
+    padding: 20px; /* Add padding to the login card */
+    border-radius: 8px; /* Add rounded corners to the login card */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow to the login card */
+  }
+  
+  h2 {
+    font-size: 24px; /* Adjust the font size for the title */
+  }
+  
+  /* Styling for the login form */
+  .login-form {
+    margin-top: 20px; /* Add spacing between the title and the form */
+  }
+  
+  .form-input {
+    width: 100%; /* Set the input width to 100% of the parent container */
+    padding: 10px; /* Add padding to the form inputs */
+    margin-bottom: 10px; /* Add spacing between form inputs */
+    border: 1px solid #ccc; /* Add a border to form inputs */
+    border-radius: 5px; /* Add rounded corners to form inputs */
+  }
+  
+  /* Styling for the submit button */
+  .btn-block {
+    width: 100%; /* Set the button width to 100% of the parent container */
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Add rounded corners to the button */
+    padding: 10px; /* Add padding to the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  .btn-block:hover {
+    background-color: #0056b3; /* Button background color on hover */
+  }
+  
+  /* Styling for error messages */
+  .my-3 {
+    margin-top: 10px; /* Add spacing above error messages */
+    padding: 10px; /* Add padding to error messages */
+    background-color: #dc3545; /* Error message background color */
+    color: #fff; /* Error message text color */
+    border-radius: 5px; /* Add rounded corners to error messages */
+  }
+  
+  /* Styling for the "Signup" link */
+  p a {
+    color: #007bff; /* Link text color */
+    text-decoration: none; /* Remove underlines from links */
+    font-weight: bold; /* Add font weight for emphasis */
+  }
+  
+  p a:hover {
+    text-decoration: underline; /* Underline links on hover */
+  }
