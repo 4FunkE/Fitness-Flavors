@@ -1,7 +1,7 @@
 // header for app
 import React from "react";
 import NavBar from './NavBar';
-// import './App.css';
+import '../styles/Header.css'; // Import your CSS file for styling
 
 export default function Header() {
   return (
