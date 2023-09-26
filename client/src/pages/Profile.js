@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-// import './Profile.css'; // Import your CSS file for styling
+import '../styles/Profile.js'; // Import your CSS file for styling
+import ExerciseCard from '../components/views/ExerciseCard'; // Import the ExerciseCard component
 
 function Profile() {
     const [profileExercises, setProfileExercises] = useState([]); // Store the user's saved Exercises
@@ -8,32 +9,97 @@ function Profile() {
   
     useEffect(() => {
       // Fetch and update the user's saved Exercises from the server
-      fetch('/api/user/exercises') // Replace with your API endpoint
+      fetch('/api/user/exercises')
         .then((response) => response.json())
         .then((data) => {
           setProfileExercises(data); // Assuming the API response is an array of exercises
         })
         .catch((error) => {
-          console.error('Error fetching user exercises:', error);
+          console.error('Error fetching user exercises: file: Profile.js ~ line 18', error);
         });
     }, []);
   
     const addToProfile = (exercise) => {
-      // Add a exercise to the user's profile
-      // Send a request to your server to update the user's profile with the selected exercise
-      // Update profileexercises with the new exercise
+      // API endpoint for adding exercises to a user's profile
+      const endpoint = '/api/user/exercises';
+
+      // Make a POST request to add the exercise to the user's profile
+      fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ exerciseId: exercise._id }), // Send the exercise ID or relevant data
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to add exercise to profile: file: Profile.js ~ line 36');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // updated user's profile
+        setProfileExercises(data.profileExercises);
+      })
+      .catch((error) => {
+        console.error('Error adding exercise to profile: file: Profile.js ~ line 45', error);
+      });
     };
   
     const removeFromProfile = (exerciseId) => {
-      // Remove a exercise from the user's profile
-      // Send a request to your server to remove the exercise from the user's profile
-      // Update profileexercises without the removed exercise
+      // API endpoint for removing exercises from a user's profile
+      const endpoint = `/api/user/exercises/${exerciseId}`;
+    
+      // Make a DELETE request to remove the exercise from the user's profile
+      fetch(endpoint, {
+        method: 'DELETE',
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Failed to remove exercise from profile: file: Profile.js ~ line 59');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Update profileExercises with the updated user's profile (excluding the removed exercise)
+          setProfileExercises(data.profileExercises);
+        })
+        .catch((error) => {
+          console.error('Error removing exercise from profile: file: Profile.js ~ line 68', error);
+        });
     };
   
     const addNote = () => {
-      // Add a note to the selected exercise
-      // Send a request to your server to update the exercise's notes
-      // Update the notes state and include a timestamp
+      // API endpoint for updating exercise notes
+      const endpoint = `/api/exercises/${selectedExercise._id}/notes`;
+    
+      // Create a timestamp for the note
+      const timestamp = new Date().toISOString();
+    
+      // Make a POST request to add the note to the selected exercise
+      fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ note: notes, timestamp }), // Send the note content and timestamp
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Failed to add note to exercise ~ file: Profile.js ~ line 89');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Update the notes state with the newly added note and timestamp
+          const updatedNotes = [...selectedExercise.notes, { content: notes, timestamp }];
+          setSelectedExercise({ ...selectedExercise, notes: updatedNotes });
+          // Optionally, clear the notes input field if needed
+          setNotes('');
+        })
+        .catch((error) => {
+          console.error('Error adding note to exercise: ~ file: Profile.js ~ line 101', error);
+        });
     };
 
     return (
@@ -44,7 +110,7 @@ function Profile() {
             <ul className="exercise-list">
               {profileExercises.map((exercise) => (
                 <li key={exercise._id} className="exercise-item">
-                  {exercise.name}
+                  <ExerciseCard exercise={exercise} /> {/* ExerciseCard component here */}
                   <button onClick={() => removeFromProfile(exercise._id)}>Remove</button>
                 </li>
               ))}
