@@ -103,40 +103,41 @@ function Profile() {
     };
 
     return (
-        <div className="profile-container">
-          <h2>My Profile</h2>
-          <section className="exercises-section">
-            <h3>My Exercises</h3>
-            <ul className="exercise-list">
-              {profileExercises.map((exercise) => (
-                <li key={exercise._id} className="exercise-item">
-                  <ExerciseCard exercise={exercise} /> {/* ExerciseCard component here */}
-                  <button onClick={() => removeFromProfile(exercise._id)}>Remove</button>
-                </li>
-              ))}
-            </ul>
-          </section>
-          <section className="selected-exercise-section">
-            <h3>Selected Exercise</h3>
-            <div className="selected-exercise-details">
-              <p>Name: {selectedExercise?.name}</p>
-              <p>Description: {selectedExercise?.description}</p>
-              <button onClick={() => addToProfile(selectedExercise)}>Add to My Exercises</button>
-            </div>
-            <div className="notes-section">
-              <h4>Notes</h4>
-              <textarea
-                value={notes}
-                onChange={(e) => setNotes(e.target.value)}
-                placeholder="Add your notes here..."
-                className="notes-input"
-              ></textarea>
-              <button onClick={addNote} className="add-note-button">Add Note</button>
-            </div>
-          </section>
-          {/* Add other styled sections and elements for tracking progress, marking as favorite, adjusting intensity, and viewing history */}
-        </div>
-      );
-    }
+      <div className="profile-container">
+        <h2>My Profile</h2>
+        <section className="exercises-section">
+          <h3>My Exercises</h3>
+          <ul className="exercise-list">
+            {profileExercises.map((exercise) => (
+              <li key={exercise._id} className="exercise-item">
+                <ExerciseCard exercise={exercise} /> {/* ExerciseCard component here */}
+                <button onClick={() => removeFromProfile(exercise._id)}>Remove</button>
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section className="selected-exercise-section">
+          <h3>Selected Exercise</h3>
+          <div className="selected-exercise-details">
+            <p>Name: {selectedExercise?.name}</p>
+            <p>Description: {selectedExercise?.description}</p>
+            <button onClick={() => addToProfile(selectedExercise)}>Add to My Exercises</button>
+          </div>
+          <div className="notes-section">
+            <h4>Notes</h4>
+            <textarea
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              placeholder="Add your notes here..."
+              className="notes-input"
+            ></textarea>
+            <button onClick={addNote} className="add-note-button">Add Note</button>
+          </div>
+        </section>
+        {/* Add other styled sections and elements for tracking progress, marking as favorite, adjusting intensity, and viewing history */}
+      </div>
+    );
+  }
+
     
     export default Profile;
