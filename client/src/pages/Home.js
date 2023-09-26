@@ -19,9 +19,9 @@ function HomePage() {
   };
 
   // Use the in-view hook to detect when the sliding images section is in view
-  const [ref, inView] = inView({
-    triggerOnce: true,
-  });
+  // const [ref, inView] = inView({
+  //   triggerOnce: true,
+  // });
 
   return (
     <div>
@@ -32,11 +32,11 @@ function HomePage() {
       {/* Sliding Images Section */}
       <div
         className="container mx-auto mt-8"
-        ref={ref} // Attach the ref to the sliding images section
+        // ref={/} // Attach the ref to the sliding images section
       >
         <div className="flex flex-wrap">
           {/* Check if the section is in view, and apply animations */}
-          {inView && (
+          {
             <>
               <div className="w-full md:w-1/2 animation-container animate__animated animate__slideInLeft">
                 <img src="image1.jpg" alt="Image 1" />
@@ -52,7 +52,7 @@ function HomePage() {
               </div>
               {/* Add more images as needed */}
             </>
-          )}
+          }
         </div>
       </div>
     </div>
