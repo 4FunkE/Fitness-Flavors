@@ -1,6 +1,6 @@
 // nav for app
 import React from "react";
-// import './App.css';
+import '../styles/Navbar.css'; // Import your CSS file for styling
 
 export default function NavBar() {
   return (
