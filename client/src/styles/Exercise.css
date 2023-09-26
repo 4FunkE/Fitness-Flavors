@@ -31,29 +31,12 @@
     border-radius: 5px;
   }
 
-  /* Style Headings and Text: */
-  .exercise-list h3 {
-    color: #333;
-  }
-  
-  .exercise-list p {
-    color: #666;
-  }
-
-/* Style Notes Preview */
-.exercise-notes {
-    background-color: #f0f0f0;
+  .exercise-list-section {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     padding: 10px;
-    border-radius: 3px;
-  }
-  
-  .exercise-notes ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .exercise-notes li {
-    margin-bottom: 5px;
+    margin-top: 20px;
   }
 
   /* Add Hover Effects: */
@@ -65,6 +48,11 @@
   /* Responsive Design: */
   @media (max-width: 768px) {
     .exercise-list li {
-      /* Adjust styles for smaller screens */
+      padding: 10px; /* Reduce padding for smaller screens */
+      margin-bottom: 10px; /* Reduce margin for smaller screens */
+    }
+  
+    .exercise-list-section h2 {
+      font-size: 20px; /* Reduce font size for heading on smaller screens */
     }
   }
