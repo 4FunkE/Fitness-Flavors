@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Profile.css'; // Import your CSS file for styling
+// import './Profile.css'; // Import your CSS file for styling
 
 function Profile() {
     const [profileExercises, setProfileExercises] = useState([]); // Store the user's saved Exercises

@@ -1,20 +1,17 @@
 import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
-import { GET_MESSAGE, UPDATE_MESSAGE } from "./graphql";
-import { useInView } from "react-intersection-observer"; // Import the in-view hook
-
-import "../styles/tailwind.css"; // Import Tailwind CSS
-import "../styles/animate.css"; // Import Animate.css for animations
+// import { GET_MESSAGE, UPDATE_MESSAGE } from "./graphql";
+import "../styles/Home.css";
 
 function HomePage() {
   // Define state for the mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Define your GraphQL query
-  const { loading, error, data } = useQuery(GET_MESSAGE);
+  // Define  GraphQL query
+  // const { loading, error, data } = useQuery(GET_MESSAGE);
 
-  // Define your GraphQL mutation
-  const [updateMessage] = useMutation(UPDATE_MESSAGE);
+  // Define  GraphQL mutation
+  // const [updateMessage] = useMutation(UPDATE_MESSAGE);
 
   // Handle mobile menu toggle
   const toggleMobileMenu = () => {
