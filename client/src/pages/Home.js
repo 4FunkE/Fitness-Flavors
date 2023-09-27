@@ -25,12 +25,13 @@ function HomePage() {
           className="absolute inset-0 h-full w-full bg-cover bg-center"
           style={{ backgroundImage: `url(${homeimg})` }}
         ></div>
+
         <div className="container mx-auto relative">
-          <div className="container mx-auto text-center text-white pt-16 md:pt-96">
-            <h1 className="text-3xl md:text-5xl font-bold animate__animated animate__fadeInUp">
+          <div className="container mx-auto text-center text-white pt-96 h-screen">
+            <h1 className=" animate__animated animate__fadeInUptext-3xl md:text-5xl font-bold ">
               Achieve Your Fitness Goals
             </h1>
-            <p className="text-xl md:text-2xl mt-4 animate__animated animate__fadeInUp animate__delay-1s">
+            <p className="animate__animated animate__delay-1s animate__fadeInUp text-xl md:text-2xl mt-4  animate__delay-1s">
               Join us and transform your body!
             </p>
             <a
