@@ -1,18 +1,12 @@
-// nav for app
 import React from "react";
-import '../styles/Navbar.css'; // Import your CSS file for styling
-
+import "../styles/Navbar.css";
 export default function NavBar() {
   return (
-    <div id="navBar" className="container">
-      <div id="navBarText">
-        <ul className="navUl">
-          <li>Profile</li>
-          <li>SignIn</li>
-          <li>Profile</li>
-          {/* <li>Nutrition COMING SOON</li> */}
-        </ul>
-      </div>
+    <div className="">
+      <ul className="">
+        {/* <li className="cursor-pointer">Profile</li>
+        <li className="cursor-pointer">SignIn</li> */}
+      </ul>
     </div>
   );
 }
