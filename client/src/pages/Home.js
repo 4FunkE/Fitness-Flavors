@@ -146,7 +146,70 @@ function HomePage() {
                 Have questions or need assistance? Contact us today!
               </p>
               <form className="mt-4">
-                {/* Form input fields go here */}
+                <div className="mb-4">
+                  <label
+                    className="block text-left text-white mb-2"
+                    htmlFor="name"
+                  >
+                    Name
+                  </label>
+                  <input
+                    className="w-full border-2 border-blue-300 rounded-lg py-2 px-3"
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <label
+                    className="block text-left text-white mb-2"
+                    htmlFor="email"
+                  >
+                    Email
+                  </label>
+                  <input
+                    className="w-full border-2 border-blue-300 rounded-lg py-2 px-3"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <label
+                    className="block text-left text-white mb-2"
+                    htmlFor="subject"
+                  >
+                    Subject
+                  </label>
+                  <input
+                    className="w-full border-2 border-blue-300 rounded-lg py-2 px-3"
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Subject"
+                    required
+                  />
+                </div>
+                <div className="mb-6">
+                  <label
+                    className="block text-left text-white mb-2"
+                    htmlFor="message"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    className="w-full border-2 border-blue-300 rounded-lg py-2 px-3"
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Your Message"
+                    required
+                  ></textarea>
+                </div>
                 <button
                   type="submit"
                   className="bg-white text-blue-500 rounded-full px-4 md:px-6 py-2 hover:bg-green-600 hover:text-white mt-4"
