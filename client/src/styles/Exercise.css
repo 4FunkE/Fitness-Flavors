@@ -1,18 +1,18 @@
 :root {
-  --chineseViolet: #71677D;
-  --eggplant: #4A3642;
-  --beige: #DADFC5;
-  --dimGray: #67675F;
-  --olivine: #92B384;
-  --light: #e3e4dd;
-  --Dark: #292028; 
+  --primary: #F9F5EB;
+  --secondary: #E4DCCF;
+  --accent: #EA5455;
+  --orange: #F77F00;
+  --yellow: #FCBF49;
+  --accent2: #002B5B;
+  --Dark: #04011d; 
   --Header: 'Josefin Slab'; /*Georgia, 'Times New Roman', Times, serif;*/
   --text: 'Maven Pro'; /*Arial, Helvetica, sans-serif;*/
 }
 
 /* Style the List of exercises */
 .exercise-container {
-    background-color: #f7f7f7;
+    background-color: var(--light);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
