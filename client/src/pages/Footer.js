@@ -1,6 +1,6 @@
 // footer for app
 import React from "react";
-// import './App.css';
+import '../styles/Footer.css'; // Import your CSS file for styling
 
 export default function Footer() {
   return (

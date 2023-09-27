@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import '../styles/Profile.js'; // Import your CSS file for styling
+import '../styles/Profile.css'; // Import your CSS file for styling
 import ExerciseCard from '../components/views/ExerciseCard'; // Import the ExerciseCard component
 
 function Profile() {

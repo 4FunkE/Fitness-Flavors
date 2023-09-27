@@ -1,6 +1,7 @@
 //login page for app
 import React, { useState } from "react";
-// import './App.css';
+import '../styles/Login.css'; // Import your CSS file for styling
+
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/Mutations';
@@ -49,7 +50,7 @@ return (
   <div id="login" className="container">
     <div className="row justify-content-center">
       <div className="col-md-6">
-        <h2>Welcome back!</h2>
+        <h2 className='loginH'>Welcome back!</h2>
         <div className="card-body">
             {data ? (
               <p>

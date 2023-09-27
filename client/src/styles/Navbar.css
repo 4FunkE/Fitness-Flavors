@@ -1,0 +1,31 @@
+#navBar {
+    background-color: #007bff; /* Background color for the navbar */
+    color: #fff; /* Text color for the navbar items */
+    padding: 10px; /* Add padding to the navbar */
+    border-bottom: 1px solid #ccc; /* Add a border at the bottom of the navbar */
+  }
+  
+  /* Styling for the unordered list */
+  .navUl {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default list padding */
+    display: flex; /* Display list items horizontally */
+    justify-content: space-around; /* Space items evenly within the navbar */
+  }
+  
+  /* Styling for the list items */
+  li {
+    margin: 0; /* Reset margin for list items */
+    padding: 0; /* Reset padding for list items */
+  }
+  
+  li:hover {
+    text-decoration: underline; /* Underline items on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  /* Styling for the active item (e.g., current page) */
+  .active {
+    font-weight: bold; /* Make the active item bold */
+    text-decoration: underline; /* Underline the active item */
+  }
