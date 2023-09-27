@@ -4,7 +4,7 @@ export const QUERY_USER = gql`
   {
     user {
       _id
-      userName
+      username
       exercises {
         _id
         exerciseName
