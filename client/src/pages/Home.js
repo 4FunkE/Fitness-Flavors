@@ -6,6 +6,7 @@ import image3 from "../components/images/image3.jpg";
 import image4 from "../components/images/image4.jpg";
 import homeimg from "../components/images/homeimg.jpg";
 import "../styles/Home.css";
+import "../index.css";
 
 function HomePage() {
   // Define state for the mobile menu
@@ -221,6 +222,19 @@ function HomePage() {
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function Donation() {
+  return (
+    <div className="donation-container">
+      <h2 className="donation-heading">Donation</h2>
+      <p>
+        If you'd like to support our work, you can donate using the button
+        below:
+      </p>
+      <button className="donation-button">Donate</button>
     </div>
   );
 }
