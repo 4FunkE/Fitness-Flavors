@@ -6,7 +6,9 @@ import image3 from "../components/images/image3.jpg";
 import image4 from "../components/images/image4.jpg";
 import homeimg from "../components/images/homeimg.jpg";
 import "../styles/Home.css";
-
+import "../pages/NavBar";
+import "../pages/Header";
+import "../pages/Footer";
 function HomePage() {
   // Define state for the mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,8 +22,12 @@ function HomePage() {
 
   return (
     <div>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"
+      />
       <div
-        className="bg-cover bg-center h-screen mb-96"
+        className="bg-cover bg-center  mb-96 h-screen w-auto"
         style={{ backgroundImage: `url(${homeimg})` }}
       >
         <div class="container mx-auto text-center text-white pt-96">
@@ -80,6 +86,7 @@ function HomePage() {
                 Improve flexibility and find inner peace with our yoga classes.
               </p>
             </div>
+            {/*  */}
             {/* Class Card 2 */}
             <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
               <h3 className="text-xl font-semibold">Strength Training</h3>
