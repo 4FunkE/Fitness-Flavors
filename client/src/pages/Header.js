@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import NavBar from "./NavBar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import "../styles/Header.css";
-import logo from "../components/images/Fitness Flavors Logo.png";
+// header for app
+import React from "react";
+import NavBar from './NavBar';
+import '../styles/Header.css'; // Import your CSS file for styling
 
 export default function Header() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -42,22 +40,11 @@ export default function Header() {
   }, []);
 
   return (
-    <div
-      id="header"
-      className="bg-gray-900 text-white"
-      style={{ height: "6rem" }}
-    >
-      <div className="container mx-auto p-2 flex justify-between items-center">
-        <div id="headerText">
-          {/* Replace the h2 with the logo */}
-          <img
-            src={logo}
-            alt="Fitness Flavors Logo"
-            className="logo-image mb-16"
-            style={{ width: "12.5%" }} // Adjust the size here
-          />
-        </div>
-      </div>
+    <div id="header" className="container">
+      <div id="headerText">
+        <h2>Fitness Flavors</h2>
+      <NavBar />
     </div>
+  </div>
   );
 }
