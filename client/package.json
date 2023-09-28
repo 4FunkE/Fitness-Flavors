@@ -20,6 +20,7 @@
     "react-dom": "^16.14.0",
     "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",
+    "react-stripe-elements": "^6.1.2",
     "tailwindcss": "^2.2.19"
   },
   "scripts": {
