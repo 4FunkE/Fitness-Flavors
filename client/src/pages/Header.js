@@ -1,7 +1,7 @@
 // header for app
-import React from "react";
-import NavBar from './NavBar';
-import '../styles/Header.css'; // Import your CSS file for styling
+import React, { useState, useEffect, useRef } from "react"; // Import React and hooks
+import NavBar from "./NavBar";
+import "../styles/Header.css"; // Import your CSS file for styling
 
 export default function Header() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -43,8 +43,8 @@ export default function Header() {
     <div id="header" className="container">
       <div id="headerText">
         <h2>Fitness Flavors</h2>
+      </div>
       <NavBar />
     </div>
-  </div>
   );
 }
