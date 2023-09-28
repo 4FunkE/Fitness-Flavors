@@ -1,20 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "animate.css"; // Import animate.css
 import image1 from "../components/images/image1.jpg";
-import image2 from "../components/images/image2.jpg";
-import image3 from "../components/images/image3.jpg";
-import image4 from "../components/images/image4.jpg";
 import homeimg from "../components/images/homeimg.jpg";
 import "../styles/Home.css";
 import "../index.css";
 
 function HomePage() {
-  // Define state for the mobile menu
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // Define state for the cards data
+  const [cardsData, setCardsData] = useState([]);
 
-  // Handle mobile menu toggle
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  // Fetch data from your API
+  useEffect(() => {
+    // Replace 'fetchDataFromAPI' with your actual API fetch function
+    fetchDataFromAPI()
+      .then((data) => setCardsData(data))
+      .catch((error) => console.error(error));
+  }, []);
+  // Function to fetch data from your API
+  const fetchDataFromAPI = async () => {
+    try {
+      // Replace 'apiEndpoint' with the actual API endpoint
+      const response = await fetch("apiEndpoint");
+      if (!response.ok) {
+        throw new Error("Failed to fetch data from the API");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  // Render individual card components based on data
+  const renderCards = () => {
+    return cardsData.map((card, index) => (
+      <div
+        key={index}
+        className="w-full md:w-1/4 animate__animated animate__fadeInUp mb-4 md:mb-0"
+      >
+        <div className="bg-white rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+          <h3 className="text-lg md:text-xl font-semibold">{card.title}</h3>
+          <p className="text-gray-600 mt-2">{card.description}</p>
+        </div>
+      </div>
+    ));
   };
 
   return (
@@ -28,57 +57,28 @@ function HomePage() {
 
         <div className="container mx-auto relative">
           <div className="container mx-auto text-center text-white pt-96 h-screen">
-            <h1 className=" animate__animated animate__fadeInUptext-3xl md:text-5xl font-bold ">
-              Achieve Your Fitness Goals
-            </h1>
-            <p className="animate__animated animate__delay-1s animate__fadeInUp text-xl md:text-2xl mt-4  animate__delay-1s">
-              Join us and transform your body!
-            </p>
-            <a
-              href="#"
-              className="mt-8 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 md:px-6 rounded-full animate__animated animate__fadeInUp animate__delay-2s"
-            >
-              Get Started
-            </a>
+            {" "}
+            <div className="animate__animated animate__slideInLeft custom-slide-in-left">
+              <h1 className=" animate__animated animate__fadeInUp text-3xl md:text-5xl font-bold ">
+                Achieve Your Fitness Goals
+              </h1>
+              <p className="animate__animated animate__fadeInUp animate__delay-1s text-xl md:text-2xl mt-4 animate__delay-1s animate__slideInRight">
+                Join us and transform your body!
+              </p>
+              <a
+                href="#"
+                className="mt-8 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 md:px-6 rounded-full animate__animated animate__fadeInUp animate__delay-2s"
+              >
+                Get Started
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Sliding Images Section */}
+      {/* Cards Section */}
       <div className="bg-custom-primary text-center py-16 md:py-32">
-        <div className="flex flex-wrap">
-          {/* Left Sliding Images */}
-          <div className="w-full md:w-1/2 animate__animated animate__slideInLeft animate__delay-3s">
-            <img
-              src={image1}
-              alt="Image 1"
-              className="w-48 md:w-64 h-48 md:h-64"
-            />
-          </div>
-          <div className="w-full md:w-1/2 animate__animated animate__slideInLeft animate__delay-3s">
-            <img
-              src={image2}
-              alt="Image 2"
-              className="w-48 md:w-64 h-48 md:h-64"
-            />
-          </div>
-
-          {/* Right Sliding Images */}
-          <div className="w-full md:w-1/2 animate__animated animate__slideInRight animate__delay-3s">
-            <img
-              src={image3}
-              alt="Image 3"
-              className="w-48 md:w-64 h-48 md:h-64"
-            />
-          </div>
-          <div className="w-full md:w-1/2 animate__animated animate__slideInRight animate__delay-3s">
-            <img
-              src={image4}
-              alt="Image 4"
-              className="w-48 md:w-64 h-48 md:h-64"
-            />
-          </div>
-        </div>
+        <div className="flex flex-wrap">{renderCards()}</div>
       </div>
 
       {/* About Section */}
@@ -102,11 +102,14 @@ function HomePage() {
           <h2 className="text-xl md:text-3xl font-semibold">Our Classes</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-8">
             {/* Class Card 1 */}
-            <div className="bg-white rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
-              <h3 className="text-lg md:text-xl font-semibold">Yoga</h3>
-              <p className="text-gray-600 mt-2">
-                Improve flexibility and find inner peace with our yoga classes.
-              </p>
+            <div className="animate__animated animate__slideInLeft">
+              <div className="bg-white rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h3 className="text-lg md:text-xl font-semibold">Yoga</h3>
+                <p className="text-gray-600 mt-2">
+                  Improve flexibility and find inner peace with our yoga
+                  classes.
+                </p>
+              </div>
             </div>
             {/* Class Card 2 */}
             <div className="bg-white rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
@@ -223,19 +226,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function Donation() {
-  return (
-    <div className="donation-container">
-      <h2 className="donation-heading">Donation</h2>
-      <p>
-        If you'd like to support our work, you can donate using the button
-        below:
-      </p>
-      <button className="donation-button">Donate</button>
     </div>
   );
 }
