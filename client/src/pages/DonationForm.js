@@ -14,45 +14,83 @@ const DonationForm = (props) => {
     e.preventDefault();
     if (captcha) {
       // If CAPTCHA is completed, create a Stripe token
-      const { token } = await props.stripe.createToken();
+      try {
+        const { token } = await props.stripe.createToken();
       // Use the token to create a charge on your server
-    } else {
-      alert("Please complete the CAPTCHA");
+    } catch (error) {
+      alert("Payment processing failed. Please try again later.");
+      console.error("Error creating Stripe token:", error);
     }
-  };
+  } else {
+    alert("Please complete the CAPTCHA");
+  }
+  
+  const [donationCompleted, setDonationCompleted] = useState(false);
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="First Name"
-        value={firstName}
-        onChange={(e) => setFirstName(e.target.value)}
-        required
-      />
-      <input
-        type="text"
-        placeholder="Last Name"
-        value={lastName}
-        onChange={(e) => setLastName(e.target.value)}
-        required
-      />
-      <input
-        type="email"
-        placeholder="Email Address"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <CardElement />
-      {/* Stripe CardElement for credit card details */}
-      <ReCAPTCHA
-        sitekey="your-recaptcha-site-key"
-        onChange={() => setCaptcha(true)}
-      />
-      <button type="submit">Donate</button>
-    </form>
-  );
+// Inside handleSubmit after token creation
+try {
+  const { token } = await props.stripe.createToken();
+  // Use the token to create a charge on your server
+  setDonationCompleted(true);
+} catch (error) {
+  // Handle error as shown above
+}
 };
+
+return (
+  <div id="donation" className="donateContainer">
+    <h2 className='donateH'>Donations</h2>
+      { donationCompleted ? (
+        <p>
+          Thank you for your donation!
+        </p>
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="first-name">First Name:</label>
+            <input
+              type="text"
+              placeholder="First Name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              required
+            />
+          <label htmlFor="last-name">Last Name:</label>
+            <input
+              type="text"
+              placeholder="Last Name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              required
+            />
+          <label htmlFor="email">Email Address:</label>
+            <input
+              type="email"
+              placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            />
+          <CardElement />
+          {/* Stripe CardElement for credit card details */}
+          <ReCAPTCHA
+          sitekey="your-recaptcha-site-key"
+          onChange={() => setCaptcha(true)}
+          />
+              <button type="submit" aria-label="Donate">
+                Donate
+              </button>
+        </form>
+      )}
+
+      {error && (
+        <div className="my-3 p-3 bg-danger text-white">
+          {error.message}
+        </div>
+      )}
+  </div>
+  )
+};
+
 
 export default injectStripe(DonationForm);
