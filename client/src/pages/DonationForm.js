@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CardElement, Elements, injectStripe } from "react-stripe-elements";
+import { CardElement, injectStripe, Elements } from "react-stripe-elements";
 import ReCAPTCHA from "react-google-recaptcha";
 import '../styles/DonationForm.css'; // Import your CSS file for styling
 
@@ -64,7 +64,9 @@ return (
               required
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             />
-          <CardElement />
+          <Elements>
+            <CardElement />
+          </Elements>
           {/* Stripe CardElement for credit card details */}
           <ReCAPTCHA
           sitekey="your-recaptcha-site-key"

@@ -44,24 +44,23 @@ function App() {
     <ApolloProvider client={client}>
       {/* Use 'Router' as the top-level routing component */}
       <Router>
-        <div className="App">
-          <Header />
-          <div className="appContainer">
-            {/* Define your routes */}
-            <Routes>
-              <Route path="/home" element={<Home />} />
-              <Route path="/exercise" element={<Exercise />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/profile" element={<Profile />} />
-            </Routes>
+        <Elements>
+          <div className="App">
+            <Header />
+            <div className="appContainer">
+              {/* Define your routes */}
+              <Routes>
+                <Route path="/home" element={<Home />} />
+                <Route path="/exercise" element={<Exercise />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/donate" element={<DonationForm />} />
+              </Routes>
+            </div>
+            <Footer />
           </div>
-          {/* Place <Elements> here, outside of <Routes> */}
-          <Elements>
-            <DonationForm />
-          </Elements>
-          <Footer />
-        </div>
+        </Elements>
       </Router>
     </ApolloProvider>
   );
