@@ -12,6 +12,7 @@ import Profile from "./pages/Profile.js";
 import Signup from "./pages/SignUp.js";
 import Header from './pages/Header.js';
 import Footer from './pages/Footer.js';
+import DonationForm from './pages/DonationForm.js';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -52,6 +53,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/donationform" element={<DonationForm />} />
             </Routes>
           </div>
           <Footer />
