@@ -1,44 +1,49 @@
 #header {
-    background-color: #333; /* Background color for the header */
-    color: #fff; /* Text color */
-    padding: 20px 0; /* Add some spacing inside the header */
-    text-align: center; /* Center-align the text */
-  }
-  
-  #headerText {
-    font-size: 24px; /* Adjust the font size to your preference */
-  }
-  
-  /* Styling for the logo or title */
-  #headerText h2 {
-    margin: 0; /* Remove default margin */
-    font-weight: bold; /* Add font weight for emphasis */
-  }
-  
-  /* Styling for the navigation bar */
-  #headerText .nav-bar {
-    margin-top: 10px; /* Add some spacing between the title and navigation bar */
-  }
-  
-  /* Styling for navigation links */
-  #headerText .nav-bar ul {
-    list-style: none; /* Remove default list styling */
-    padding: 0; /* Remove padding from the list */
-  }
-  
-  #headerText .nav-bar li {
-    display: inline; /* Display navigation links horizontally */
-    margin-right: 10px; /* Add spacing between navigation links */
-  }
-  
-  #headerText .nav-bar a {
-    color: #fff; /* Text color for navigation links */
-    text-decoration: none; /* Remove underlines from links */
-    font-weight: bold; /* Add font weight for emphasis */
-    font-size: 16px; /* Adjust the font size to your preference */
-  }
-  
-  /* Styling for active navigation link (optional) */
-  #headerText .nav-bar a.active {
-    color: #ff9900; /* Change color for active link */
-  }
+  background-color: #333; /* Background color for the header */
+  color: #fff; /* Text color */
+  padding: 20px 0; /* Add some spacing inside the header */
+  text-align: center; /* Center-align the text */
+}
+
+#headerText {
+  font-size: 24px; /* Adjust the font size to your preference */
+}
+
+/* Styling for the logo or title */
+#headerText h2 {
+  margin: 0; /* Remove default margin */
+  font-weight: bold; /* Add font weight for emphasis */
+}
+
+/* Styling for the navigation bar */
+#headerText .nav-bar {
+  margin-top: 10px; /* Add some spacing between the title and navigation bar */
+}
+
+/* Styling for navigation links */
+#headerText .nav-bar ul {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove padding from the list */
+}
+
+#headerText .nav-bar li {
+  display: inline; /* Display navigation links horizontally */
+  margin-right: 10px; /* Add spacing between navigation links */
+}
+
+#headerText .nav-bar a {
+  color: #fff; /* Text color for navigation links */
+  text-decoration: none; /* Remove underlines from links */
+  font-weight: bold; /* Add font weight for emphasis */
+  font-size: 16px; /* Adjust the font size to your preference */
+}
+
+/* Styling for active navigation link (optional) */
+#headerText .nav-bar a.active {
+  color: #ff9900; /* Change color for active link */
+}
+
+/* Header.css */
+.menu-icon:hover {
+  color: black; /* Change the color to black on hover */
+}

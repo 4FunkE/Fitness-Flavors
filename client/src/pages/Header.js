@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import NavBar from "./NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons"; // Import the hamburger menu icon
-import "../styles/Header.css"; // Import your CSS file for additional styling if needed
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import "../styles/Header.css";
+import logo from "../components/images/Fitness Flavors Logo.png";
 
 export default function Header() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [menuVisible, setMenuVisible] = useState(false);
 
   useEffect(() => {
     function handleResize() {
@@ -19,38 +21,42 @@ export default function Header() {
     };
   }, []);
 
-  return (
-    <div id="header" className="bg-gray-900 text-white">
-      <div className="container mx-auto p-4 flex justify-between items-center">
-        <div id="headerText">
-          <h2 className="text-3xl font-semibold">Fitness Flavors</h2>
-        </div>
-        {isMobile ? (
-          // Render hamburger menu on mobile
-          <MobileMenu />
-        ) : (
-          // Render buttons on desktop and tablet
-          <div className="flex items-center">
-            <NavBar />
-            <div className="ml-auto">
-              <button className="mr-2">Profile</button>
-              <button>Sign Up</button>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  };
 
-function MobileMenu() {
-  // Implement your mobile menu with the hamburger icon here
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuVisible(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="flex items-center">
-      <NavBar />
-      {/* Hamburger menu icon */}
-      <div className="ml-auto">
-        <FontAwesomeIcon icon={faBars} size="lg" />
+    <div
+      id="header"
+      className="bg-gray-900 text-white"
+      style={{ height: "6rem" }}
+    >
+      <div className="container mx-auto p-2 flex justify-between items-center">
+        <div id="headerText">
+          {/* Replace the h2 with the logo */}
+          <img
+            src={logo}
+            alt="Fitness Flavors Logo"
+            className="logo-image mb-16"
+            style={{ width: "12.5%" }} // Adjust the size here
+          />
+        </div>
       </div>
     </div>
   );
