@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import "animate.css"; // Import animate.css
 import image1 from "../components/images/image1.jpg";
 import homeimg from "../components/images/homeimg.jpg";
@@ -70,7 +70,7 @@ function HomePage() {
               </p>
               <a
                 href="#"
-                className="mt-8 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 md:px-6 rounded-full animate__animated animate__fadeInUp animate__delay-2s"
+                className="mt-8 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 md:px-6 rounded-full animate__animated animate__fadeInUp animate__delay-2s infinite-pulse"
               >
                 Get Started
               </a>

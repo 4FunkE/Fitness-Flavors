@@ -34,3 +34,20 @@
   animation-duration: 1s; /* Adjust the duration as needed */
   animation-timing-function: ease-out; /* Adjust the easing function as needed */
 }
+/* get started */
+.infinite-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Define the custom pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
