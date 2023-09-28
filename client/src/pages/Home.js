@@ -45,42 +45,44 @@ function HomePage() {
       </div>
 
       {/* Sliding Images Section */}
-      <div className="bg-custom-primary text-center py-16 md:py-32">
-        <div className="flex flex-wrap">
-          {/* Left Sliding Images */}
-          <div className="w-full md:w-1/2 animate__animated animate__slideInLeft animate__delay-3s">
-            <img
-              src={image1}
-              alt="Image 1"
-              className="w-48 md:w-64 h-48 md:h-64"
-            />
-          </div>
-          <div className="w-full md:w-1/2 animate__animated animate__slideInLeft animate__delay-3s">
-            <img
-              src={image2}
-              alt="Image 2"
-              className="w-48 md:w-64 h-48 md:h-64"
-            />
-          </div>
+      <div className="bg-custom-primary text-center py-16 md:py-32 flex justify-center items-center">
+  <div className="flex flex-wrap">
+    {/* First Left Sliding Image */}
+    <div className="w-full md:w-1/4 animate__animated animate__slideInLeft animate__delay-3s mb-4 md:mb-0">
+      <img
+        src={image1}
+        alt="Image 1"
+        className="w-48 md:w-64 h-48 md:h-64 mb-5 md:mb-0 mr-5 md:mr-0"
+      />
+    </div>
+    {/* Second Left Sliding Image */}
+    <div className="w-full md:w-1/4 animate__animated animate__slideInLeft animate__delay-3s mb-4 md:mb-0 ">
+      <img
+        src={image2}
+        alt="Image 2"
+        className="w-48 md:w-64 h-48 md:h-64 mb-5 md:mb-0 mr-5 md:mr-0"
+      />
+    </div>
 
-          {/* Right Sliding Images */}
-          <div className="w-full md:w-1/2 animate__animated animate__slideInRight animate__delay-3s">
-            <img
-              src={image3}
-              alt="Image 3"
-              className="w-48 md:w-64 h-48 md:h-64"
-            />
-          </div>
-          <div className="w-full md:w-1/2 animate__animated animate__slideInRight animate__delay-3s">
-            <img
-              src={image4}
-              alt="Image 4"
-              className="w-48 md:w-64 h-48 md:h-64"
-            />
-          </div>
-        </div>
-      </div>
+    {/* Third Right Sliding Image */}
+    <div className="w-full md:w-1/4 animate__animated animate__slideInRight animate__delay-3s mb-4 md:mb-0 ">
+      <img
+        src={image3}
+        alt="Image 3"
+        className="w-48 md:w-64 h-48 md:h-64 mb-5 md:mb-0 mr-5 md:mr-0"
+      />
+    </div>
 
+    {/* Fourth Right Sliding Image */}
+    <div className="w-full md:w-1/4 animate__animated animate__slideInRight animate__delay-3s mb-4 md:mb-0">
+      <img
+        src={image4}
+        alt="Image 4"
+        className="w-48 md:w-64 h-48 md:h-64 mb-5 md:mb-0 mr-5 md:mr-0"
+      />
+    </div>
+  </div>
+</div>
       {/* About Section */}
       <div className="bg-custom-secondary">
         <div className="container mx-auto">
