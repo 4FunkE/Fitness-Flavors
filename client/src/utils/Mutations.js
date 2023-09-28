@@ -1,45 +1,52 @@
 import { gql } from "@apollo/client";
 
-export const ADD_USER = gql`
-  mutation ADD_USER($username: String!, $email: String!, $password: String!) {
-    registerUser(username: $username, email: $email, password: $password) {
+export const REGISTER_USER = gql`
+  mutation REGISTER_USER($username: String!, $password: String!) {
+    registerUser(input: { username: $username, password: $password }) {
       token
       user {
-        id
+        _id
         username
-        email
+        fitnessGoals
+        createdAt
       }
     }
   }
 `;
 
 export const LOGIN_USER = gql`
-  mutation LOGIN_USER($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
+  mutation LOGIN_USER($username: String!, $password: String!) {
+    login(username: $username, password: $password) {
       token
       user {
-        id
+        _id
         username
-        email
+        fitnessGoals
+        createdAt
       }
     }
   }
 `;
 
 export const SAVE_WORKOUT = gql`
-mutation SAVE_WORKOUT($exercise: String!) {
-  addWorkout(exersice: $exersice) {
-    id
-    exersice
-    duration
-    reps
-    sets
+  mutation SAVE_WORKOUT($input: WorkoutInput!) {
+    addWorkout(input: $input) {
+      _id
+      user {
+        _id
+      }
+      exercise
+      duration
+      reps
+      sets
+    }
   }
-}
 `;
 
 export const DELETE_WORKOUT = gql`
-  mutation DELETE_WORKOUT($deleteWorkoutId: ID!) {
-    deleteworkout(id: $deleteworkoutId)
+  mutation DELETE_WORKOUT($id: ID!) {
+    deleteWorkout(id: $id) {
+      _id
+    }
   }
 `;
