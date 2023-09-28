@@ -1,20 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "animate.css"; // Import animate.css
 import image1 from "../components/images/image1.jpg";
-import image2 from "../components/images/image2.jpg";
-import image3 from "../components/images/image3.jpg";
-import image4 from "../components/images/image4.jpg";
 import homeimg from "../components/images/homeimg.jpg";
 import "../styles/Home.css";
 import "../index.css";
 
 function HomePage() {
-  // Define state for the mobile menu
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // Define state for the cards data
+  const [cardsData, setCardsData] = useState([]);
 
-  // Handle mobile menu toggle
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  // Fetch data from your API
+  useEffect(() => {
+    // Replace 'fetchDataFromAPI' with your actual API fetch function
+    fetchDataFromAPI()
+      .then((data) => setCardsData(data))
+      .catch((error) => console.error(error));
+  }, []);
+  // Function to fetch data from your API
+  const fetchDataFromAPI = async () => {
+    try {
+      // Replace 'apiEndpoint' with the actual API endpoint
+      const response = await fetch("apiEndpoint");
+      if (!response.ok) {
+        throw new Error("Failed to fetch data from the API");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  // Render individual card components based on data
+  const renderCards = () => {
+    return cardsData.map((card, index) => (
+      <div
+        key={index}
+        className="w-full md:w-1/4 animate__animated animate__fadeInUp mb-4 md:mb-0"
+      >
+        <div className="bg-white rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+          <h3 className="text-lg md:text-xl font-semibold">{card.title}</h3>
+          <p className="text-gray-600 mt-2">{card.description}</p>
+        </div>
+      </div>
+    ));
   };
 
   return (
@@ -44,45 +73,11 @@ function HomePage() {
         </div>
       </div>
 
-      {/* Sliding Images Section */}
-      <div className="bg-custom-primary text-center py-16 md:py-32 flex justify-center items-center">
-  <div className="flex flex-wrap">
-    {/* First Left Sliding Image */}
-    <div className="w-full md:w-1/4 animate__animated animate__slideInLeft animate__delay-3s mb-4 md:mb-0">
-      <img
-        src={image1}
-        alt="Image 1"
-        className="w-48 md:w-64 h-48 md:h-64 mb-5 md:mb-0 mr-5 md:mr-0"
-      />
-    </div>
-    {/* Second Left Sliding Image */}
-    <div className="w-full md:w-1/4 animate__animated animate__slideInLeft animate__delay-3s mb-4 md:mb-0 ">
-      <img
-        src={image2}
-        alt="Image 2"
-        className="w-48 md:w-64 h-48 md:h-64 mb-5 md:mb-0 mr-5 md:mr-0"
-      />
-    </div>
+      {/* Cards Section */}
+      <div className="bg-custom-primary text-center py-16 md:py-32">
+        <div className="flex flex-wrap">{renderCards()}</div>
+      </div>
 
-    {/* Third Right Sliding Image */}
-    <div className="w-full md:w-1/4 animate__animated animate__slideInRight animate__delay-3s mb-4 md:mb-0 ">
-      <img
-        src={image3}
-        alt="Image 3"
-        className="w-48 md:w-64 h-48 md:h-64 mb-5 md:mb-0 mr-5 md:mr-0"
-      />
-    </div>
-
-    {/* Fourth Right Sliding Image */}
-    <div className="w-full md:w-1/4 animate__animated animate__slideInRight animate__delay-3s mb-4 md:mb-0">
-      <img
-        src={image4}
-        alt="Image 4"
-        className="w-48 md:w-64 h-48 md:h-64 mb-5 md:mb-0 mr-5 md:mr-0"
-      />
-    </div>
-  </div>
-</div>
       {/* About Section */}
       <div className="bg-custom-secondary">
         <div className="container mx-auto">
@@ -225,19 +220,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function Donation() {
-  return (
-    <div className="donation-container">
-      <h2 className="donation-heading">Donation</h2>
-      <p>
-        If you'd like to support our work, you can donate using the button
-        below:
-      </p>
-      <button className="donation-button">Donate</button>
     </div>
   );
 }
