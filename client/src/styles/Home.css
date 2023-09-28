@@ -6,8 +6,8 @@
   --yellow: #fcbf49;
   --accent2: #002b5b;
   --Dark: #04011d;
-  --Header: 'Josefin Slab', Georgia, 'Times New Roman', Times, serif;
-  --text: 'Maven Pro', Arial, Helvetica, sans-serif;
+  --Header: "Josefin Slab", Georgia, "Times New Roman", Times, serif;
+  --text: "Maven Pro", Arial, Helvetica, sans-serif;
 }
 
 /* Styles for mobile view */
@@ -28,4 +28,9 @@
   .mr-32 {
     margin-right: 0; /* Remove margin-right in mobile view */
   }
+}
+
+.custom-slide-in-left {
+  animation-duration: 1s; /* Adjust the duration as needed */
+  animation-timing-function: ease-out; /* Adjust the easing function as needed */
 }
