@@ -112,27 +112,33 @@ function HomePage() {
               </div>
             </div>
             {/* Class Card 2 */}
-            <div className="bg-white rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
-              <h3 className="text-lg md:text-xl font-semibold">
-                Strength Training
-              </h3>
-              <p className="text-gray-600 mt-2">
-                Build muscle and increase your strength with our strength
-                training sessions.
-              </p>
+            <div className="animate__animated animate__slideInUp">
+              <div className="bg-white rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h3 className="text-lg md:text-xl font-semibold">
+                  Strength Training
+                </h3>
+                <p className="text-gray-600 mt-2">
+                  Build muscle and increase your strength with our strength
+                  training sessions.
+                </p>
+              </div>
             </div>
             {/* Class Card 3 */}
-            <div className="bg-white rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
-              <h3 className="text-lg md:text-xl font-semibold">Cardio</h3>
-              <p className="text-gray-600 mt-2">
-                Get your heart rate up and burn calories in our cardio classes.
-              </p>
+            <div className="animate__animated animate__slideInRight">
+              <div className="bg-white rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h3 className="text-lg md:text-xl font-semibold">Cardio</h3>
+                <p className="text-gray-600 mt-2">
+                  Get your heart rate up and burn calories in our cardio
+                  classes.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
+
       <div className="bg-custom-dark-blue py-16 md:py-32 text-white text-center">
         <div className="container mx-auto flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 p-4 md:p-8 md:pl-32">
