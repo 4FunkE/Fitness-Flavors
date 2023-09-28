@@ -1,3 +1,15 @@
+:root {
+  --primary: #F9F5EB;
+  --secondary: #E4DCCF;
+  --accent: #EA5455;
+  --orange: #F77F00;
+  --yellow: #FCBF49;
+  --accent2: #002B5B;
+  --Dark: #04011d; 
+  --Header: 'Josefin Slab'; /*Georgia, 'Times New Roman', Times, serif;*/
+  --text: 'Maven Pro'; /*Arial, Helvetica, sans-serif;*/
+}
+
 #header {
     background-color: #333; /* Background color for the header */
     color: #fff; /* Text color */
