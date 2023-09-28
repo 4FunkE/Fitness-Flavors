@@ -4,6 +4,7 @@ import React from "react";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Elements } from 'react-stripe-elements';
 
 import Exercise from "./pages/Exercise.js";
 import Home from "./pages/Home.js";
@@ -53,9 +54,12 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/profile" element={<Profile />} />
-              <Route path="/donationform" element={<DonationForm />} />
             </Routes>
           </div>
+          {/* Place <Elements> here, outside of <Routes> */}
+          <Elements>
+            <DonationForm />
+          </Elements>
           <Footer />
         </div>
       </Router>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { CardElement, injectStripe } from "react-stripe-elements";
+import { CardElement, Elements, injectStripe } from "react-stripe-elements";
 import ReCAPTCHA from "react-google-recaptcha";
-import '../styles/DonationForm'; // Import your CSS file for styling
+import '../styles/DonationForm.css'; // Import your CSS file for styling
 
 
 const DonationForm = (props) => {
