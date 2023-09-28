@@ -102,11 +102,14 @@ function HomePage() {
           <h2 className="text-xl md:text-3xl font-semibold">Our Classes</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-8">
             {/* Class Card 1 */}
-            <div className="bg-white rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
-              <h3 className="text-lg md:text-xl font-semibold">Yoga</h3>
-              <p className="text-gray-600 mt-2">
-                Improve flexibility and find inner peace with our yoga classes.
-              </p>
+            <div className="animate__animated animate__slideInLeft">
+              <div className="bg-white rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h3 className="text-lg md:text-xl font-semibold">Yoga</h3>
+                <p className="text-gray-600 mt-2">
+                  Improve flexibility and find inner peace with our yoga
+                  classes.
+                </p>
+              </div>
             </div>
             {/* Class Card 2 */}
             <div className="bg-white rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
