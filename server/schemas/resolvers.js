@@ -101,14 +101,14 @@ const resolvers = {
             const user = await User.findOne({ username });
 
             if (!user) {
-                throw new AuthenticationError('Wrong username');
+                throw new AuthenticationError('Wrong username or password');
             }
 
             const correctPw = await user.isCorrectPassword(password);
             // bcrypt.compare(password, user.password);
 
             if (!correctPw) {
-                throw new AuthenticationError('Wrong password');
+                throw new AuthenticationError('Wrong username or password');
             }
 
             const token = signToken({ username, _id: user._id });
