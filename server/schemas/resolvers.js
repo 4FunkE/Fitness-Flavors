@@ -37,14 +37,15 @@ const resolvers = {
             }
             // create workout instance
             const newWorkout = new Workout({
-                user: context.user.id,
+                user: context.user._id,
                 exercise: args.input.exercise,
                 duration: args.input.duration,
                 reps: args.input.reps,
                 sets: args.input.sets,
             });
             // save workout
-            const savedWorkout = await newWorkout.save();
+            const savedWorkout = (await newWorkout.save()).populate('user');
+            console.log({ savedWorkout });
 
             // return workout
             return savedWorkout;
@@ -74,44 +75,45 @@ const resolvers = {
             const { username, password } = input;
 
             // check if user exists
-            const existingUser = await User.findOne({ username});
+            const existingUser = await User.findOne({ username });
             if (existingUser) {
                 throw new AuthenticationError('User already exists');
             }
 
             // hash password
-            const hashedPassword = await bcrypt.hash(password, 10);
+            // const hashedPassword = await bcrypt.hash(password, 10);
 
             // create user instance
             const newUser = new User({
                 username,
-                password: hashedPassword,
+                password,
             });
 
             await newUser.save();
 
             // generate authentication token
-            const token = signToken({ username, _id: newUser._id});
+            const token = signToken({ username, _id: newUser._id });
 
             return { token, user: newUser };
         },
         // login user
-        login: async (_, { username, password}) => {
-            const user = await User.findOne({ username});
+        login: async (_, { username, password }) => {
+            const user = await User.findOne({ username });
 
             if (!user) {
-                throw new AuthenticationError('Wrong username or password');
+                throw new AuthenticationError('Wrong username');
             }
 
-            const correctPw = await bcrypt.compare(password, user.password);
+            const correctPw = await user.isCorrectPassword(password);
+            // bcrypt.compare(password, user.password);
 
             if (!correctPw) {
-                throw new AuthenticationError('Wrong username or password');
+                throw new AuthenticationError('Wrong password');
             }
 
             const token = signToken({ username, _id: user._id });
 
-            return { token, user};
+            return { token, user };
         }
     },
 };
