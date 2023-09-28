@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { CardElement, injectStripe } from "react-stripe-elements";
 import ReCAPTCHA from "react-google-recaptcha";
-import DonationForm from '../styles/DonationForm'; 
+import '../styles/DonationForm'; // Import your CSS file for styling
 
 
 const DonationForm = (props) => {
@@ -9,6 +9,7 @@ const DonationForm = (props) => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [captcha, setCaptcha] = useState(false);
+  const [donationCompleted, setDonationCompleted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,24 +18,16 @@ const DonationForm = (props) => {
       try {
         const { token } = await props.stripe.createToken();
       // Use the token to create a charge on your server
+      setDonationCompleted(true);
+
     } catch (error) {
       alert("Payment processing failed. Please try again later.");
       console.error("Error creating Stripe token:", error);
     }
+
   } else {
     alert("Please complete the CAPTCHA");
   }
-  
-  const [donationCompleted, setDonationCompleted] = useState(false);
-
-// Inside handleSubmit after token creation
-try {
-  const { token } = await props.stripe.createToken();
-  // Use the token to create a charge on your server
-  setDonationCompleted(true);
-} catch (error) {
-  // Handle error as shown above
-}
 };
 
 return (
