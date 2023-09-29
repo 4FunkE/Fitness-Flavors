@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CardElement, injectStripe, Elements } from "react-stripe-elements";
+import { CardElement, injectStripe, Elements, StripeProvider } from "react-stripe-elements";
 import ReCAPTCHA from "react-google-recaptcha";
 import '../styles/DonationForm.css'; // Import your CSS file for styling
 
@@ -10,6 +10,9 @@ const DonationForm = (props) => {
   const [email, setEmail] = useState("");
   const [captcha, setCaptcha] = useState(false);
   const [donationCompleted, setDonationCompleted] = useState(false);
+
+  // Your Stripe public key
+  const stripePublicKey = 'pk_test_51NvTs0BIpfMVyqZTDRDOs3XFAuJgfgAeNDn4zwkAng7woHZKNCwvYXgwVPnQWIaKQmzVSAaP3EKWtvGZItFzfUl100xthHySOx';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -64,10 +67,12 @@ return (
               required
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             />
-          <Elements>
-            <CardElement />
-          </Elements>
-          {/* Stripe CardElement for credit card details */}
+          <StripeProvider apiKey={stripePublicKey}>
+            <Elements>
+              <CardElement />
+            </Elements>
+          </StripeProvider>
+          
           <ReCAPTCHA
           sitekey="your-recaptcha-site-key"
           onChange={() => setCaptcha(true)}
