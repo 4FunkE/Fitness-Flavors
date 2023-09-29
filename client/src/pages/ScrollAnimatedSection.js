@@ -30,9 +30,7 @@ const ScrollAnimatedSection = ({ children, animationClass }) => {
   return (
     <section
       ref={sectionRef}
-      className={`bg-custom-dark-blue py-8 md:py-16 ${
-        isVisible ? `animate__animated ${animationClass}` : ""
-      }`}
+      className={` ${isVisible ? `animate__animated ${animationClass}` : ""}`}
     >
       {children}
     </section>
