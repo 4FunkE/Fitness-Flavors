@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import '../styles/SignUp.css';
 import Header from './Header';
 import Footer from './Footer';
-// import { useMutation } from '@apollo/client';
-// import { ADD_USER } from '../utils/Mutations.js'
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/Mutations.js'
 
 
 export default function Signup() {
@@ -20,7 +20,7 @@ export default function Signup() {
     try {
       console.log('test submitted', formData);
       //inseert sign up mutation here
-      // const { data } = await addUser({ variables: { ...formData } });
+      const { data } = await addUser({ variables: { ...formData } });
       // front end auth token here
     } catch(error) {
       console.error('error')
