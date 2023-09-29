@@ -67,7 +67,7 @@ const resolvers = {
 
                 return deletedWorkout;
             } catch (error) {
-                throw new Error('Error deleting workout: ${error.message');
+                throw new Error(`Error deleting workout: ${error.message}`);
             }
         },
         // register user
