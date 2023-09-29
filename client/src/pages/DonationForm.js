@@ -3,6 +3,8 @@ import { CardElement, injectStripe, Elements, StripeProvider } from "react-strip
 import ReCAPTCHA from "react-google-recaptcha";
 import '../styles/DonationForm.css'; // Import your CSS file for styling
 
+//one cart item with 10$ in the cart, then follow exercise 26
+// files that were changes, resolvers.js, donation.js, donationpayment.js, typedefs.js, mutations.js, donationforms.js
 
 const DonationForm = (props) => {
   const [firstName, setFirstName] = useState("");
