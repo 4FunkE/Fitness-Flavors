@@ -28,16 +28,6 @@ const resolvers = {
       const workouts = await Workout.find({ user: context.user.id });
       return workouts;
     },
-    donate: async (_, { token, amount }) => {
-      try {
-        // Call the payment function to create a charge
-        const charge = await createCharge(token, amount);
-
-        return 'Donation successful';
-      } catch (error) {
-        throw new Error(error.message);
-      }
-    },
   },
   Mutation: {
     // resolver for addWorkout mutation
@@ -125,7 +115,17 @@ const resolvers = {
       const token = signToken({ username, _id: user._id });
 
       return { token, user };
-    }
+    },
+    donate: async (_, { token, amount }) => {
+      try {
+        // Call the payment function to create a charge
+        const charge = await createCharge(token, amount);
+
+        return 'Donation successful';
+      } catch (error) {
+        throw new Error(error.message);
+      }
+    },
   },
 };
 
