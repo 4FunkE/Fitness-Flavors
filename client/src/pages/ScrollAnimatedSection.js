@@ -1,6 +1,7 @@
+// ScrollAnimatedSection.js
 import React, { useState, useEffect, useRef } from "react";
 
-const ScrollAnimatedSection = ({ children }) => {
+const ScrollAnimatedSection = ({ children, animationClass }) => {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -30,7 +31,7 @@ const ScrollAnimatedSection = ({ children }) => {
     <section
       ref={sectionRef}
       className={`bg-custom-dark-blue py-8 md:py-16 ${
-        isVisible ? "animate__animated animate__fadeIn" : ""
+        isVisible ? `animate__animated ${animationClass}` : ""
       }`}
     >
       {children}

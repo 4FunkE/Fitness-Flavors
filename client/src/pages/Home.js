@@ -56,7 +56,7 @@ function HomePage() {
   return (
     <div>
       {/* Hero Section */}
-      <ScrollAnimatedSection>
+      <ScrollAnimatedSection animationClass="animate__fadeIn">
         <div className="bg-custom-dark-blue py-16 md:py-32 text-white text-center relative">
           <div
             className="absolute inset-0 h-full w-full bg-cover bg-center"
@@ -65,9 +65,8 @@ function HomePage() {
 
           <div className="container mx-auto relative">
             <div className="container mx-auto text-center text-white pt-96 h-screen">
-              {" "}
               <div className="animate__animated animate__slideInLeft custom-slide-in-left">
-                <h1 className=" animate__animated animate__fadeInUp text-3xl md:text-5xl font-bold ">
+                <h1 className="animate__animated animate__fadeInUp text-3xl md:text-5xl font-bold">
                   Achieve Your Fitness Goals
                 </h1>
                 <p className="animate__animated animate__fadeInUp animate__delay-1s text-xl md:text-2xl mt-4 animate__delay-1s animate__slideInRight">
@@ -86,14 +85,14 @@ function HomePage() {
       </ScrollAnimatedSection>
 
       {/* Cards Section */}
-      <ScrollAnimatedSection>
-        <div className="bg-custom-primary text-center ">
+      <ScrollAnimatedSection animationClass="animate__fadeInUp">
+        <div className="bg-custom-primary text-center">
           <div className="flex flex-wrap">{renderCards()}</div>
         </div>
       </ScrollAnimatedSection>
 
       {/* About Section */}
-      <ScrollAnimatedSection>
+      <ScrollAnimatedSection animationClass="animate__fadeIn">
         <div className="bg-custom-secondary">
           <div className="container mx-auto text-center">
             <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-center pt-24 pb-8">
@@ -103,21 +102,21 @@ function HomePage() {
               "Harnessing the Energy of Fitness to Ignite Passion for a Balanced
               Life."
             </p>
-            <div class="flex justify-center  space-x-4 pb-24">
+            <div className="flex justify-center space-x-4 pb-24">
               <img
                 src={workout1}
                 alt="Workout 1"
-                class="ml-4 w-1/4 rounded-xl animate__animated animate__slideInLeft"
+                className="ml-4 w-1/4 rounded-xl animate__animated animate__slideInLeft"
               />
               <img
                 src={workout2}
                 alt="Workout 2"
-                class="w-1/4 rounded-xl animate__animated animate__slideInUp"
+                className="w-1/4 rounded-xl animate__animated animate__slideInUp"
               />
               <img
                 src={workout3}
                 alt="Workout 3"
-                class="w-1/4 rounded-xl animate__animated animate__slideInRight"
+                className="w-1/4 rounded-xl animate__animated animate__slideInRight"
               />
             </div>
           </div>
@@ -125,8 +124,8 @@ function HomePage() {
       </ScrollAnimatedSection>
 
       {/* Our Classes Section */}
-      <ScrollAnimatedSection>
-        <section className="bg-custom-dark-blue  py-8 md:py-16 ">
+      <ScrollAnimatedSection animationClass="animate__fadeIn">
+        <section className="bg-custom-dark-blue py-8 md:py-16 ">
           <div className="container mx-auto text-center pb-20">
             <h2 className="text-white text-xl md:text-3xl font-semibold pb-8">
               Our Classes
@@ -170,14 +169,14 @@ function HomePage() {
       </ScrollAnimatedSection>
 
       {/* Contact Section */}
-      <ScrollAnimatedSection>
+      <ScrollAnimatedSection animationClass="animate__fadeIn">
         <div className="bg-custom-accent py-16 md:py-32 text-white text-center">
           <div className="container mx-auto flex flex-col md:flex-row items-center">
             <div className="w-full md:w-1/2 p-4 md:p-8 md:pl-32">
               <img
                 src={image1}
                 alt="Image 1"
-                class="max-w-full h-auto md:pt-16 move-up-down"
+                className="max-w-full h-auto md:pt-16 move-up-down"
               />
             </div>
             <div className="w-full md:w-1/2 p-4 md:p-8">
