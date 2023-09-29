@@ -1,6 +1,6 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import "animate.css"; // Import animate.css
-import image1 from "../components/images/image1.jpg";
+import image1 from "../components/images/mail.jpg";
 import homeimg from "../components/images/homeimg.jpg";
 import "../styles/Home.css";
 import "../index.css";
