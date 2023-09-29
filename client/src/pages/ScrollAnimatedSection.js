@@ -1,40 +1,40 @@
-// ScrollAnimatedSection.js
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
-const ScrollAnimatedSection = ({ children, animationClass }) => {
+function ScrollAnimatedSection({ animationClass, children }) {
   const sectionRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        const windowHeight =
-          window.innerHeight || document.documentElement.clientHeight;
+    const section = sectionRef.current;
 
-        if (rect.top < windowHeight * 0.75 && rect.bottom >= 0) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
+    // Function to check if the section is in the viewport
+    const isSectionInViewport = () => {
+      const rect = section.getBoundingClientRect();
+      return rect.top >= 0 && rect.bottom <= window.innerHeight;
+    };
+
+    const handleScroll = () => {
+      if (isSectionInViewport()) {
+        // Add the animate__animated class and the specified animation class
+        section.classList.add("animate__animated", animationClass);
+      } else {
+        // Remove the animation classes if the section is not in the viewport
+        section.classList.remove("animate__animated", animationClass);
       }
     };
 
+    // Add an event listener for scroll events
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check initial state
+
+    // Initial check when the component mounts
+    handleScroll();
+
+    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [animationClass]);
 
-  return (
-    <section
-      ref={sectionRef}
-      className={` ${isVisible ? `animate__animated ${animationClass}` : ""}`}
-    >
-      {children}
-    </section>
-  );
-};
+  return <div ref={sectionRef}>{children}</div>;
+}
 
 export default ScrollAnimatedSection;
