@@ -1,30 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/Exercise.css';
-import ExerciseCard from '../components/views/ExerciseCard'; // ExerciseCard component in veiws
-import {BrowserRouter as Router, Route, Routes, useNavigate, Link } from "react-router-dom";
-// import ExerciseCard from "../components/views/ExerciseCard";
+import React, { useState, useEffect } from "react";
+import "../styles/Exercise.css";
+import ExerciseCard from "../components/views/ExerciseCard"; // ExerciseCard component in views
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+  Link,
+} from "react-router-dom";
 
-
-function Exercise( { exercise } ) {
-  // const [exercises, setExercises] = useState([]);
-
-
-  
+function Exercise({ exercise }) {
   const API = "2d3f6a0fecmsh850234d0340ad92p1cdaf5jsnde0fee7b9768";
   const [searchInput, setSearchInput] = useState("");
-  // const navigate = useNavigate();
-  const [workoutData, setWorkoutData] = useState([]);
-
-  // useEffect(() => {
-  //   // Fetch data when the component mounts
-  //   fetchWorkouts("BACK");
-  // }, []);
+  const [workoutData, setWorkoutData] = useState({
+    filteredBodyPartSearch: [],
+    filteredEquipmentSearch: [],
+    filteredGIFSearch: [],
+  });
 
   const fetchWorkouts = async (muscleGroup) => {
     try {
       console.log("show me this PLEASE");
       const response = await fetch(
-        `https://exercisedb.p.rapidapi.com/exercises?${muscleGroup}?limit=10`,
+        `https://exercisedb.p.rapidapi.com/exercises?bodyPart=${muscleGroup}?limit=10`,
         {
           method: "GET",
           headers: {
@@ -39,11 +37,54 @@ function Exercise( { exercise } ) {
       }
 
       const data = await response.json();
-      console.log(data);
-      setWorkoutData(data); // exc 26 global state file
+      const filteredBodyPartSearch = data.filter((excercise) =>
+        excercise.bodyPart.toUpperCase().includes(muscleGroup.toUpperCase())
+      );
+      const filteredEquipmentSearch = data.filter((excercise) =>
+        excercise.equipment.toUpperCase().includes(muscleGroup.toUpperCase())
+      );
+      const filteredInstructionSearch = data.filter((excercise) =>
+      typeof excercise.instructions === 'string' && exercise.instructions.toLowerCase().includes(muscleGroup.toLowerCase())
+      );
+      const filteredSecondaryMusclesSearch = data.filter((exercise) =>
+      exercise.secondaryMuscles && typeof exercise.secondaryMuscles === 'string' && exercise.secondaryMuscles.toUpperCase().includes(muscleGroup.toUpperCase())
+    );
+      const filteredWorkoutNameSearch = data.filter((excercise) =>
+      excercise.name.toUpperCase().includes(muscleGroup.toUpperCase())
+      );
+      // const filteredGIFSearch = data.filter((excercise) =>
+      //   excercise.gifUrl.toUpperCase().includes(muscleGroup.toUpperCase())
+      // );
+
+      setWorkoutData({
+        filteredBodyPartSearch,
+        filteredEquipmentSearch,
+        // filteredGIFSearch,
+        filteredInstructionSearch,
+        filteredSecondaryMusclesSearch,
+        filteredWorkoutNameSearch
+      });
     } catch (err) {
       console.error(err);
     }
+  };
+
+  const renderFilteredExercises = (filterType, exercises) => {
+    if (exercises.length > 0) {
+      return (
+        <div>
+          <h2>Exercises based on your search for {filterType} targeting!</h2>
+          <ul>
+            {exercises.map((exercise, index) => (
+              <li key={index}>
+                <ExerciseCard key={exercise.id} exercise={exercise} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
+    return null;
   };
 
   const handleSubmit = async (e) => {
@@ -51,50 +92,10 @@ function Exercise( { exercise } ) {
     fetchWorkouts(searchInput);
   };
 
-  // function routeToExerciseCard() {
-  //   console.log('data');
-  //   const exerciseSearch = workoutData.results;
-  //   const exerciseCard = document.getElementsByClassName('exercise-item');
-  //   exerciseCard.innerHTML = '';
-    
-  //   if ( exerciseSearch.length === 0) {
-  //     return (
-  //     <div>
-  //         <h2>List of Exercises</h2>
-  //         {workoutData.map((exercise) => (
-  //           <ExerciseCard key={exercise.id} exercise={exercise} />
-  //         ))}
-  //     </div>
-  //   ) 
-  // } else {
-  //   return  (
-  //     <div>
-  //       <p> I'm sorry! Your search did not yield any results.</p>
-  //     </div>
-  //   )}
-  // }
-
-
-
-  // useEffect(() => {
-  //   // Fetch Exercises from the API
-  //   fetch("/api/exercises") // API endpoint
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setExercises(data); // API response is an array of Exercises
-  //     })
-  //     .catch((error) => {
-  //       console.error(
-  //         "Error fetching Exercises: ~ file: Exercies.js ~ line 16",
-  //         error
-  //       );
-  //     });
-  // }, []); // Empty dependency array means this effect runs once on component mount
-
-    return (
-      <div className="exercise-container">
-        <h2>Exercises</h2>
-        <div>
+  return (
+    <div className="exercise-container">
+      <h2>Exercises</h2>
+      <div>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -105,33 +106,29 @@ function Exercise( { exercise } ) {
           <button type="submit">Search!</button>
         </form>
       </div>
-        <div>
+      <div>
         <h1>List of Exercises</h1>
-        {workoutData.length > 0 ? (
-          <ul>
-            {workoutData.map((exercise, index) => (
-              <li key={index}>
-                <h3>{exercise.name}</h3>
-                <p>{exercise.description}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No exercises found.</p>
-        )}
+        <ul>
+          {workoutData.filteredBodyPartSearch.length > 0 ? (
+            <div>
+              {workoutData.filteredBodyPartSearch.map((exercise, index) => (
+                <li key={index}>
+                  <ExerciseCard exercise={exercise} />
+                </li>
+              ))}
+            </div>
+          ) : null}
+        </ul>
       </div>
-        <section className="exercise-list-section">
-          <ul className="exercise-list">
-              <li className="exercise-item">
-                <ExerciseCard exercise={exercise} /> 
-                {/* Use ExerciseCard component here */}
-              </li>
-          </ul>
-        </section>
-      </div>
-    );
-  }
+    </div>
+  );
+}
 
-  export default Exercise;
+export default Exercise;
 
-  // key={exercise._id} 
+{
+  /* 
+// {renderFilteredExercises('BodyPart', workoutData.filteredBodyPartSearch)}
+// {renderFilteredExercises('Equipment', workoutData.filteredEquipmentSearch)}
+// {renderFilteredExercises('GIF URL', workoutData.filteredGIFSearch)} */
+}
