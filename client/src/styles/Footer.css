@@ -10,13 +10,6 @@
   --text: 'Maven Pro'; /*Arial, Helvetica, sans-serif;*/
 }
 
-#footer {
-  background-color: #333; /* Background color for the footer */
-  color: #fff; /* Text color */
-  padding: 20px 0; /* Add some spacing inside the footer */
-  text-align: center; /* Center-align the text */
-}
-
 #footerText {
   font-size: 14px; /* Adjust the font size to your preference */
 }
@@ -65,8 +58,10 @@
 
   /* Footer */
 .footer {
-  background-color: #0f0e0e00;
-  padding: 1rem ;
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+  padding: 20px 0; /* Add some spacing inside the footer */
+  text-align: center; /* Center-align the text */
+  color: whitesmoke
 }
 
 /* Social icons */
