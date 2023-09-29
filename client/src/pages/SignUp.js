@@ -9,7 +9,7 @@ import { ADD_USER } from '../utils/Mutations.js'
 
 export default function Signup() {
   const [formData, setFormData] = useState({ username: '', password: '' })
-  // const [ addUser ] = useMutation(ADD_USER);
+  const [ addUser ] = useMutation(ADD_USER);
   const handleInputChange = (event) => {
     const {name, value} = event.target;
     setFormData ({ ...formData, [name]: value });
