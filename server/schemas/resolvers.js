@@ -1,7 +1,7 @@
 // import authentication error and
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
-const { createCharge } = require('../../client/src/components/views/DonationPayment');
+const { createCharge } = require('./DonationPayment');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 // import the User and Workout models
