@@ -39,6 +39,7 @@ const typeDefs = gql`
         deleteWorkout(id: ID!): Workout
         registerUser(input: RegisterUserInput!): Auth
         login(username: String!, password: String!): Auth
+        donate(token: String!, amount: Int!): String
     }
     input RegisterUserInput {
         username: String!
