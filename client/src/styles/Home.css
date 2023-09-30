@@ -67,3 +67,7 @@
     ); /* Adjust this value to control the movement distance */
   }
 }
+
+#imagecontainer1 {
+  border-radius: 30px;
+}

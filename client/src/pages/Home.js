@@ -126,39 +126,47 @@ function HomePage() {
             "Harnessing the Energy of Fitness to Ignite Passion for a Balanced
             Life."
           </p>
-          <div className="flex justify-center space-x-4 pb-24">
-            <div className="image-container" data-aos="fade-left">
-              <img src={workout1} alt="Workout 1" />
+          <div className="flex justify-center  pb-32  pt-6">
+            <div className="imagecontainer1 rounded-xl" data-aos="fade-left">
+              <img
+                src={workout1}
+                alt="Workout 1"
+                className="h-auto pl-4 pr-4 "
+              />
             </div>
-            <div className="image-container" data-aos="fade-up">
+            <div
+              className="imagecontainer1 pt-6 pb-6 pl-4 pr-4 rounded-xl"
+              data-aos="fade-up"
+            >
               <img
                 src={workout2}
                 alt="Workout 2"
-                className=" rounded-xl animate__animated animate__slideInUp"
+                style={{ height: "250px", width: "6050px" }}
               />
             </div>
-            <div className="image-container" data-aos="fade-right">
+            <div className="imagecontainer1 rounded-xl " data-aos="fade-right">
               <img
                 src={workout3}
                 alt="Workout 3"
-                className=" rounded-xl animate__animated animate__slideInRight"
+                className="h-auto pl-4 pr-4 "
               />
             </div>
           </div>
         </div>
       </div>
+
       {/* Our Classes Section */}
 
       <section className="bg-custom-dark-blue py-8 md:py-16 ">
-        <div className="container mx-auto text-center pb-20">
+        <div className="container mx-auto text-center pb-32">
           <h2 className="text-white text-xl md:text-3xl font-semibold pb-8">
             Our Classes
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-8 pb-24">
             {/* Class Card 1 */}
             <div class="item2" data-aos="fade-right">
               <div className="animate__animated animate__slideInLeft">
-                <div className="bg-custom-secondary rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <div className="bg-custom-secondary rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
                   <h3 className=" text-lg md:text-xl font-semibold">Yoga</h3>
                   <p className="text-gray-600 mt-2 pb-6">
                     Improve flexibility and find inner peace with our yoga
@@ -170,10 +178,10 @@ function HomePage() {
             {/* Class Card 2 */}
             <div class="item" data-aos="fade-up">
               <div className="bg-custom-secondary rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
-                <h3 className="text-lg md:text-xl font-semibold">
+                <h3 className="text-lg md:text-xl font-semibold ">
                   Strength Training
                 </h3>
-                <p className="text-gray-600 mt-2 ">
+                <p className="text-gray-600 mt-2 pb-6">
                   Build muscle and increase your strength with our strength
                   training sessions.
                 </p>
