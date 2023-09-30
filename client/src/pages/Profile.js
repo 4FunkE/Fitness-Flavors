@@ -128,13 +128,13 @@ function Profile() {
           <div className="bg-white p-4 rounded-xl">
             <p className="mb-2">Name: {selectedExercise?.name}</p>
             <p className="mb-2">Description: {selectedExercise?.description}</p>
-            <button
-              onClick={() => addToProfile(selectedExercise)}
-              className="px-4 py-2 bg-blue-500 text-white rounded-xl"
-            >
-              Add to My Exercises
-            </button>
           </div>
+          <button
+            onClick={() => addToProfile(selectedExercise)}
+            className="px-4 py-2 bg-custom-dark-blue text-white rounded-xl mt-6 transform transition-transform hover:scale-105 hover:bg-green-500 "
+          >
+            Add to My Exercises
+          </button>
         </section>
         <section>
           <h4 className="text-lg font-semibold mb-2">Notes</h4>
@@ -146,7 +146,7 @@ function Profile() {
           ></textarea>
           <button
             onClick={addNote}
-            className="mt-2 px-4 py-2 bg-green-500 text-white rounded-xl"
+            className="mt-2 px-4 py-2 bg-green-500 text-white rounded-xl bg-custom-dark-blue"
           >
             Add Note
           </button>
