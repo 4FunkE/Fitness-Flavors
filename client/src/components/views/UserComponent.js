@@ -2,18 +2,23 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from './queries'; // Import your GraphQL query
 
+
 function UserComponent() {
   const { loading, error, data } = useQuery(QUERY_USER);
+
 
   if (loading) {
     return <p>Loading data...</p>;
   }
 
+
   if (error) {
     return <p>Error: {error.message}</p>;
   }
 
-  const user = data.user;AC
+
+  const user = data.user;
+
 
   return (
     <div>
@@ -23,5 +28,6 @@ function UserComponent() {
     </div>
   );
 }
+
 
 export default UserComponent;

@@ -89,17 +89,17 @@ function HomePage() {
           <div className="container mx-auto relative">
             <div className="container mx-auto text-center text-white pt-96 h-screen">
               <div className="animate__animated animate__slideInLeft custom-slide-in-left">
-                <div class="item2" data-aos="fade-right">
+                <div className="item2" data-aos="fade-right">
                   <h1 className="animate__animated animate__fadeInUp text-3xl md:text-5xl font-bold pt-96">
                     Achieve Your Fitness Goals
                   </h1>
                 </div>
-                <div class="item3" data-aos="fade-left">
+                <div className="item3" data-aos="fade-left">
                   <p className="animate__animated animate__fadeInUp animate__delay-1s text-xl md:text-2xl mt-4 animate__delay-1s animate__slideInRight">
                     Join us and transform your body!
                   </p>
                 </div>
-                <div class="item" data-aos="fade-up">
+                <div className="item" data-aos="fade-up">
                   <a
                     href="/SignUp"
                     className="mt-8 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 md:px-6 rounded-full animate__animated animate__fadeInUp animate__delay-2s infinite-pulse"
@@ -125,12 +125,12 @@ function HomePage() {
       {/* About Section */}
       <div className="bg-custom-secondary">
         <div className="container mx-auto text-center ">
-          <div class="item2" data-aos="fade-right">
+          <div className="item2" data-aos="fade-right">
             <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-center pt-24 pb-8 ">
               About Us
             </h3>
           </div>
-          <div class="item3" data-aos="fade-left">
+          <div className="item3" data-aos="fade-left">
             <p className="text-center mt-4 text-lg md:text-xl font-semibold pb-16">
               "Harnessing the Energy of Fitness to Ignite Passion for a Balanced
               Life."
@@ -174,7 +174,7 @@ function HomePage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-8 pb-24">
             {/* Class Card 1 */}
-            <div class="item2" data-aos="fade-right">
+            <div className="item2" data-aos="fade-right">
               <div className="animate__animated animate__slideInLeft">
                 <div className="bg-custom-secondary rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
                   <h3 className=" text-lg md:text-xl font-semibold">Yoga</h3>
@@ -186,7 +186,7 @@ function HomePage() {
               </div>
             </div>
             {/* Class Card 2 */}
-            <div class="item" data-aos="fade-up">
+            <div className="item" data-aos="fade-up">
               <div className="bg-custom-secondary rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
                 <h3 className="text-lg md:text-xl font-semibold ">
                   Strength Training
@@ -198,7 +198,7 @@ function HomePage() {
               </div>
             </div>
             {/* Class Card 3 */}
-            <div class="item3" data-aos="fade-left">
+            <div className="item3" data-aos="fade-left">
               <div className="bg-custom-secondary rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
                 <h3 className="text-lg md:text-xl font-semibold">Cardio</h3>
                 <p className="text-gray-600 mt-2 pb-6">
@@ -216,7 +216,7 @@ function HomePage() {
       <div className="bg-custom-accent py-16 md:py-32 text-white text-center">
         <div className="container mx-auto flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 p-4 md:p-8 md:pl-32">
-            <div class="item2" data-aos="fade-right">
+            <div className="item2" data-aos="fade-right">
               <img
                 src={image1}
                 alt="Image 1"

@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 export default function NavBar() {
-  const [searchInput, setSearchInput] = useState("");
-  const navigate = useNavigate();
+  // const [searchInput, setSearchInput] = useState("");
+  // const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate("/exercise"); // Redirects to /exercise
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   navigate("/exercise"); // Redirects to /exercise
+  // };
 
   return (
     <div id="navBar" className="container" style={{ width: "100%" }}>
@@ -38,7 +38,7 @@ export default function NavBar() {
         </ul>
       </div>
       <div>
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Select your muscle group ..."
@@ -52,7 +52,7 @@ export default function NavBar() {
           >
             Search!
           </button>
-        </form>
+        </form> */}
       </div>
     </div>
   );
