@@ -3,13 +3,16 @@ import { useNavigate, Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 
 export default function NavBar() {
-  // const [searchInput, setSearchInput] = useState("");
-  // const navigate = useNavigate();
+  const [searchInput, setSearchInput] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1300);
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   navigate("/exercise"); // Redirects to /exercise
-  // };
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/exercise");
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -122,24 +125,24 @@ export default function NavBar() {
         >
           <Link
             to="profile"
-            className="text-white pl-4 pr-4"
+            className="text-black pl-4 pr-4"
             onClick={closeMenu}
           >
             Profile
           </Link>
           <Link
             to="/signup"
-            className="text-white pl-4 pr-4"
+            className="text-black pl-4 pr-4"
             onClick={closeMenu}
           >
             SignUp
           </Link>
-          <Link to="login" className="text-white pl-4 pr-4" onClick={closeMenu}>
+          <Link to="login" className="text-black pl-4 pr-4" onClick={closeMenu}>
             Login
           </Link>
           <Link
             to="/exercise"
-            className="text-white pl-4 pr-4"
+            className="text-black pl-4 pr-4"
             onClick={closeMenu}
           >
             Exercise
