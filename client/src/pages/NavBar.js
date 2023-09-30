@@ -1,16 +1,13 @@
-// NavBar.js
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 export default function NavBar() {
-  // Define state for the search input
   const [searchInput, setSearchInput] = useState("");
+  const navigate = useNavigate();
 
-  // Define the handleSubmit function
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform your search logic here using 'searchInput'
-    // For example, you can navigate to a search results page.
+    navigate("/exercise"); // Redirects to /exercise
   };
 
   return (
@@ -18,17 +15,18 @@ export default function NavBar() {
       <div id="navBarText">
         <ul className="navUl">
           <li>
-            <Link to="/profile">Profile</Link>
+            <Link to="profile">Profile</Link>
           </li>
           <li>
             <Link to="/signup">SignUp</Link>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="login">Login</Link>
           </li>
           <li>
             <Link to="/exercise">Exercise</Link>
           </li>
+          {/* <li>Nutrition COMING SOON</li> */}
         </ul>
       </div>
       <div>
@@ -39,7 +37,12 @@ export default function NavBar() {
             onChange={(e) => setSearchInput(e.target.value)}
             value={searchInput}
           />
-          <button type="submit">Search!</button>
+          <button
+            type="submit"
+            className="bg-blue-600 rounded-xl ml-4 pl-4 pr-4 transition-transform transform hover:translate-x-2 hover:bg-green-500"
+          >
+            Search!
+          </button>
         </form>
       </div>
     </div>
