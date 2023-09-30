@@ -36,9 +36,9 @@ const Login = (props) => {
   return (
     <div
       id="login"
-      className="flex justify-center items-center min-h-screen bg-secondary"
+      className="flex justify-center items-center min-h-screen bg-custom-dark-blue"
     >
-      <div className="w-full max-w-screen-md p-4 border border-solid border-gray-300 rounded-md">
+      <div className=" bg-custom-secondary w-full max-w-screen-md p-4 border border-solid border-gray-300 rounded-md">
         <h2 className="text-2xl font-semibold mb-4">Welcome back!</h2>
         <div className="card-body">
           {data ? (
@@ -47,7 +47,7 @@ const Login = (props) => {
               <Link to="/">back to the homepage.</Link>
             </p>
           ) : (
-            <form className="login-form" onSubmit={handleInputSubmit}>
+            <form className="login-form " onSubmit={handleInputSubmit}>
               <input
                 className="form-input mb-4 p-2 border rounded-md focus:outline-none focus:ring focus:ring-secondary focus:ring-opacity-50"
                 placeholder="Your Username"
@@ -65,7 +65,7 @@ const Login = (props) => {
                 onChange={handleInputChange}
               />
               <button
-                className="bg-accent text-white px-4 py-2 rounded-md hover:bg-orange focus:outline-none focus:ring focus:ring-orange focus:ring-opacity-50 cursor-pointer"
+                className="bg-blue-600 rounded-xl  px-4 py-2 mb-6 rounded-md transition-transform transform hover:translate-x-2 hover:bg-green-500"
                 type="submit"
               >
                 Submit
@@ -73,12 +73,10 @@ const Login = (props) => {
             </form>
           )}
 
-          {error && (
-            <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
-          )}
+          {error && <div className="my-3 p-3 bg-danger ">{error.message}</div>}
           <p>
             Let's get an account set up for you!{" "}
-            <Link to="/SignUp" className="text-accent">
+            <Link to="/SignUp" className="text-dark-blue">
               Sign Up
             </Link>
           </p>
