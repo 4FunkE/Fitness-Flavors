@@ -1,19 +1,18 @@
 :root {
-  --primary: #F9F5EB;
-  --secondary: #E4DCCF;
-  --accent: #EA5455;
-  --orange: #F77F00;
-  --yellow: #FCBF49;
-  --accent2: #002B5B;
-  --Dark: #04011d; 
-  --Header: 'Josefin Slab'; /*Georgia, 'Times New Roman', Times, serif;*/
-  --text: 'Maven Pro'; /*Arial, Helvetica, sans-serif;*/
+  --primary: #f9f5eb;
+  --secondary: #e4dccf;
+  --accent: #ea5455;
+  --orange: #f77f00;
+  --yellow: #fcbf49;
+  --accent2: #002b5b;
+  --Dark: #04011d;
+  --Header: "Josefin Slab"; /*Georgia, 'Times New Roman', Times, serif;*/
+  --text: "Maven Pro"; /*Arial, Helvetica, sans-serif;*/
 }
 
 #navBar {
-    background-color: #007bff; /* Background color for the navbar */
-    color: #fff; /* Text color for the navbar items */
-    padding: 10px; /* Add padding to the navbar */
-    border-bottom: 1px solid #ccc; /* Add a border at the bottom of the navbar */
-  }
+  background-color: #007bff; /* Background color for the navbar */
+  color: #fff; /* Text color for the navbar items */ /* Add padding to the navbar */
+  border-bottom: 1px solid #ccc; /* Add a border at the bottom of the navbar */
 
+}

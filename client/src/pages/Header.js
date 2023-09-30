@@ -43,10 +43,10 @@ export default function Header() {
   return (
     <div id="header" className="container">
       <div id="headerText">
-        <h2 className="color">
-          <Link to="/" className="text-white">
+        <h2 className="color pt-4">
+          {/* <Link to="/" className="text-white">
             Fitness Flavors
-          </Link>
+          </Link> */}
         </h2>
       </div>
       <NavBar />

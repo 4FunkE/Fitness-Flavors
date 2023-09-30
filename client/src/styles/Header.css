@@ -16,9 +16,10 @@
     rgba(18, 35, 60, 1) 0%,
     #bbb 90%
   );
-
-  padding: 20px 0; /* Add some spacing inside the header */
+  color: #fff; /* Text color */
+  /* Add some spacing inside the header */
   text-align: center; /* Center-align the text */
+  width: 100%;
 }
 
 #headerText {
@@ -56,14 +57,4 @@
   text-decoration: none; /* Remove underlines from links */
   font-weight: bold; /* Add font weight for emphasis */
   font-size: 16px; /* Adjust the font size to your preference */
-}
-
-/* Styling for active navigation link (optional) */
-#headerText .nav-bar a.active {
-  color: #ff9900; /* Change color for active link */
-}
-
-/* Header.css */
-.menu-icon:hover {
-  color: black; /* Change the color to black on hover */
 }
