@@ -1,17 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   // ...
+
   theme: {
     extend: {
       colors: {
         custom: {
-          primary: "#F9F5EB",
-          secondary: "#E4DCCF",
-          accent: "#EA5455",
-          "dark-blue": "#002B5B",
+          primary: "var(--primary)",
+          secondary: "var(--secondary)",
+          accent: "var(--accent)",
+          "dark-blue": "var(--accent2)",
+          dark: "var(--Dark)",
+          header: "var(--Header)",
+          text: "var(--text)",
         },
       },
     },
   },
-  // ...
 };

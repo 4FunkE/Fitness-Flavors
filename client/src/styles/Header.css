@@ -11,7 +11,7 @@
 }
 
 #header {
-  background-color: #333; /* Background color for the header */
+  background-image: radial-gradient( circle 590px at 8.2% 13.8%,  rgba(18,35,60,1) 0%, #bbb 90% );
   color: #fff; /* Text color */
   padding: 20px 0; /* Add some spacing inside the header */
   text-align: center; /* Center-align the text */
@@ -44,7 +44,7 @@
 }
 
 #headerText .nav-bar a {
-  color: #fff; /* Text color for navigation links */
+  background-image: radial-gradient( circle 590px at 8.2% 13.8%,  rgba(18,35,60,1) 0%, #bbb 90% ); /* Text color for navigation links */
   text-decoration: none; /* Remove underlines from links */
   font-weight: bold; /* Add font weight for emphasis */
   font-size: 16px; /* Adjust the font size to your preference */
