@@ -44,7 +44,9 @@ export default function Header() {
     <div id="header" className="container">
       <div id="headerText">
         <h2 className="color">
-          <Link to="/">Fitness Flavors</Link>
+          <Link to="/" className="text-white">
+            Fitness Flavors
+          </Link>
         </h2>
       </div>
       <NavBar />
