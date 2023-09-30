@@ -89,7 +89,7 @@ function HomePage() {
           <div className="container mx-auto relative">
             <div className="container mx-auto text-center text-white pt-96 h-screen">
               <div className="animate__animated animate__slideInLeft custom-slide-in-left">
-                <h1 className="animate__animated animate__fadeInUp text-3xl md:text-5xl font-bold">
+                <h1 className="animate__animated animate__fadeInUp text-3xl md:text-5xl font-bold pt-96">
                   Achieve Your Fitness Goals
                 </h1>
                 <p className="animate__animated animate__fadeInUp animate__delay-1s text-xl md:text-2xl mt-4 animate__delay-1s animate__slideInRight">
@@ -116,8 +116,8 @@ function HomePage() {
 
       {/* About Section */}
 
-    {/* About Section */}
-    <div className="bg-custom-secondary">
+      {/* About Section */}
+      <div className="bg-custom-secondary">
         <div className="container mx-auto text-center">
           <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-center pt-24 pb-8">
             About Us
@@ -208,7 +208,7 @@ function HomePage() {
           </div>
 
           <div className="w-full md:w-1/2 p-4 md:p-8">
-            <div className="w-full md:w-96 mx-auto">
+            <div className=" text-black-600 w-full md:w-96 mx-auto">
               <h3 className="text-lg md:text-2xl font-semibold mb-4">
                 Contact Us
               </h3>
@@ -224,7 +224,7 @@ function HomePage() {
                     Name
                   </label>
                   <input
-                    className="w-full border-2 border-blue-300 rounded-lg py-2 px-3"
+                    className="text-black-600 w-full border-2 border-blue-300 rounded-lg py-2 px-3"
                     type="text"
                     id="name"
                     name="name"
@@ -234,7 +234,7 @@ function HomePage() {
                 </div>
                 <div className="mb-4">
                   <label
-                    className="block text-left text-white mb-2"
+                    className="text-black-600 block text-left text-white mb-2"
                     htmlFor="email"
                   >
                     Email
@@ -250,7 +250,7 @@ function HomePage() {
                 </div>
                 <div className="mb-4">
                   <label
-                    className="block text-left text-white mb-2"
+                    className="text-black-600 block text-left text-white mb-2"
                     htmlFor="subject"
                   >
                     Subject
@@ -266,7 +266,7 @@ function HomePage() {
                 </div>
                 <div className="mb-6">
                   <label
-                    className="block text-left text-white mb-2"
+                    className="text-black-600 block text-left text-white mb-2"
                     htmlFor="message"
                   >
                     Message
