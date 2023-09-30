@@ -13,18 +13,26 @@ export default function NavBar() {
   return (
     <div id="navBar" className="container" style={{ width: "100%" }}>
       <div id="navBarText">
-        <ul className="navUl">
+        <ul className="navUl ">
           <li>
-            <Link to="profile">Profile</Link>
+            <Link to="profile" className="text-white">
+              Profile
+            </Link>
           </li>
           <li>
-            <Link to="/signup">SignUp</Link>
+            <Link to="/signup" className="text-white">
+              SignUp
+            </Link>
           </li>
           <li>
-            <Link to="login">Login</Link>
+            <Link to="login" className="text-white">
+              Login
+            </Link>
           </li>
           <li>
-            <Link to="/exercise">Exercise</Link>
+            <Link to="/exercise" className="text-white">
+              Exercise
+            </Link>
           </li>
           {/* <li>Nutrition COMING SOON</li> */}
         </ul>
