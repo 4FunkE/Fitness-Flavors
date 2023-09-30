@@ -1,14 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { slide as Menu } from "react-burger-menu";
 
 export default function NavBar() {
   const [searchInput, setSearchInput] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1300);
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/exercise"); // Redirects to /exercise
+    navigate("/exercise");
   };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Close the menu when a link is clicked
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth < 1300);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div id="navBar" className="container" style={{ padding: 0, margin: 0 }}>
@@ -19,11 +44,11 @@ export default function NavBar() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          width: "100%", // Set width to 100%
+          width: "100%",
         }}
       >
         <div>
-          <Link to="/" className="text-white font-bold text-xl ">
+          <Link to="/" className="text-white font-bold text-xl">
             Fitness Flavors
           </Link>
         </div>
@@ -46,32 +71,84 @@ export default function NavBar() {
           </button>
         </form>
         <div>
-          <ul className="navUl" style={{ marginLeft: "auto" }}>
-            <Link to="profile" className="text-white pl-4 pr-4">
-              Profile
-            </Link>
+          {isMobileView ? (
+            <div onClick={toggleMenu}>
+              <img
+                src="../weight.png" // Replace with the actual path to your "weight.png" image
+                alt="Hamburger Menu"
+                className="hamburger-icon"
+              />
+            </div>
+          ) : (
+            <ul className="navUl" style={{ marginLeft: "auto" }}>
+              <Link to="profile" className="text-white pl-4 pr-4">
+                Profile
+              </Link>
 
-            <Link to="/signup" className="text-white pl-4 pr-4">
-              SignUp
-            </Link>
+              <Link to="/signup" className="text-white pl-4 pr-4">
+                SignUp
+              </Link>
 
-            <Link to="login" className="text-white pl-4 pr-4">
-              Login
-            </Link>
+              <Link to="login" className="text-white pl-4 pr-4">
+                Login
+              </Link>
 
-            <Link to="/exercise" className="text-white pl-4 pr-4">
-              Exercise
-            </Link>
-          </ul>
+              <Link to="/exercise" className="text-white pl-4 pr-4">
+                Exercise
+              </Link>
+            </ul>
+          )}
         </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center", // Center the search input
-        }}
-      ></div>
+      {isMobileView && (
+        <Menu
+          right
+          isOpen={isMenuOpen}
+          onStateChange={({ isOpen }) => setIsMenuOpen(isOpen)}
+          width={200} // Adjust the width to your desired value
+          customBurgerIcon={false} // Disable default burger icon
+          customCrossIcon={false} // Disable default close icon
+          styles={{
+            bmBurgerButton: {
+              display: "none", // Hide the default burger icon
+            },
+            bmMenuWrap: {
+              position: "absolute",
+              height: "80%",
+            },
+            bmMenu: {
+              background: "none", // Change the background color as needed
+              width: "200px", // Set the width to 200px
+              height: "400px", // Set the height to 400px
+            },
+          }}
+        >
+          <Link
+            to="profile"
+            className="text-black pl-4 pr-4"
+            onClick={closeMenu}
+          >
+            Profile
+          </Link>
+          <Link
+            to="/signup"
+            className="text-black pl-4 pr-4"
+            onClick={closeMenu}
+          >
+            SignUp
+          </Link>
+          <Link to="login" className="text-black pl-4 pr-4" onClick={closeMenu}>
+            Login
+          </Link>
+          <Link
+            to="/exercise"
+            className="text-black pl-4 pr-4"
+            onClick={closeMenu}
+          >
+            Exercise
+          </Link>
+        </Menu>
+      )}
     </div>
   );
 }
