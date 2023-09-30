@@ -94,7 +94,6 @@ function Exercise({ exercise }) {
 
   return (
     <div className="exercise-container">
-      <h2>Exercises</h2>
       <div>
         <form onSubmit={handleSubmit}>
           <input
@@ -107,7 +106,7 @@ function Exercise({ exercise }) {
         </form>
       </div>
       <div>
-        <h1>List of Exercises</h1>
+        <h1>Here are some exercises based on your search for {searchInput} exercises!</h1>
         <ul>
           {workoutData.filteredBodyPartSearch.length > 0 ? (
             <div>
@@ -125,10 +124,3 @@ function Exercise({ exercise }) {
 }
 
 export default Exercise;
-
-{
-  /* 
-// {renderFilteredExercises('BodyPart', workoutData.filteredBodyPartSearch)}
-// {renderFilteredExercises('Equipment', workoutData.filteredEquipmentSearch)}
-// {renderFilteredExercises('GIF URL', workoutData.filteredGIFSearch)} */
-}

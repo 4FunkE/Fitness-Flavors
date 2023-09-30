@@ -95,21 +95,21 @@ function HomePage() {
             "Harnessing the Energy of Fitness to Ignite Passion for a Balanced
             Life."
           </p>
-          <div class="flex justify-center  space-x-4 pb-24">
+          <div className="flex justify-center  space-x-4 pb-24">
             <img
               src={workout1}
               alt="Workout 1"
-              class="ml-4 w-1/4 rounded-xl animate__animated animate__slideInLeft"
+              className="ml-4 w-1/4 rounded-xl animate__animated animate__slideInLeft"
             />
             <img
               src={workout2}
               alt="Workout 2"
-              class="w-1/4 rounded-xl animate__animated animate__slideInUp"
+              className="w-1/4 rounded-xl animate__animated animate__slideInUp"
             />
             <img
               src={workout3}
               alt="Workout 3"
-              class="w-1/4 rounded-xl animate__animated animate__slideInRight"
+              className="w-1/4 rounded-xl animate__animated animate__slideInRight"
             />
           </div>
         </div>
