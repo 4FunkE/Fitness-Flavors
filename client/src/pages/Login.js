@@ -34,8 +34,11 @@ const Login = (props) => {
   };
 
   return (
-    <div id="login" className="flex justify-center items-center min-h-screen bg-custom-dark-blue">
-      <div className="w-full max-w-screen-md p-4 border border-solid border-gray-300 rounded-md">
+    <div
+      id="login"
+      className="flex justify-center items-center min-h-screen bg-custom-dark-blue"
+    >
+      <div className=" bg-custom-secondary w-full max-w-screen-md p-4 border border-solid border-gray-300 rounded-md">
         <h2 className="text-2xl font-semibold mb-4">Welcome back!</h2>
         <div className="card-body">
           {data ? (
@@ -62,7 +65,7 @@ const Login = (props) => {
                 onChange={handleInputChange}
               />
               <button
-                className="bg-custom-dark-blue text-white px-4 py-2 rounded-md hover:bg-orange focus:outline-none focus:ring focus:ring-orange focus:ring-opacity-50 cursor-pointer"
+                className="bg-blue-600 rounded-xl  px-4 py-2 mb-6 rounded-md transition-transform transform hover:translate-x-2 hover:bg-green-500"
                 type="submit"
               >
                 Submit
