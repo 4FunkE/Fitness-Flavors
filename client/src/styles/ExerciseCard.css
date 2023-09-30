@@ -9,28 +9,25 @@
   --Header: 'Josefin Slab'; /*Georgia, 'Times New Roman', Times, serif;*/
   --text: 'Maven Pro'; /*Arial, Helvetica, sans-serif;*/
 }
+/* 
+.makeRow{
+  display: flex;
+  flex-direction: row;
+} */
 
 .exerciseC-card {
-    width: 300px;
-    height: 200px;
-    background-color: #f5f5f5;
+    background-color: var(--accent);
     border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
+    border-radius: 30px;
   }
   
   .exerciseC-name {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
+    background-color: var(--accent);
   }
   
-  .exerciseC-description {
-    font-size: 14px;
-    color: #666;
-    flex-grow: 1;
+  .exerciseC-target,
+  .exerciseC-secondaryMuscles,
+  .exerciseC-equipement,
+  .exerciseC-instructions {
+    background-color: var(--accent2);
   }
