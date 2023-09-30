@@ -12,12 +12,18 @@
 
 /* Style the List of exercises */
 .exercise-container {
-    background-color: var(--light);
+    display: flex;
+    flex-direction: row;
+    background-color: var(--Dark);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
   
+  /* .exerciseSearch {
+    width: 200px;
+  } */
+
   .exercise-list {
     list-style: none;
     padding: 0;
