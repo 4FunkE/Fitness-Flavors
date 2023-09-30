@@ -21,4 +21,5 @@ function ExerciseCard({ exercise }) {
   );
 }
 
+
 export default ExerciseCard;
