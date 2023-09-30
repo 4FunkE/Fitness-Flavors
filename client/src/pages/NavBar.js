@@ -125,24 +125,24 @@ export default function NavBar() {
         >
           <Link
             to="profile"
-            className="text-black pl-4 pr-4"
+            className="text-white pl-4 pr-4"
             onClick={closeMenu}
           >
             Profile
           </Link>
           <Link
             to="/signup"
-            className="text-black pl-4 pr-4"
+            className="text-white pl-4 pr-4"
             onClick={closeMenu}
           >
             SignUp
           </Link>
-          <Link to="login" className="text-black pl-4 pr-4" onClick={closeMenu}>
+          <Link to="login" className="text-white pl-4 pr-4" onClick={closeMenu}>
             Login
           </Link>
           <Link
             to="/exercise"
-            className="text-black pl-4 pr-4"
+            className="text-white pl-4 pr-4"
             onClick={closeMenu}
           >
             Exercise
