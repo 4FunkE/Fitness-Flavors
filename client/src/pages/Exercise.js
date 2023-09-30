@@ -1,40 +1,126 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/Exercise.css';
-import ExerciseCard from '../components/views/ExerciseCard'; // ExerciseCard component in veiws
+import React, { useState, useEffect } from "react";
+import "../styles/Exercise.css";
+import ExerciseCard from "../components/views/ExerciseCard"; // ExerciseCard component in views
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+  Link,
+} from "react-router-dom";
 
+function Exercise({ exercise }) {
+  const API = "2d3f6a0fecmsh850234d0340ad92p1cdaf5jsnde0fee7b9768";
+  const [searchInput, setSearchInput] = useState("");
+  const [workoutData, setWorkoutData] = useState({
+    filteredBodyPartSearch: [],
+    filteredEquipmentSearch: [],
+    filteredGIFSearch: [],
+  });
 
-function Exercise() {
-  const [exercises, setExercises] = useState([]);
+  const fetchWorkouts = async (muscleGroup) => {
+    try {
+      console.log("show me this PLEASE");
+      const response = await fetch(
+        `https://exercisedb.p.rapidapi.com/exercises?bodyPart=${muscleGroup}?limit=10`,
+        {
+          method: "GET",
+          headers: {
+            "X-RapidAPI-Key": API,
+            "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+          },
+        }
+      );
 
-  useEffect(() => {
-    // Fetch Exercises from the API
-    fetch("/api/exercises") // API endpoint
-      .then((response) => response.json())
-      .then((data) => {
-        setExercises(data); // API response is an array of Exercises
-      })
-      .catch((error) => {
-        console.error(
-          "Error fetching Exercises: ~ file: Exervies.js ~ line 16",
-          error
-        );
+      if (!response.ok) {
+        throw new Error("error with gathering data");
+      }
+
+      const data = await response.json();
+      const filteredBodyPartSearch = data.filter((excercise) =>
+        excercise.bodyPart.toUpperCase().includes(muscleGroup.toUpperCase())
+      );
+      const filteredEquipmentSearch = data.filter((excercise) =>
+        excercise.equipment.toUpperCase().includes(muscleGroup.toUpperCase())
+      );
+      const filteredInstructionSearch = data.filter((excercise) =>
+      typeof excercise.instructions === 'string' && exercise.instructions.toLowerCase().includes(muscleGroup.toLowerCase())
+      );
+      const filteredSecondaryMusclesSearch = data.filter((exercise) =>
+      exercise.secondaryMuscles && typeof exercise.secondaryMuscles === 'string' && exercise.secondaryMuscles.toUpperCase().includes(muscleGroup.toUpperCase())
+    );
+      const filteredWorkoutNameSearch = data.filter((excercise) =>
+      excercise.name.toUpperCase().includes(muscleGroup.toUpperCase())
+      );
+      // const filteredGIFSearch = data.filter((excercise) =>
+      //   excercise.gifUrl.toUpperCase().includes(muscleGroup.toUpperCase())
+      // );
+
+      setWorkoutData({
+        filteredBodyPartSearch,
+        filteredEquipmentSearch,
+        // filteredGIFSearch,
+        filteredInstructionSearch,
+        filteredSecondaryMusclesSearch,
+        filteredWorkoutNameSearch
       });
-  }, []); // Empty dependency array means this effect runs once on component mount
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
-    return (
-      <div className="exercise-container">
-        <h2>Exercises</h2>
-        <section className="exercise-list-section">
-          <ul className="exercise-list">
-            {exercises.map((exercise) => (
-              <li key={exercise._id} className="exercise-item">
-                <ExerciseCard exercise={exercise} /> {/* Use ExerciseCard component here */}
+  const renderFilteredExercises = (filterType, exercises) => {
+    if (exercises.length > 0) {
+      return (
+        <div>
+          <h2>Exercises based on your search for {filterType} targeting!</h2>
+          <ul>
+            {exercises.map((exercise, index) => (
+              <li key={index}>
+                <ExerciseCard key={exercise.id} exercise={exercise} />
               </li>
             ))}
           </ul>
-        </section>
-      </div>
-    );
-  }
+        </div>
+      );
+    }
+    return null;
+  };
 
-  export default Exercise;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    fetchWorkouts(searchInput);
+  };
+
+  return (
+    <div className="exercise-container">
+      <div>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Select your muscle group ..."
+            onChange={(e) => setSearchInput(e.target.value)}
+            value={searchInput}
+          />
+          <button type="submit">Search!</button>
+        </form>
+      </div>
+      <div>
+        <h1>Here are some exercises based on your search for {searchInput} exercises!</h1>
+        <ul>
+          {workoutData.filteredBodyPartSearch.length > 0 ? (
+            <div>
+              {workoutData.filteredBodyPartSearch.map((exercise, index) => (
+                <li key={index}>
+                  <ExerciseCard exercise={exercise} />
+                </li>
+              ))}
+            </div>
+          ) : null}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export default Exercise;
