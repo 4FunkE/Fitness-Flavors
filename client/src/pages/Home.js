@@ -89,18 +89,24 @@ function HomePage() {
           <div className="container mx-auto relative">
             <div className="container mx-auto text-center text-white pt-96 h-screen">
               <div className="animate__animated animate__slideInLeft custom-slide-in-left">
-                <h1 className="animate__animated animate__fadeInUp text-3xl md:text-5xl font-bold pt-96">
-                  Achieve Your Fitness Goals
-                </h1>
-                <p className="animate__animated animate__fadeInUp animate__delay-1s text-xl md:text-2xl mt-4 animate__delay-1s animate__slideInRight">
-                  Join us and transform your body!
-                </p>
-                <a
-                  href="#"
-                  className="mt-8 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 md:px-6 rounded-full animate__animated animate__fadeInUp animate__delay-2s infinite-pulse"
-                >
-                  Get Started
-                </a>
+                <div class="item2" data-aos="fade-right">
+                  <h1 className="animate__animated animate__fadeInUp text-3xl md:text-5xl font-bold pt-96">
+                    Achieve Your Fitness Goals
+                  </h1>
+                </div>
+                <div class="item3" data-aos="fade-left">
+                  <p className="animate__animated animate__fadeInUp animate__delay-1s text-xl md:text-2xl mt-4 animate__delay-1s animate__slideInRight">
+                    Join us and transform your body!
+                  </p>
+                </div>
+                <div class="item" data-aos="fade-up">
+                  <a
+                    href="/SignUp"
+                    className="mt-8 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 md:px-6 rounded-full animate__animated animate__fadeInUp animate__delay-2s infinite-pulse"
+                  >
+                    Get Started
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -118,14 +124,18 @@ function HomePage() {
 
       {/* About Section */}
       <div className="bg-custom-secondary">
-        <div className="container mx-auto text-center">
-          <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-center pt-24 pb-8">
-            About Us
-          </h3>
-          <p className="text-center mt-4 text-lg md:text-xl font-semibold pb-16">
-            "Harnessing the Energy of Fitness to Ignite Passion for a Balanced
-            Life."
-          </p>
+        <div className="container mx-auto text-center ">
+          <div class="item2" data-aos="fade-right">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-center pt-24 pb-8 ">
+              About Us
+            </h3>
+          </div>
+          <div class="item3" data-aos="fade-left">
+            <p className="text-center mt-4 text-lg md:text-xl font-semibold pb-16">
+              "Harnessing the Energy of Fitness to Ignite Passion for a Balanced
+              Life."
+            </p>
+          </div>
           <div className="flex justify-center  pb-32  pt-6">
             <div className="imagecontainer1 rounded-xl" data-aos="fade-left">
               <img
