@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ExerciseCard from "../components/views/ExerciseCard";
-import { useAuth } from "../utils/AuthContext";
+// import { useAuth } from "../utils/AuthContext";
+
 // import {useAuth} from './utils/auth.js'
 // import { useHistory } from ' react-router-dom';
 
 function Profile() {
-  const {loggedIn} = useAuth();
+  // const {loggedIn} = useAuth();
+
   const [profileExercises, setProfileExercises] = useState([]);
   const [selectedExercise, setSelectedExercise] = useState(null);
   const [notes, setNotes] = useState("");
@@ -17,13 +19,13 @@ function Profile() {
 // if someone wants to try getting it to route I don't know how else to get it
 
 
-  useEffect(() => {
+  // useEffect(() => {
     //is user logged in
-    if (!loggedIn) {
-      // history.push('/SignUp');
-      // return
-      window.location.href = '/SignUp';
-    } else {
+    // if (!loggedIn) {
+    //   // history.push('/SignUp');
+    //   // return
+    //   window.location.href = '/SignUp';
+    // } else {
       // Fetch and update the user's saved Exercises from the server
       fetch("/api/user/exercises")
         .then((response) => response.json())
@@ -33,8 +35,8 @@ function Profile() {
         .catch((error) => {
           console.error("Error fetching user exercises:", error);
         });
-    }
-  }, [loggedIn]);
+    // };
+  // }, [loggedIn]);
 
 
   const addToProfile = (exercise) => {

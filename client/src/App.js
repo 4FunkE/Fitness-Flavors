@@ -17,11 +17,23 @@ import Profile from "./pages/Profile.js";
 import Signup from "./pages/SignUp.js";
 import Header from "./pages/Header.js";
 import Footer from "./pages/Footer.js";
+// import 'font-awesome/css/font-awesome.min.css';
 
 // Construct our main GraphQL API endpoint
-const httpLink = createHttpLink({
-  uri: "/graphql",
+
+const httpLink = new ApolloClient({
+  link: new createHttpLink({
+    uri: "http://localhost:3001/graphql", 
+  }),
+  cache: new InMemoryCache(),
 });
+
+
+
+
+// const httpLink = createHttpLink({
+//   uri: "/graphql",
+// });
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
@@ -38,7 +50,7 @@ const authLink = setContext((_, { headers }) => {
 
 const client = new ApolloClient({
   // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
-  link: authLink.concat(httpLink),
+  link: authLink.concat(createHttpLink),
   cache: new InMemoryCache(),
 });
 
