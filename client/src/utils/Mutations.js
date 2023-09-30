@@ -49,3 +49,11 @@ export const DELETE_WORKOUT = gql`
     }
   }
 `;
+
+export const DONATE = gql`
+  mutation DONATE($token: String!, $amount: Int!) {
+    donate(token: $token, amount: $amount) {
+      message
+    }
+  }
+`;

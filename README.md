@@ -31,7 +31,7 @@ What are the steps required to install your project? Provide a step-by-step desc
 1. **Clone the Repository from GitHub:** Alternatively, you can download the ZIP folder from the repository's GitHub page.
 
 ```bash
-git clone https://github.com/{username}/{nameOfRepo}.git
+git clone https://github.com/4FunkE/Fitness-Flavors.git
 ```
 
 2. **Open the Repository in a Source Code Editor:**
@@ -58,11 +58,11 @@ By following these steps, you'll be seamlessly...
 
 ## Deployed Application Link:
 
-[Deployed Application Link](...)
+[Deployed Application Link](https://fitness-flavors-6c56562cb291.herokuapp.com/)
 
 ## GitHub Repository:
 
-[GitHub Repository](...)
+[GitHub Repository](https://github.com/4FunkE/Fitness-Flavors)
 
 ## Screenshot
 
@@ -107,7 +107,6 @@ Collaborators:
 
 - Andrew Bautista-Instructor
 - Will-TA
-- Starter code provided by [username](...)
 - Asia Kemp- [Akemp24](...)
 - Isabel Nance-[KEINance](...)
 - Jaldhara Patel-[jaldhara21](...)
@@ -147,7 +146,7 @@ To contribute to our project, follow these steps:
 2. Clone the Repository: Clone the forked repository to your local machine using:
 
 ```bash
-git clone https://github.com/{username}/{nameOfRepo}.git
+git clone https://github.com/4FunkE/Fitness-Flavors.git
 ```
 
 3. Create a New Branch: Create a new branch to work on your contribution using:
