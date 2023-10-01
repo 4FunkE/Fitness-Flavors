@@ -19,7 +19,7 @@
   color: #fff; /* Text color */
   /* Add some spacing inside the header */
   text-align: center; /* Center-align the text */
-  width: 100%;
+  width: 2000 !important;
 }
 
 #headerText {
@@ -57,4 +57,14 @@
   text-decoration: none; /* Remove underlines from links */
   font-weight: bold; /* Add font weight for emphasis */
   font-size: 16px; /* Adjust the font size to your preference */
+}
+@media (min-width: 1036px) {
+  .container {
+    max-width: 2036px !important;
+  }
+}
+@media (min-width: 770px) {
+  .container {
+    max-width: 2036px !important;
+  }
 }
