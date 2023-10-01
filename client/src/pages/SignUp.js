@@ -6,10 +6,13 @@ import Footer from './Footer';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/Mutations.js'
 
+// import Auth for authentication
+import Auth from '../utils/auth';
 
 export default function Signup() {
   const [formData, setFormData] = useState({ username: '', password: '' })
-  const [ addUser ] = useMutation(ADD_USER);
+  const [ registerUser ] = useMutation(ADD_USER);
+
   const handleInputChange = (event) => {
     const {name, value} = event.target;
     setFormData ({ ...formData, [name]: value });
@@ -20,10 +23,12 @@ export default function Signup() {
     try {
       console.log('test submitted', formData);
       //inseert sign up mutation here
-      const { data } = await addUser({ variables: { ...formData } });
+      const { data } = await registerUser({ variables: { ...formData } });
       // front end auth token here
+      Auth.login(data.registerUser.token);
+
     } catch(error) {
-      console.error('error')
+      console.error('error in handleInputSubmit:', error);
     }
 
   }
