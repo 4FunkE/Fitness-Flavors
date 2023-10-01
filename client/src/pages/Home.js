@@ -77,7 +77,9 @@ function HomePage() {
   };
 
   return (
-    <div>
+    <div style={{ overflowX: "hidden" }}>
+      {" "}
+      {/* Apply the CSS class here */}
       {/* Hero Section */}
       <ScrollAnimatedSection animationClass="animate__fadeIn">
         <div className="bg-custom-dark-blue py-16 md:py-32 text-white text-center relative">
@@ -112,16 +114,12 @@ function HomePage() {
           </div>
         </div>
       </ScrollAnimatedSection>
-
       {/* Cards Section */}
       <ScrollAnimatedSection animationClass="animate__fadeInUp">
         <div className="bg-custom-primary text-center">
           <div className="flex flex-wrap">{renderCards()}</div>
         </div>
       </ScrollAnimatedSection>
-
-      {/* About Section */}
-
       {/* About Section */}
       <div className="bg-custom-secondary">
         <div className="container mx-auto text-center ">
@@ -151,7 +149,7 @@ function HomePage() {
               <img
                 src={workout2}
                 alt="Workout 2"
-                style={{ height: "250px", width: "6050px" }}
+                style={{ height: "300px", width: "6050px" }}
               />
             </div>
             <div className="imagecontainer1 rounded-xl " data-aos="fade-right">
@@ -164,9 +162,7 @@ function HomePage() {
           </div>
         </div>
       </div>
-
       {/* Our Classes Section */}
-
       <section className="bg-custom-dark-blue py-8 md:py-16 ">
         <div className="container mx-auto text-center pb-32">
           <h2 className="text-white text-xl md:text-3xl font-semibold pb-8">
@@ -210,9 +206,7 @@ function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Contact Section */}
-
       <div className="bg-custom-accent py-16 md:py-32 text-white text-center">
         <div className="container mx-auto flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 p-4 md:p-8 md:pl-32">

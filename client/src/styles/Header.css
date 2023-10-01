@@ -16,9 +16,10 @@
     rgba(18, 35, 60, 1) 0%,
     #bbb 90%
   );
-
-  padding: 20px 0; /* Add some spacing inside the header */
+  color: #fff; /* Text color */
+  /* Add some spacing inside the header */
   text-align: center; /* Center-align the text */
+  width: 2000 !important;
 }
 
 #headerText {
@@ -57,13 +58,13 @@
   font-weight: bold; /* Add font weight for emphasis */
   font-size: 16px; /* Adjust the font size to your preference */
 }
-
-/* Styling for active navigation link (optional) */
-#headerText .nav-bar a.active {
-  color: #ff9900; /* Change color for active link */
+@media (min-width: 1036px) {
+  .container {
+    max-width: 2036px !important;
+  }
 }
-
-/* Header.css */
-.menu-icon:hover {
-  color: black; /* Change the color to black on hover */
+@media (min-width: 770px) {
+  .container {
+    max-width: 2036px !important;
+  }
 }
