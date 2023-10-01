@@ -1,67 +1,75 @@
 :root {
-  --primary: #F9F5EB;
-  --secondary: #E4DCCF;
-  --accent: #EA5455;
-  --orange: #F77F00;
-  --yellow: #FCBF49;
-  --accent2: #002B5B;
-  --Dark: #04011d; 
-  --Header: 'Josefin Slab'; /*Georgia, 'Times New Roman', Times, serif;*/
-  --text: 'Maven Pro'; /*Arial, Helvetica, sans-serif;*/
+  --primary: #f9f5eb;
+  --secondary: #e4dccf;
+  --accent: #ea5455;
+  --orange: #f77f00;
+  --yellow: #fcbf49;
+  --accent2: #002b5b;
+  --Dark: #04011d;
+  --Header: "Josefin Slab"; /*Georgia, 'Times New Roman', Times, serif;*/
+  --text: "Maven Pro"; /*Arial, Helvetica, sans-serif;*/
 }
 
 #footerText {
   font-size: 14px; /* Adjust the font size to your preference */
 }
 
-  .footer {
-    font-family: var(--AppleFont);
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .transparent-bg,
-  .icon {
-    background-color: transparent;
-  }
-  
-  .name {
-    font-size: 1.3rem;
-    color: #ffffff;
-  }
-  
-  .icon {
-    position: relative;
-  }
-  
-  .icon::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    pointer-events: none;
-  }
-  
-  .transparent-icon {
-    background-color: transparent;
-    box-shadow: none;
-  }
-  
-  .icon:hover::after {
-    opacity: 1;
-  }
-
-  /* Footer */
 .footer {
-  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+  font-family: var(--AppleFont);
+  bottom: 0;
+  width: 100%;
+}
+
+.transparent-bg,
+.icon {
+  background-color: transparent;
+}
+
+.name {
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+.icon {
+  position: relative;
+}
+
+.icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.transparent-icon {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.icon:hover::after {
+  opacity: 1;
+}
+
+/* Footer */
+.footer {
+  background-image: linear-gradient(
+    to right,
+    #ff8177 0%,
+    #ff867a 0%,
+    #ff8c7f 21%,
+    #f99185 52%,
+    #cf556c 78%,
+    #b12a5b 100%
+  );
   padding: 20px 0; /* Add some spacing inside the footer */
   text-align: center; /* Center-align the text */
-  color: whitesmoke
+  color: whitesmoke;
 }
 
 /* Social icons */
@@ -92,10 +100,9 @@
 }
 
 .container {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-  }
+}
 
 .social-icons-wrapper {
   display: flex;
