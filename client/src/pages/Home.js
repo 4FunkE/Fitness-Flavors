@@ -149,7 +149,7 @@ function HomePage() {
               <img
                 src={workout2}
                 alt="Workout 2"
-                style={{ height: "250px", width: "6050px" }}
+                style={{ height: "300px", width: "6050px" }}
               />
             </div>
             <div className="imagecontainer1 rounded-xl " data-aos="fade-right">
