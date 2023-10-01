@@ -14,7 +14,7 @@
   max-width: 400px; /* Set a maximum width for the form container */
   margin: 0 auto; /* Center the form container horizontally */
   padding: 20px; /* Add some padding around the form */
-  background-color: #f7f7f7; /* Background color for the form container */
+  /* Background color for the form container */
   border-radius: 15px; /* Add a border radius to the form container */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow to the form container */
 }

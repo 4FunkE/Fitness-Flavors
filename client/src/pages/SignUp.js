@@ -1,8 +1,6 @@
 //sign up for app
 import React, { useState } from 'react';
 import '../styles/SignUp.css';
-import Header from './Header';
-import Footer from './Footer';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/Mutations.js'
 
@@ -17,6 +15,7 @@ export default function Signup() {
     const {name, value} = event.target;
     setFormData ({ ...formData, [name]: value });
   }
+
 
   const handleInputSubmit = async (event) => {
     event.preventDefault()
@@ -33,7 +32,9 @@ export default function Signup() {
       console.error('error in handleInputSubmit:', error);
     }
 
+
   }
+
 
   // code for login form
   return (
@@ -46,13 +47,13 @@ export default function Signup() {
             <label for="email-login">Email:</label>
             <input type="text" className="form-control" id="email-login" />
           </div> */}
-          
+         
           <div className="form-group">
-            <label for="username-login">Username:</label>
+            <label htmlFor="username-login">Username:</label>
             <input type="text" className="form-control" id="username-login" name='username' value={formData.username} onChange={handleInputChange} />
           </div>
           <div className="form-group">
-            <label for="password-login">Password:</label>
+            <label htmlFor="password-login">Password:</label>
             <input type="password" className="form-control" name="password" value={formData.password} onChange={handleInputChange} id="password-login" />
           </div>
           <div className="form-group">
@@ -60,17 +61,8 @@ export default function Signup() {
           </div>
         </form>
       </div>
-    
+   
     </div>
     </div>
 );
 }
-
-
-
-
-
-
-
-
-

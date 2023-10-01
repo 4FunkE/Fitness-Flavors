@@ -89,18 +89,24 @@ function HomePage() {
           <div className="container mx-auto relative">
             <div className="container mx-auto text-center text-white pt-96 h-screen">
               <div className="animate__animated animate__slideInLeft custom-slide-in-left">
-                <h1 className="animate__animated animate__fadeInUp text-3xl md:text-5xl font-bold">
-                  Achieve Your Fitness Goals
-                </h1>
-                <p className="animate__animated animate__fadeInUp animate__delay-1s text-xl md:text-2xl mt-4 animate__delay-1s animate__slideInRight">
-                  Join us and transform your body!
-                </p>
-                <a
-                  href="#"
-                  className="mt-8 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 md:px-6 rounded-full animate__animated animate__fadeInUp animate__delay-2s infinite-pulse"
-                >
-                  Get Started
-                </a>
+                <div className="item2" data-aos="fade-right">
+                  <h1 className="animate__animated animate__fadeInUp text-3xl md:text-5xl font-bold pt-96">
+                    Achieve Your Fitness Goals
+                  </h1>
+                </div>
+                <div className="item3" data-aos="fade-left">
+                  <p className="animate__animated animate__fadeInUp animate__delay-1s text-xl md:text-2xl mt-4 animate__delay-1s animate__slideInRight">
+                    Join us and transform your body!
+                  </p>
+                </div>
+                <div className="item" data-aos="fade-up">
+                  <a
+                    href="/SignUp"
+                    className="mt-8 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 md:px-6 rounded-full animate__animated animate__fadeInUp animate__delay-2s infinite-pulse"
+                  >
+                    Get Started
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -116,49 +122,61 @@ function HomePage() {
 
       {/* About Section */}
 
-    {/* About Section */}
-    <div className="bg-custom-secondary">
-        <div className="container mx-auto text-center">
-          <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-center pt-24 pb-8">
-            About Us
-          </h3>
-          <p className="text-center mt-4 text-lg md:text-xl font-semibold pb-16">
-            "Harnessing the Energy of Fitness to Ignite Passion for a Balanced
-            Life."
-          </p>
-          <div className="flex justify-center space-x-4 pb-24">
-            <div className="image-container" data-aos="fade-left">
-              <img src={workout1} alt="Workout 1" />
+      {/* About Section */}
+      <div className="bg-custom-secondary">
+        <div className="container mx-auto text-center ">
+          <div className="item2" data-aos="fade-right">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-center pt-24 pb-8 ">
+              About Us
+            </h3>
+          </div>
+          <div className="item3" data-aos="fade-left">
+            <p className="text-center mt-4 text-lg md:text-xl font-semibold pb-16">
+              "Harnessing the Energy of Fitness to Ignite Passion for a Balanced
+              Life."
+            </p>
+          </div>
+          <div className="flex justify-center  pb-32  pt-6">
+            <div className="imagecontainer1 rounded-xl" data-aos="fade-left">
+              <img
+                src={workout1}
+                alt="Workout 1"
+                className="h-auto pl-4 pr-4 "
+              />
             </div>
-            <div className="image-container" data-aos="fade-up">
+            <div
+              className="imagecontainer1 pt-6 pb-6 pl-4 pr-4 rounded-xl"
+              data-aos="fade-up"
+            >
               <img
                 src={workout2}
                 alt="Workout 2"
-                className=" rounded-xl animate__animated animate__slideInUp"
+                style={{ height: "250px", width: "6050px" }}
               />
             </div>
-            <div className="image-container" data-aos="fade-right">
+            <div className="imagecontainer1 rounded-xl " data-aos="fade-right">
               <img
                 src={workout3}
                 alt="Workout 3"
-                className=" rounded-xl animate__animated animate__slideInRight"
+                className="h-auto pl-4 pr-4 "
               />
             </div>
           </div>
         </div>
       </div>
+
       {/* Our Classes Section */}
 
       <section className="bg-custom-dark-blue py-8 md:py-16 ">
-        <div className="container mx-auto text-center pb-20">
+        <div className="container mx-auto text-center pb-32">
           <h2 className="text-white text-xl md:text-3xl font-semibold pb-8">
             Our Classes
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-8 pb-24">
             {/* Class Card 1 */}
-            <div class="item2" data-aos="fade-right">
+            <div className="item2" data-aos="fade-right">
               <div className="animate__animated animate__slideInLeft">
-                <div className="bg-custom-secondary rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <div className="bg-custom-secondary rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
                   <h3 className=" text-lg md:text-xl font-semibold">Yoga</h3>
                   <p className="text-gray-600 mt-2 pb-6">
                     Improve flexibility and find inner peace with our yoga
@@ -168,19 +186,19 @@ function HomePage() {
               </div>
             </div>
             {/* Class Card 2 */}
-            <div class="item" data-aos="fade-up">
+            <div className="item" data-aos="fade-up">
               <div className="bg-custom-secondary rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
-                <h3 className="text-lg md:text-xl font-semibold">
+                <h3 className="text-lg md:text-xl font-semibold ">
                   Strength Training
                 </h3>
-                <p className="text-gray-600 mt-2 ">
+                <p className="text-gray-600 mt-2 pb-6">
                   Build muscle and increase your strength with our strength
                   training sessions.
                 </p>
               </div>
             </div>
             {/* Class Card 3 */}
-            <div class="item3" data-aos="fade-left">
+            <div className="item3" data-aos="fade-left">
               <div className="bg-custom-secondary rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
                 <h3 className="text-lg md:text-xl font-semibold">Cardio</h3>
                 <p className="text-gray-600 mt-2 pb-6">
@@ -198,7 +216,7 @@ function HomePage() {
       <div className="bg-custom-accent py-16 md:py-32 text-white text-center">
         <div className="container mx-auto flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 p-4 md:p-8 md:pl-32">
-            <div class="item2" data-aos="fade-right">
+            <div className="item2" data-aos="fade-right">
               <img
                 src={image1}
                 alt="Image 1"
@@ -208,7 +226,7 @@ function HomePage() {
           </div>
 
           <div className="w-full md:w-1/2 p-4 md:p-8">
-            <div className="w-full md:w-96 mx-auto">
+            <div className=" text-black-600 w-full md:w-96 mx-auto">
               <h3 className="text-lg md:text-2xl font-semibold mb-4">
                 Contact Us
               </h3>
@@ -224,7 +242,7 @@ function HomePage() {
                     Name
                   </label>
                   <input
-                    className="w-full border-2 border-blue-300 rounded-lg py-2 px-3"
+                    className="text-black-600 w-full border-2 border-blue-300 rounded-lg py-2 px-3"
                     type="text"
                     id="name"
                     name="name"
@@ -234,7 +252,7 @@ function HomePage() {
                 </div>
                 <div className="mb-4">
                   <label
-                    className="block text-left text-white mb-2"
+                    className="text-black-600 block text-left text-white mb-2"
                     htmlFor="email"
                   >
                     Email
@@ -250,7 +268,7 @@ function HomePage() {
                 </div>
                 <div className="mb-4">
                   <label
-                    className="block text-left text-white mb-2"
+                    className="text-black-600 block text-left text-white mb-2"
                     htmlFor="subject"
                   >
                     Subject
@@ -266,7 +284,7 @@ function HomePage() {
                 </div>
                 <div className="mb-6">
                   <label
-                    className="block text-left text-white mb-2"
+                    className="text-black-600 block text-left text-white mb-2"
                     htmlFor="message"
                   >
                     Message
