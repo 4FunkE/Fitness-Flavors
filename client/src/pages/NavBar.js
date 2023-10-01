@@ -110,41 +110,46 @@ export default function NavBar() {
               display: "none", // Hide the default burger icon
             },
             bmMenuWrap: {
-              position: "absolute",
+              position: "fixed",
               height: "80%",
             },
             bmMenu: {
-              background: "none", // Change the background color as needed
+              background: "transparent", // Change the background color as needed
               width: "200px", // Set the width to 200px
-              height: "400px", // Set the height to 400px
+              height: "150px", // Set the height to 400px
+              textAlign: "center",
               overflowY: "hidden", // Prevent vertical scrolling
+              boxShadow: "none", // Remove the shadow
+            },
+            bmOverlay: {
+              background: "transparent", // Set the overlay color to transparent
             },
           }}
         >
           <Link
             to="profile"
-            className="profilecolor border bg-blue-600 text-white rounded-2xl pl-4 pr-4 mt-2 mb-2"
+            className="profilecolor border bg-blue-600 text-white rounded-2xl pl-4 pr-4 mt-2 mb-2 flex justify-center items-center"
             onClick={closeMenu}
           >
             Profile
           </Link>
           <Link
             to="/signup"
-            className="bg-blue-600 border text-white rounded-2xl pl-4 pr-4 mt-2 mb-2"
+            className="bg-blue-600 border text-white rounded-2xl pl-4 pr-4 mt-2 mb-2 flex justify-center items-center"
             onClick={closeMenu}
           >
             SignUp
           </Link>
           <Link
             to="login"
-            className="bg-blue-600 border text-white rounded-2xl pl-4 pr-4 mt-2 mb-2"
+            className="bg-blue-600 border text-white rounded-2xl pl-4 pr-4 mt-2 mb-2 flex justify-center items-center"
             onClick={closeMenu}
           >
             Login
           </Link>
           <Link
             to="/exercise"
-            className="bg-blue-600 border text-white rounded-2xl pl-4 pr-4 mt-2 mb-2"
+            className="bg-blue-600 border text-white rounded-2xl pl-4 pr-4 mt-2 mb-2 flex justify-center items-center"
             onClick={closeMenu}
           >
             Exercise
