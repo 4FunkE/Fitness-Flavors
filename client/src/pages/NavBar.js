@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 import weight from "../components/images/weight.png";
+
 export default function NavBar() {
   const [searchInput, setSearchInput] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,10 +13,6 @@ export default function NavBar() {
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate("/exercise");
-  };
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
   };
 
   // Close the menu when a link is clicked
@@ -71,11 +68,12 @@ export default function NavBar() {
         </form>
         <div>
           {isMobileView ? (
-            <div onClick={toggleMenu} style={{ marginLeft: "auto" }}>
+            <div style={{ marginLeft: "auto" }}>
               <img
                 src={weight} // Use the imported image variable here
                 alt="Hamburger Menu"
                 className="hamburger-icon"
+                onClick={() => setIsMenuOpen(!isMenuOpen)} // Open the menu when clicked
               />
             </div>
           ) : (
@@ -119,6 +117,7 @@ export default function NavBar() {
               background: "none", // Change the background color as needed
               width: "200px", // Set the width to 200px
               height: "400px", // Set the height to 400px
+              overflowY: "hidden", // Prevent vertical scrolling
             },
           }}
         >

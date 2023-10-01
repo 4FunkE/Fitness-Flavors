@@ -31,3 +31,7 @@
 .active .bar:nth-child(3) {
   transform: rotate(45deg) translate(-4px, -4px);
 }
+/* Prevent horizontal scrolling */
+body {
+  overflow-x: hidden !important;
+}
