@@ -56,7 +56,7 @@ export default function Signup() {
             <input type="password" className="form-control" name="password" value={formData.password} onChange={handleInputChange} id="password-login" />
           </div>
           <div className="form-group">
-            <button type="submit" className="signupBtn">Login</button>
+            <button type="submit" className="signupBtn">Signup</button>
           </div>
         </form>
       </div>
