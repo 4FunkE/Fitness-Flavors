@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
-
+import weight from "../components/images/weight.png";
 export default function NavBar() {
   const [searchInput, setSearchInput] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,7 +44,6 @@ export default function NavBar() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          width: "100%",
         }}
       >
         <div>
@@ -72,16 +71,16 @@ export default function NavBar() {
         </form>
         <div>
           {isMobileView ? (
-            <div onClick={toggleMenu}>
+            <div onClick={toggleMenu} style={{ marginLeft: "auto" }}>
               <img
-                src="../weight.png" // Replace with the actual path to your "weight.png" image
+                src={weight} // Use the imported image variable here
                 alt="Hamburger Menu"
                 className="hamburger-icon"
               />
             </div>
           ) : (
             <ul className="navUl" style={{ marginLeft: "auto" }}>
-              <Link to="profile" className="text-white pl-4 pr-4">
+              <Link to="profile" className=" text-white pl-4 pr-4">
                 Profile
               </Link>
 
@@ -125,24 +124,28 @@ export default function NavBar() {
         >
           <Link
             to="profile"
-            className="text-black pl-4 pr-4"
+            className="profilecolor border bg-blue-600 text-white rounded-2xl pl-4 pr-4 mt-2 mb-2"
             onClick={closeMenu}
           >
             Profile
           </Link>
           <Link
             to="/signup"
-            className="text-black pl-4 pr-4"
+            className="bg-blue-600 border text-white rounded-2xl pl-4 pr-4 mt-2 mb-2"
             onClick={closeMenu}
           >
             SignUp
           </Link>
-          <Link to="login" className="text-black pl-4 pr-4" onClick={closeMenu}>
+          <Link
+            to="login"
+            className="bg-blue-600 border text-white rounded-2xl pl-4 pr-4 mt-2 mb-2"
+            onClick={closeMenu}
+          >
             Login
           </Link>
           <Link
             to="/exercise"
-            className="text-black pl-4 pr-4"
+            className="bg-blue-600 border text-white rounded-2xl pl-4 pr-4 mt-2 mb-2"
             onClick={closeMenu}
           >
             Exercise
