@@ -71,9 +71,7 @@ const resolvers = {
             }
         },
         // register user
-        registerUser: async (_, { input }) => {
-            const { username, password } = input;
-
+        registerUser: async (_, { username, password }) => {
             // check if user exists
             const existingUser = await User.findOne({ username });
             if (existingUser) {
@@ -90,11 +88,16 @@ const resolvers = {
             });
 
             await newUser.save();
+            // newUser.save(function (err, results) {
+            //     console.log('register user error:', err);
+            //   });
 
             // generate authentication token
             const token = signToken({ username, _id: newUser._id });
 
             return { token, user: newUser };
+
+            // return('hi');
         },
         // login user
         login: async (_, { username, password }) => {
