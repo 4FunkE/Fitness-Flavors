@@ -3,16 +3,13 @@ import React, { useState } from 'react';
 import '../styles/SignUp.css';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/Mutations.js'
-import { QUERY_USER } from '../utils/queries';
 
-
-
+// import Auth for authentication
+import Auth from '../utils/auth';
 
 export default function Signup() {
   const [formData, setFormData] = useState({ username: '', password: '' })
-  const [signupUser] = useMutation(ADD_USER)
-  // const [ addUser ] = useMutation(ADD_USER);
-
+  const [ registerUser ] = useMutation(ADD_USER);
 
   const handleInputChange = (event) => {
     const {name, value} = event.target;
@@ -23,14 +20,16 @@ export default function Signup() {
   const handleInputSubmit = async (event) => {
     event.preventDefault()
     try {
-      console.log('test submitted', formData);
-      //inseert sign up mutation here
-      const { data } = await signupUser({ variables: { ...formData } });
+          console.log('test submitted', formData);
+          //inseert sign up mutation here
+          const { data } = await registerUser({
+            variables: { ...formData },
+          });
       // front end auth token here
-      const authToken = data.signup.token;
-        console.log('token', authToken)
+      Auth.login(data.registerUser.token);
+
     } catch(error) {
-      console.error('not using token right? or calling token right?')
+      console.error('error in handleInputSubmit:', error);
     }
 
 
@@ -58,7 +57,7 @@ export default function Signup() {
             <input type="password" className="form-control" name="password" value={formData.password} onChange={handleInputChange} id="password-login" />
           </div>
           <div className="form-group">
-            <button type="submit" className="signupBtn">Login</button>
+            <button type="submit" className="signupBtn">Signup</button>
           </div>
         </form>
       </div>
