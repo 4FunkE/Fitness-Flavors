@@ -1,6 +1,6 @@
 // header for app
 import React, { useState, useEffect, useRef } from "react"; // Import React and hooks
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import "../styles/Header.css"; // Import your CSS file for styling
 
@@ -43,7 +43,11 @@ export default function Header() {
   return (
     <div id="header" className="container">
       <div id="headerText">
-        <h2 className="color"><Link to='/'>Fitness Flavors</Link></h2>
+        <h2 className="color pt-4">
+          {/* <Link to="/" className="text-white">
+            Fitness Flavors
+          </Link> */}
+        </h2>
       </div>
       <NavBar />
     </div>

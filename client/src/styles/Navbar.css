@@ -1,19 +1,37 @@
 :root {
-  --primary: #F9F5EB;
-  --secondary: #E4DCCF;
-  --accent: #EA5455;
-  --orange: #F77F00;
-  --yellow: #FCBF49;
-  --accent2: #002B5B;
-  --Dark: #04011d; 
-  --Header: 'Josefin Slab'; /*Georgia, 'Times New Roman', Times, serif;*/
-  --text: 'Maven Pro'; /*Arial, Helvetica, sans-serif;*/
+  --primary: #f9f5eb;
+  --secondary: #e4dccf;
+  --accent: #ea5455;
+  --orange: #f77f00;
+  --yellow: #fcbf49;
+  --accent2: #002b5b;
+  --Dark: #04011d;
+  --Header: "Josefin Slab"; /*Georgia, 'Times New Roman', Times, serif;*/
+  --text: "Maven Pro"; /*Arial, Helvetica, sans-serif;*/
 }
 
-#navBar {
-    background-color: #007bff; /* Background color for the navbar */
-    color: #fff; /* Text color for the navbar items */
-    padding: 10px; /* Add padding to the navbar */
-    border-bottom: 1px solid #ccc; /* Add a border at the bottom of the navbar */
-  }
+/* CSS for the smaller hamburger icon */
 
+.bar {
+  width: 20px; /* Adjust the width to make the bars smaller */
+  height: 2px; /* Adjust the height to make the bars thinner */
+
+  margin: 2px 0; /* Adjust the margin to control the spacing */
+  transition: 0.4s;
+}
+
+.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-4px, 4px);
+}
+
+.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-4px, -4px);
+}
+/* Prevent horizontal scrolling */
+body {
+  overflow-x: hidden !important;
+}
