@@ -21,9 +21,11 @@ export default function Signup() {
   const handleInputSubmit = async (event) => {
     event.preventDefault()
     try {
-      console.log('test submitted', formData);
-      //inseert sign up mutation here
-      const { data } = await registerUser({ variables: { ...formData } });
+          console.log('test submitted', formData);
+          //inseert sign up mutation here
+          const { data } = await registerUser({
+            variables: { ...formData },
+          });
       // front end auth token here
       Auth.login(data.registerUser.token);
 
