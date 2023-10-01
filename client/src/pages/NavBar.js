@@ -61,7 +61,7 @@ export default function NavBar() {
           />
           <button
             type="submit"
-            className="bg-blue-600 text-white rounded-xl ml-4 pl-4 pr-4 mt-2  transition-transform transform hover:translate-x-2 hover:bg-green-500"
+            className="bg-blue-600 text-black rounded-xl ml-4 pl-4 pr-4 mt-2  transition-transform transform hover:translate-x-2 hover:bg-green-500"
           >
             Search!
           </button>
