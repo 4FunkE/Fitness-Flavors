@@ -1,26 +1,57 @@
 import React, { useState, useEffect } from "react";
 import ExerciseCard from "../components/views/ExerciseCard";
+import { useAuth } from "../utils/AuthContext";
+
+
+// import {useAuth} from './utils/auth.js'
+// import { useHistory } from ' react-router-dom';
+
 
 function Profile() {
+  const {loggedIn} = useAuth();
+
+
   const [profileExercises, setProfileExercises] = useState([]);
   const [selectedExercise, setSelectedExercise] = useState(null);
   const [notes, setNotes] = useState("");
+  // const history = useHistory();
+ 
+
+
+
+
+// COULD NOT GET USE HISTORY TO IMPORT PROPERLY EVEN WITH NMP I EVERYWHERE
+// if someone wants to try getting it to route I don't know how else to get it
+
+
+
 
   useEffect(() => {
-    // Fetch and update the user's saved Exercises from the server
-    fetch("/api/user/exercises")
-      .then((response) => response.json())
-      .then((data) => {
-        setProfileExercises(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching user exercises:", error);
-      });
-  }, []);
+    //is user logged in
+    if (!loggedIn) {
+    //   // history.push('/SignUp');
+    //   // return
+      window.location.href = '/SignUp';
+    } else {
+      // Fetch and update the user's saved Exercises from the server
+      fetch("/api/user/exercises")
+        .then((response) => response.json())
+        .then((data) => {
+          setProfileExercises(data);
+        })
+        .catch((error) => {
+          console.error("Error fetching user exercises:", error);
+        });
+    };
+  }, [loggedIn]);
+
+
+
 
   const addToProfile = (exercise) => {
     // API endpoint for adding exercises to a user's profile
     const endpoint = "/api/user/exercises";
+
 
     // Make a POST request to add the exercise to the user's profile
     fetch(endpoint, {
@@ -44,9 +75,11 @@ function Profile() {
       });
   };
 
+
   const removeFromProfile = (exerciseId) => {
     // API endpoint for removing exercises from a user's profile
     const endpoint = `/api/user/exercises/${exerciseId}`;
+
 
     // Make a DELETE request to remove the exercise from the user's profile
     fetch(endpoint, {
@@ -66,12 +99,15 @@ function Profile() {
       });
   };
 
+
   const addNote = () => {
     // API endpoint for updating exercise notes
     const endpoint = `/api/exercises/${selectedExercise._id}/notes`;
 
+
     // Create a timestamp for the note
     const timestamp = new Date().toISOString();
+
 
     // Make a POST request to add the note to the selected exercise
     fetch(endpoint, {
@@ -98,7 +134,10 @@ function Profile() {
       .catch((error) => {
         console.error("Error adding note to exercise:", error);
       });
-  };
+  }
+
+
+
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-custom-secondary">
@@ -155,5 +194,6 @@ function Profile() {
     </div>
   );
 }
+
 
 export default Profile;
