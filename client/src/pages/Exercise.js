@@ -1,15 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/Exercise.css";
 // import './styles.css';
 import ExerciseCard from "../components/views/ExerciseCard"; // ExerciseCard component in views
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useNavigate,
-  Link,
-} from "react-router-dom";
 
 function Exercise({ exercise }) {
   const API = "2d3f6a0fecmsh850234d0340ad92p1cdaf5jsnde0fee7b9768";
@@ -74,23 +66,23 @@ function Exercise({ exercise }) {
     }
   };
 
-  const renderFilteredExercises = (filterType, exercises) => {
-    if (exercises.length > 0) {
-      return (
-        <div>
-          <h2>Exercises based on your search for {filterType} targeting!</h2>
-          <ul>
-            {exercises.map((exercise, index) => (
-              <li key={index}>
-                <ExerciseCard key={exercise.id} exercise={exercise} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      );
-    }
-    return null;
-  };
+  // const renderFilteredExercises = (filterType, exercises) => {
+  //   if (exercises.length > 0) {
+  //     return (
+  //       <div>
+  //         <h2>Exercises based on your search for {filterType} targeting!</h2>
+  //         <ul>
+  //           {exercises.map((exercise, index) => (
+  //             <li key={index}>
+  //               <ExerciseCard key={exercise.id} exercise={exercise} />
+  //             </li>
+  //           ))}
+  //         </ul>
+  //       </div>
+  //     );
+  //   }
+  //   return null;
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
