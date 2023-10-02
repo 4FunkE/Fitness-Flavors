@@ -1,13 +1,35 @@
 # Fitness-Flavors
 
+Welcome to Fitness-Flavors – Your Personal Fitness Companion!
+
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+Fitness-Flavors is a web application designed to help you achieve your fitness goals with ease and precision. It provides a wide range of features to support your fitness journey.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+### Motivation
+
+Our motivation is simple: we believe that everyone should have the tools to lead a healthier life. With busy schedules and information overload, it's easy to feel overwhelmed when trying to maintain a consistent fitness routine. We built Fitness-Flavors to provide a solution.
+
+### Why We Built This Project
+
+Fitness-Flavors was created to empower individuals to take control of their health and fitness routines. We wanted to make it easy for people to find exercises tailored to their needs, whether it's working on specific muscle groups, cardio workouts, or flexibility training.
+
+### Key Features
+
+- **Exercise Library:** Explore a comprehensive library of exercises, each with detailed instructions and videos.
+- **Custom Workouts:** Create personalized workout routines that suit your fitness goals.
+- **Community Support:** Connect with like-minded individuals, share your progress, and stay motivated.
+- **Track Your Progress:** Log your workouts, set goals, and visualize your fitness journey.
+
+### What Problem Does It Solve?
+
+Fitness-Flavors addresses the common challenge of not knowing which exercises or activities to perform at the gym or home to target specific muscle groups effectively. With our app, you can access a wide range of exercises and create customized workouts with ease.
+
+### What We Learned
+
+Throughout the development of Fitness-Flavors, we gained valuable experience in building a fully functional MERN (MongoDB, Express, React, Node.js) stack application. We honed our skills in frontend and backend development, database management, and user interface design.
+
+Join us on this fitness journey and take the first step toward a healthier, more active lifestyle with Fitness-Flavors.
 
 ## Table of Contents
 
@@ -31,7 +53,7 @@ What are the steps required to install your project? Provide a step-by-step desc
 1. **Clone the Repository from GitHub:** Alternatively, you can download the ZIP folder from the repository's GitHub page.
 
 ```bash
-git clone https://github.com/{username}/{nameOfRepo}.git
+git clone https://github.com/4funke/Fitness-Flavors.git
 ```
 
 2. **Open the Repository in a Source Code Editor:**
@@ -42,27 +64,48 @@ git clone https://github.com/{username}/{nameOfRepo}.git
 - [Deployed Application Link](#deployed-application-link) Check out our live application
 - [GitHub Repository](#github-repository) For more details and to explore the code
 
-## Usage Instruction:
+## Getting Started
 
-#### Follow these steps to effectively utilize our application:
+Welcome to our fitness application! This guide will help you make the most out of your fitness journey with our platform. 
 
-Provide instructions and examples for use.
+### Purpose
+Our application is designed to provide you with a seamless way to discover exercises, create workout routines, and track your progress. Whether you're a fitness enthusiast or a beginner, we're here to support your goals.
 
-1. step 1
-2. step 2
-3. step 3
-4. step 4
-5. step 5
+### Usage Instructions
 
-By following these steps, you'll be seamlessly...
+Follow these steps to effectively utilize our application:
+
+1. **Sign Up or Log In**
+   - If you're a new user, click the "Sign Up" button and follow the registration process.
+   - If you're an existing user, simply log in with your credentials.
+
+   ![Sign Up](url_to_screenshot_signup.png)
+
+2. **Explore Exercises by Muscle Groups**
+   - Click on the "Exercises" tab in the navigation menu to access a wide range of exercises categorized by muscle groups.
+   - Select a muscle group to view specific exercises.
+
+   ![Exercises](url_to_screenshot_exercises.png)
+
+3. **Add Exercises to Your Profile**
+   - When you find an exercise you'd like to include in your routine, click the "Add to Profile" button.
+   - You can create and customize workout routines by selecting exercises from your profile.
+
+   ![Add to Profile](url_to_screenshot_add_to_profile.png)
+
+4. **View Your Profile**
+   - Click on your profile icon or username in the top-right corner to access your profile.
+   - Here, you can see your saved workouts, delete them, or leave notes to track your progress.
+
+5. **Logout**
 
 ## Deployed Application Link:
 
-[Deployed Application Link](...)
+[Deployed Application Link](https://fitness-flavors-6c56562cb291.herokuapp.com/ )
 
 ## GitHub Repository:
 
-[GitHub Repository](...)
+[GitHub Repository](https://github.com/4FunkE/Fitness-Flavors)
 
 ## Screenshot
 
@@ -72,42 +115,43 @@ By following these steps, you'll be seamlessly...
 
 This project was developed using the following technologies and tools:(please input your code below, examples provided)
 
-- [JSON](https://www.npmjs.com/package/json)
-- [Node.js](https://nodejs.org/en/blog/release/v16.18.1/)
-- [Dotenv](https://www.npmjs.com/package/dotenv)
-- [Express](https://www.npmjs.com/package/express)
-- [Node MySql2](https://www.npmjs.com/package/mysql2)
-- [Inquirer](https://www.npmjs.com/package/inquirer/v/8.2.4)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Bcrypt](https://www.npmjs.com/package/bcrypt)
-- [Sequelize](https://www.npmjs.com/package/connect-session-sequelize)
-- [Express Handlebars](https://www.npmjs.com/package/express-handlebars)
-- [Express-Session](https://www.npmjs.com/package/express-session)
-
-### Technologies and Tools Overview
-
-- JSON: Used for data representation and exchange.
-- Node.js: The runtime environment for executing JavaScript code on the server.
-- Dotenv: Enables the usage of environment variables to manage configuration.
-- Express: A fast and minimal web application framework for Node.js.
-- Node MySql2: A MySQL driver for Node.js.
-- Inquirer: Facilitates user interactions in the command-line interface.
-- Visual Studio Code: The integrated development environment used for coding.
-- Sequelize: Connect Session Store
+[![concurrently](https://badgen.net/badge/icon/concurrently?icon=npm&label)](https://www.npmjs.com/package/concurrently)
+[![eslint](https://badgen.net/badge/icon/eslint?icon=npm&label)](https://www.npmjs.com/package/eslint)
+[![eslint-config-prettier](https://badgen.net/badge/icon/eslint-config-prettier?icon=npm&label)](https://www.npmjs.com/package/eslint-config-prettier)
+[![prettier](https://badgen.net/badge/icon/prettier?icon=npm&label)](https://www.npmjs.com/package/prettier)
+[![tailwindcss](https://badgen.net/badge/icon/tailwindcss?icon=npm&label)](https://www.npmjs.com/package/tailwindcss)
+[![@testing-library/jest-dom](https://badgen.net/badge/icon/jest-dom?icon=npm&label)](https://www.npmjs.com/package/@testing-library/jest-dom)
+[![@testing-library/react](https://badgen.net/badge/icon/testing-library?icon=npm&label)](https://www.npmjs.com/package/@testing-library/react)
+[![@testing-library/user-event](https://badgen.net/badge/icon/testing-library?icon=npm&label)](https://www.npmjs.com/package/@testing-library/user-event)
+[![animate.css](https://badgen.net/badge/icon/animate.css?icon=npm&label)](https://www.npmjs.com/package/animate.css)
+[![apollo-client](https://badgen.net/badge/icon/apollo-client?icon=npm&label)](https://www.npmjs.com/package/apollo-client)
+[![dotenv](https://badgen.net/badge/icon/dotenv?icon=npm&label)](https://www.npmjs.com/package/dotenv)
+[![graphql](https://badgen.net/badge/icon/graphql?icon=npm&label)](https://www.npmjs.com/package/graphql)
+[![jwt-decode](https://badgen.net/badge/icon/jwt-decode?icon=npm&label)](https://www.npmjs.com/package/jwt-decode)
+[![react](https://badgen.net/badge/icon/react?icon=npm&label)](https://www.npmjs.com/package/react)
+[![react-bootstrap](https://badgen.net/badge/icon/react-bootstrap?icon=npm&label)](https://www.npmjs.com/package/react-bootstrap)
+[![react-dom](https://badgen.net/badge/icon/react-dom?icon=npm&label)](https://www.npmjs.com/package/react-dom)
+[![react-router-dom](https://badgen.net/badge/icon/react-router-dom?icon=npm&label)](https://www.npmjs.com/package/react-router-dom)
+[![react-scripts](https://badgen.net/badge/icon/react-scripts?icon=npm&label)](https://www.npmjs.com/package/react-scripts)
+[![bootstrap](https://badgen.net/badge/icon/bootstrap?icon=npm&label)](https://www.npmjs.com/package/bootstrap)
+[![jsonwebtoken](https://badgen.net/badge/icon/jsonwebtoken?icon=npm&label)](https://www.npmjs.com/package/jsonwebtoken)
+[![mongoose](https://badgen.net/badge/icon/mongoose?icon=npm&label)](https://www.npmjs.com/package/mongoose)
+[![bcrypt](https://badgen.net/badge/icon/bcrypt?icon=npm&label)](https://www.npmjs.com/package/bcrypt)
+[![nodemon](https://badgen.net/badge/icon/nodemon?icon=npm&label)](https://www.npmjs.com/package/nodemon)
+[![test](https://badgen.net/badge/icon/test?icon=npm&label)](https://github.com/)
+[![lint](https://badgen.net/badge/icon/lint?icon=npm&label)](https://github.com/)
+[![start](https://badgen.net/badge/icon/start?icon=npm&label)](https://github.com/)
+[![develop](https://badgen.net/badge/icon/develop?icon=npm&label)](https://github.com/)
+[![install](https://badgen.net/badge/icon/install?icon=npm&label)](https://github.com/)
+[![seed](https://badgen.net/badge/icon/seed?icon=npm&label)](https://github.com/)
+[![build](https://badgen.net/badge/icon/build?icon=npm&label)](https://github.com/)
 
 ## Credits
-
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
 
 Collaborators:
 
 - Andrew Bautista-Instructor
 - Will-TA
-- Starter code provided by [username](...)
 - Asia Kemp- [Akemp24](...)
 - Isabel Nance-[KEINance](...)
 - Jaldhara Patel-[jaldhara21](...)
@@ -124,22 +168,25 @@ This application is covered under the MIT license. [![License](https://img.shiel
 
 ## Features
 
-If your project has a lot of features, list them here. Communicate the capabilities of your project. Here's a guide you can use to structure your features section:
+### 1. User Authentication
+   - User can create an account.
+   - User can log in to their account.
+   - User can log out of their account.
+   - User can reset their password.
 
-- **Feature Name:**
-  - Description: A brief description of what this feature accomplishes.
-  - Usage Instructions: How users can interact with this feature.
-  - Example (if applicable): A simple example of how the feature works.
-- **Feature Name:**
-  - Description: A brief description of what this feature accomplishes.
-  - Usage Instructions: How users can interact with this feature.
-  - Example (if applicable): A simple example of how the feature works.
+### 2. Exercise Catalog
+   - User can browse a catalog of exercises.
+   - User can filter exercises by muscle groups.
+   - User can search for specific exercises.
+   - User can view exercise details including instructions and images.
+
+### 3. User Profile
+   - User can create a profile.
+   - User can add exercises to their workout routine.
+   - User can view and manage their saved exercises.
+   - User can leave notes for their workout sessions.
 
 ## How to Contribute
-
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
-We welcome contributions to enhance and improve our project. Whether you're interested in fixing a bug, implementing new features, or enhancing documentation, your contributions are highly appreciated.
 
 To contribute to our project, follow these steps:
 
@@ -178,56 +225,8 @@ By following these steps, you contribute to the growth and enhancement of our pr
 If you're unsure about where to start or need assistance at any point, feel free to reach out. Together, we can make our project even better!
 
 ## Tests
-
-We have implemented a comprehensive testing suite to ensure the stability and functionality of our application. Our testing includes unit tests, integration tests, and end-to-end tests to cover various scenarios. To run the tests, follow these steps:
-
-1. Ensure you have all dependencies installed by running:
-
-```bash
-npm i
-```
-
-2. Run the tests using the following command:
-
-```bash
-npm test
-```
-
-Our testing suite provides confidence in the quality of our code and ensures that any changes made to the codebase don't introduce regressions.
+n/a
 
 ## Questions
 
 If you have any questions or need further assistance, feel free to reach out. You can contact us through our GitHub profiles [](...), [](...), [](...), [](...), [](...), [](...) or via email at 4funkecodes@gmail.com, , , , , , . We are here to help and support you in any way we can.
-
-## Technologies Used
-
-[![concurrently](https://badgen.net/badge/icon/concurrently?icon=npm&label)](https://www.npmjs.com/package/concurrently)
-[![eslint](https://badgen.net/badge/icon/eslint?icon=npm&label)](https://www.npmjs.com/package/eslint)
-[![eslint-config-prettier](https://badgen.net/badge/icon/eslint-config-prettier?icon=npm&label)](https://www.npmjs.com/package/eslint-config-prettier)
-[![prettier](https://badgen.net/badge/icon/prettier?icon=npm&label)](https://www.npmjs.com/package/prettier)
-[![tailwindcss](https://badgen.net/badge/icon/tailwindcss?icon=npm&label)](https://www.npmjs.com/package/tailwindcss)
-[![@testing-library/jest-dom](https://badgen.net/badge/icon/jest-dom?icon=npm&label)](https://www.npmjs.com/package/@testing-library/jest-dom)
-[![@testing-library/react](https://badgen.net/badge/icon/testing-library?icon=npm&label)](https://www.npmjs.com/package/@testing-library/react)
-[![@testing-library/user-event](https://badgen.net/badge/icon/testing-library?icon=npm&label)](https://www.npmjs.com/package/@testing-library/user-event)
-[![animate.css](https://badgen.net/badge/icon/animate.css?icon=npm&label)](https://www.npmjs.com/package/animate.css)
-[![apollo-client](https://badgen.net/badge/icon/apollo-client?icon=npm&label)](https://www.npmjs.com/package/apollo-client)
-[![dotenv](https://badgen.net/badge/icon/dotenv?icon=npm&label)](https://www.npmjs.com/package/dotenv)
-[![graphql](https://badgen.net/badge/icon/graphql?icon=npm&label)](https://www.npmjs.com/package/graphql)
-[![jwt-decode](https://badgen.net/badge/icon/jwt-decode?icon=npm&label)](https://www.npmjs.com/package/jwt-decode)
-[![react](https://badgen.net/badge/icon/react?icon=npm&label)](https://www.npmjs.com/package/react)
-[![react-bootstrap](https://badgen.net/badge/icon/react-bootstrap?icon=npm&label)](https://www.npmjs.com/package/react-bootstrap)
-[![react-dom](https://badgen.net/badge/icon/react-dom?icon=npm&label)](https://www.npmjs.com/package/react-dom)
-[![react-router-dom](https://badgen.net/badge/icon/react-router-dom?icon=npm&label)](https://www.npmjs.com/package/react-router-dom)
-[![react-scripts](https://badgen.net/badge/icon/react-scripts?icon=npm&label)](https://www.npmjs.com/package/react-scripts)
-[![bootstrap](https://badgen.net/badge/icon/bootstrap?icon=npm&label)](https://www.npmjs.com/package/bootstrap)
-[![jsonwebtoken](https://badgen.net/badge/icon/jsonwebtoken?icon=npm&label)](https://www.npmjs.com/package/jsonwebtoken)
-[![mongoose](https://badgen.net/badge/icon/mongoose?icon=npm&label)](https://www.npmjs.com/package/mongoose)
-[![bcrypt](https://badgen.net/badge/icon/bcrypt?icon=npm&label)](https://www.npmjs.com/package/bcrypt)
-[![nodemon](https://badgen.net/badge/icon/nodemon?icon=npm&label)](https://www.npmjs.com/package/nodemon)
-[![test](https://badgen.net/badge/icon/test?icon=npm&label)](https://github.com/)
-[![lint](https://badgen.net/badge/icon/lint?icon=npm&label)](https://github.com/)
-[![start](https://badgen.net/badge/icon/start?icon=npm&label)](https://github.com/)
-[![develop](https://badgen.net/badge/icon/develop?icon=npm&label)](https://github.com/)
-[![install](https://badgen.net/badge/icon/install?icon=npm&label)](https://github.com/)
-[![seed](https://badgen.net/badge/icon/seed?icon=npm&label)](https://github.com/)
-[![build](https://badgen.net/badge/icon/build?icon=npm&label)](https://github.com/)
