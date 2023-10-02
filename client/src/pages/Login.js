@@ -35,11 +35,8 @@ const Login = (props) => {
   };
 
   return (
-    <div
-      id="login"
-      className="flex justify-center items-center min-h-screen bg-custom-dark-blue"
-    >
-      <div className=" bg-custom-secondary w-full max-w-screen-md p-4 border border-solid border-gray-300 rounded-md">
+    <div className="flex justify-center items-center min-h-screen bg-custom-dark-blue">
+      <div className="w-96 mx-auto bg-custom-secondary flex flex-col justify-center items-center p-4 border border-solid border-gray-300 rounded-2xl">
         <h2 className="text-2xl font-semibold mb-4">Welcome back!</h2>
         <div className="card-body">
           {data ? (
@@ -48,7 +45,7 @@ const Login = (props) => {
               <Link to="/">back to the homepage.</Link>
             </p>
           ) : (
-            <form className="login-form " onSubmit={handleInputSubmit}>
+            <form className="login-form" onSubmit={handleInputSubmit}>
               <input
                 className="form-input mb-4 p-2 border rounded-md focus:outline-none focus:ring focus:ring-secondary focus:ring-opacity-50"
                 placeholder="Your Username"
@@ -66,7 +63,7 @@ const Login = (props) => {
                 onChange={handleInputChange}
               />
               <button
-                className="bg-blue-600 rounded-xl  px-4 py-2 mb-6 rounded-md transition-transform transform hover:translate-x-2 hover:bg-green-500"
+                className="bg-blue-600 rounded-xl px-4 py-2 mb-6 rounded-md transition-transform transform hover:translate-x-2 hover:bg-green-500"
                 type="submit"
               >
                 Submit

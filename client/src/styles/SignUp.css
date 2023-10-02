@@ -48,20 +48,9 @@ label {
 }
 
 /* Styling for the Login Button */
-.signupBtn {
-  width: 100%; /* Make the button take up 100% of container width */
-  padding: 10px; /* Add some padding to the button */
-  background-color: #007bff; /* Background color for the button */
-  color: #fff; /* Text color for the button */
-  border: none; /* Remove button border */
-  border-radius: 15px; /* Add a border radius to the button */
-  cursor: pointer; /* Change cursor to pointer on hover */
-}
+
 
 /* Hover Effect for the Login Button */
-.signupBtn:hover {
-  background-color: #0056b3; /* Darker background color on hover */
-}
 
 /* Styling for Error Messages */
 .error-message {
