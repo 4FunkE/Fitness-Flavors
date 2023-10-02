@@ -119,6 +119,8 @@ const resolvers = {
 
             return { token, user };
         },
+
+        // need log out return true when log out
         logout: (_, __, context) => {
             if (!context.user) {
                 // handle case where user isn't authenticated
