@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 import weight from "../components/images/weight.png";
+import Auth from "../utils/auth.js";
 
 export default function NavBar() {
   const [searchInput, setSearchInput] = useState("");
@@ -48,7 +49,24 @@ export default function NavBar() {
             Fitness Flavors
           </Link>
         </div>
-
+        <form
+          onSubmit={handleSubmit}
+          style={{ display: "flex", alignItems: "center" }}
+        >
+          <input
+            type="text"
+            placeholder="Select your muscle group ..."
+            onChange={(e) => setSearchInput(e.target.value)}
+            value={searchInput}
+            className="pl-2 pr-2 rounded-xl mt-2"
+          />
+          <button
+            type="submit"
+            className="bg-blue-600 text-white rounded-xl ml-4 pl-4 pr-4 mt-2  transition-transform transform hover:translate-x-2 hover:bg-green-500"
+          >
+            Search!
+          </button>
+        </form>
         <div>
           {isMobileView ? (
             <div style={{ marginLeft: "auto" }}>
@@ -61,9 +79,11 @@ export default function NavBar() {
             </div>
           ) : (
             <ul className="navUl" style={{ marginLeft: "auto" }}>
-              <Link to="profile" className=" text-white pl-4 pr-4">
-                Profile
-              </Link>
+              {Auth.loggedIn() ? (
+                <Link to="profile" className=" text-white pl-4 pr-4">
+                  Profile
+                </Link>
+              ) : null}
 
               <Link to="/signup" className="text-white pl-4 pr-4">
                 SignUp

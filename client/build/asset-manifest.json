@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9633aabb.css",
+    "main.js": "/static/js/main.9ebd538b.js",
+    "static/media/yoga.jpg": "/static/media/yoga.20baa40df2604a89e4e4.jpg",
+    "static/media/workout3.jpg": "/static/media/workout3.5c8cee7b79f0b46b25cb.jpg",
+    "static/media/gigachad.jpg": "/static/media/gigachad.e066fe2d95c7706464df.jpg",
+    "static/media/homeimg.jpg": "/static/media/homeimg.e281f40a140935296f9b.jpg",
+    "static/media/mail.jpg": "/static/media/mail.78892973ca453f2f7195.jpg",
+    "index.html": "/index.html",
+    "main.9633aabb.css.map": "/static/css/main.9633aabb.css.map",
+    "main.9ebd538b.js.map": "/static/js/main.9ebd538b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9633aabb.css",
+    "static/js/main.9ebd538b.js"
+  ]
+}

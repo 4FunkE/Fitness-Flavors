@@ -5,9 +5,8 @@ export const ADD_USER = gql`
     registerUser(username: $username, password: $password) {
       token
       user {
-        id
+        _id
         username
-        email
       }
     }
   }
@@ -28,7 +27,7 @@ export const LOGIN_USER = gql`
 `;
 
 export const SAVE_WORKOUT = gql`
-  mutation SAVE_WORKOUT($input: WorkoutInput!) {
+  mutation addWorkout($input: WorkoutInput!) {
     addWorkout(input: $input) {
       _id
       user {
