@@ -152,11 +152,11 @@ Collaborators:
 
 - Andrew Bautista-Instructor
 - Will-TA
-- Asia Kemp- [Akemp24](...)
-- Isabel Nance-[KEINance](...)
-- Jaldhara Patel-[jaldhara21](...)
-- Joseph Rudasill- [TheWiseSailor](...)
-- Emily Funk- [4FunkE](...)
+- Asia Kemp- [Akemp24](https://github.com/Akemp24)
+- Isabel Nance-[KEINance](https://github.com/KEINance)
+- Jaldhara Patel-[jaldhara21](https://github.com/jaldhara21)
+- Joseph Rudasill- [TheWiseSailor](https://github.com/TheWiseSailor)
+- Emily Funk- [4FunkE](https://github.com/4FunkE)
 
 ## License
 
@@ -229,4 +229,4 @@ n/a
 
 ## Questions
 
-If you have any questions or need further assistance, feel free to reach out. You can contact us through our GitHub profiles [](...), [](...), [](...), [](...), [](...), [](...) or via email at 4funkecodes@gmail.com, , , , , , . We are here to help and support you in any way we can.
+If you have any questions or need further assistance, feel free to reach out. You can contact us through our GitHub profiles [Akemp24](https://github.com/Akemp24), [KEINance](https://github.com/KEINance), [jaldhara21](https://github.com/jaldhara21), [TheWiseSailor](https://github.com/TheWiseSailor), [4FunkE](https://github.com/4FunkE) or via email at 4funkecodes@gmail.com, , , , , , . We are here to help and support you in any way we can.
