@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "animate.css"; // Import animate.css
-import image1 from "../components/images/mail.jpg";
+import mail from "../components/images/mail.jpg";
 import homeimg from "../components/images/homeimg.jpg";
 import "../styles/Home.css";
 import "../index.css";
@@ -212,8 +212,8 @@ function HomePage() {
           <div className="w-full md:w-1/2 p-4 md:p-8 md:pl-32">
             <div className="item2" data-aos="fade-right">
               <img
-                src={image1}
-                alt="Image 1"
+                src={mail}
+                alt="mail"
                 className="max-w-full h-auto md:pt-16 move-up-down"
               />
             </div>

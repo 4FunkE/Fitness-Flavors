@@ -1,15 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/Exercise.css";
 // import './styles.css';
 import ExerciseCard from "../components/views/ExerciseCard"; // ExerciseCard component in views
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useNavigate,
-  Link,
-} from "react-router-dom";
 
 function Exercise({ exercise }) {
   const API = "2d3f6a0fecmsh850234d0340ad92p1cdaf5jsnde0fee7b9768";
