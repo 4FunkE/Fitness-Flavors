@@ -48,24 +48,7 @@ export default function NavBar() {
             Fitness Flavors
           </Link>
         </div>
-        <form
-          onSubmit={handleSubmit}
-          style={{ display: "flex", alignItems: "center" }}
-        >
-          <input
-            type="text"
-            placeholder="Select your muscle group ..."
-            onChange={(e) => setSearchInput(e.target.value)}
-            value={searchInput}
-            className="pl-2 pr-2 rounded-xl mt-2"
-          />
-          <button
-            type="submit"
-            className="bg-blue-600 text-black rounded-xl ml-4 pl-4 pr-4 mt-2  transition-transform transform hover:translate-x-2 hover:bg-green-500"
-          >
-            Search!
-          </button>
-        </form>
+
         <div>
           {isMobileView ? (
             <div style={{ marginLeft: "auto" }}>

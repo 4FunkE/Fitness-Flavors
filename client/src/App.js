@@ -10,7 +10,6 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-
 import Exercise from "./pages/Exercise.js";
 import Home from "./pages/Home.js";
 import Login from "./pages/Login.js";
@@ -20,28 +19,11 @@ import Header from "./pages/Header.js";
 import Footer from "./pages/Footer.js";
 // import 'font-awesome/css/font-awesome.min.css';
 
-
 // Construct our main GraphQL API endpoint
 
-
-const httpLink = new ApolloClient({
-  link: new createHttpLink({
-    uri: "http://localhost:3001/graphql",
-  }),
-  cache: new InMemoryCache(),
+const httpLink = createHttpLink({
+  uri: "/graphql",
 });
-
-
-
-
-
-
-
-
-// const httpLink = createHttpLink({
-//   uri: "/graphql",
-// });
-
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
@@ -56,13 +38,11 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-
 const client = new ApolloClient({
   // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
-  link: authLink.concat(createHttpLink),
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-
 
 function App() {
   return (
@@ -71,7 +51,7 @@ function App() {
       <Router>
         <div className="App">
           <Header />
-          <div className="appContainer">
+          <div className="appContainer ">
             {/* Define your routes */}
             <Routes>
               <Route path="*" element={<Home />} />
@@ -87,6 +67,5 @@ function App() {
     </ApolloProvider>
   );
 }
-
 
 export default App;

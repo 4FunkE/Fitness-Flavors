@@ -5,7 +5,7 @@ function ExerciseCard({ exercise }) {
   console.log(exercise);
   return (
     <div className="makeRow">
-      <div class="flex justify-center items-center mx-auto exerciseC-card rounded-lg bg-white shadow-md dark:bg-neutral-700 md:max-w-xl md:flex-row mb-6">
+      <div class="flex justify-center items-center mx-auto exerciseC-card rounded-lg bg-white shadow-md  md:max-w-xl md:flex-row mb-6">
         <img
           src={exercise.gifUrl}
           alt={`${exercise.name} GIF`}
