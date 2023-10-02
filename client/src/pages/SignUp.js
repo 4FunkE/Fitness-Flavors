@@ -69,7 +69,7 @@ export default function Signup() {
               <div className="form-group">
                 <button
                   type="submit"
-                  className="signupBtn bg-blue-500 text-white rounded-xl pt-1 pb-1 transition-transform transform hover:translate-x-2 hover:bg-green-500 pl-2 pr-2"
+                  className="signupBtn bg-blue-500 text-white rounded-md pt-1 pb-1 transition-transform transform hover:translate-x-2 hover:bg-green-500 pl-2 pr-2"
                 >
                   Signup
                 </button>

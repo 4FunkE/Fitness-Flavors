@@ -118,6 +118,26 @@ const resolvers = {
             const token = signToken({ username, _id: user._id });
 
             return { token, user };
+        },
+
+        // need log out return true when log out
+        logout: (_, __, context) => {
+            if (!context.user) {
+                // handle case where user isn't authenticated
+                return false;
+            }
+            
+            try {
+                // clear authentication token
+                localStorage.removeItem('id_token');
+
+                // return true for successful logout
+                return true;
+            } catch (error) {
+                console.error("Error logging out:", error);
+                return false;
+            }
+
         }
     },
 };

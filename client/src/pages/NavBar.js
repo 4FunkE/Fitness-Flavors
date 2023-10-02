@@ -48,7 +48,10 @@ export default function NavBar() {
             Fitness Flavors
           </Link>
         </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> a0fddc7700e122f4d9b3d451fd672c8fc839495d
         <div>
           {isMobileView ? (
             <div style={{ marginLeft: "auto" }}>

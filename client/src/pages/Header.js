@@ -1,6 +1,5 @@
 // header for app
 import React, { useState, useEffect, useRef } from "react"; // Import React and hooks
-import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import "../styles/Header.css"; // Import your CSS file for styling
 
