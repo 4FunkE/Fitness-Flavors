@@ -27,7 +27,7 @@ export const LOGIN_USER = gql`
 `;
 
 export const SAVE_WORKOUT = gql`
-  mutation SAVE_WORKOUT($input: WorkoutInput!) {
+  mutation addWorkout($input: WorkoutInput!) {
     addWorkout(input: $input) {
       _id
       user {

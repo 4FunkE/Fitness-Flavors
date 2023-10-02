@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 import weight from "../components/images/weight.png";
+import Auth from '../utils/auth.js';
+
 
 export default function NavBar() {
   const [searchInput, setSearchInput] = useState("");
@@ -64,9 +66,12 @@ export default function NavBar() {
             </div>
           ) : (
             <ul className="navUl" style={{ marginLeft: "auto" }}>
-              <Link to="profile" className=" text-white pl-4 pr-4">
-                Profile
-              </Link>
+              { Auth.loggedIn() ? (
+                 <Link to="profile" className=" text-white pl-4 pr-4">
+                 Profile
+               </Link>
+              ) : (null) }
+             
 
               <Link to="/signup" className="text-white pl-4 pr-4">
                 SignUp
