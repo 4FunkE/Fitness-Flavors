@@ -79,19 +79,20 @@ Follow these steps to effectively utilize our application:
    - If you're a new user, click the "Sign Up" button and follow the registration process.
    - If you're an existing user, simply log in with your credentials.
 
-   ![Sign Up](url_to_screenshot_signup.png)
+   ![Sign Up](./client/public/signupFF.png)
+   ![Log In](./client/public/loginFF.png)
 
 2. **Explore Exercises by Muscle Groups**
    - Click on the "Exercises" tab in the navigation menu to access a wide range of exercises categorized by muscle groups.
    - Select a muscle group to view specific exercises.
 
-   ![Exercises](url_to_screenshot_exercises.png)
+   ![Exercises](./client/public/exercise.png)
 
 3. **Add Exercises to Your Profile**
    - When you find an exercise you'd like to include in your routine, click the "Add to Profile" button.
    - You can create and customize workout routines by selecting exercises from your profile.
 
-   ![Add to Profile](url_to_screenshot_add_to_profile.png)
+   ![Profile](./client/public/Screenshot%202023-10-02%20180028.png)
 
 4. **View Your Profile**
    - Click on your profile icon or username in the top-right corner to access your profile.
@@ -109,7 +110,7 @@ Follow these steps to effectively utilize our application:
 
 ## Screenshot
 
-![image](./path/to/image.png)
+![image](./client/public/fitness-flavors.png)
 
 ## Built With:
 
