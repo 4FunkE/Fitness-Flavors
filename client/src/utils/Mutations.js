@@ -56,11 +56,3 @@ export const DELETE_WORKOUT = gql`
     }
   }
 `;
-
-export const LOGOUT_MUTATION = gql`
-  mutation Logout {
-    logout {
-      logout
-    }
-  }
-`;
