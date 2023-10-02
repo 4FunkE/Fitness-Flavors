@@ -1,58 +1,67 @@
 import React, { useState, useEffect } from "react";
 import ExerciseCard from "../components/views/ExerciseCard";
-import { useAuth } from "../utils/AuthContext";
+// import Auth from '../utils/auth'
+// import Swal from 'sweetalert2';
+import Logout from './Logout.js';
 
-
-// import {useAuth} from './utils/auth.js'
-// import { useHistory } from ' react-router-dom';
 
 
 function Profile() {
-  const {loggedIn} = useAuth();
-
-
+  // const {loggedIn} = useAuth();
+  
+  
   const [profileExercises, setProfileExercises] = useState([]);
   const [selectedExercise, setSelectedExercise] = useState(null);
   const [notes, setNotes] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   // const history = useHistory();
  
 
-
-
-
+  
+  
+  
 // COULD NOT GET USE HISTORY TO IMPORT PROPERLY EVEN WITH NMP I EVERYWHERE
 // if someone wants to try getting it to route I don't know how else to get it
 
 
 
 
-  useEffect(() => {
+  // useEffect(() => {
     //is user logged in
-    if (!loggedIn) {
+    // if (!loggedIn) {
     //   // history.push('/SignUp');
     //   // return
-      window.location.href = '/SignUp';
-    } else {
+      // window.location.href = '/profile';
+    // } else {
       // Fetch and update the user's saved Exercises from the server
-      fetch("/api/user/exercises")
-        .then((response) => response.json())
-        .then((data) => {
-          setProfileExercises(data);
-        })
-        .catch((error) => {
-          console.error("Error fetching user exercises:", error);
-        });
-    };
-  }, [loggedIn]);
+  //     fetch("/api/user/exercises")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setProfileExercises(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching user exercises:", error);
+  //     });
+  // }, []);
+  //  [loggedIn]);
 
-
-
+  useEffect(() => {
+    // Fetch and update the user's saved Exercises from the server
+    fetch("/api/user/exercises")
+      .then((response) => response.json())
+      .then((data) => {
+        setProfileExercises(data);
+      })
+      // .catch((error) => {
+      //   console.error("Error fetching user exercises:", error);
+      // });
+  }, []);
 
   const addToProfile = (exercise) => {
     // API endpoint for adding exercises to a user's profile
     const endpoint = "/api/user/exercises";
 
-
+    setIsLoading(true);
     // Make a POST request to add the exercise to the user's profile
     fetch(endpoint, {
       method: "POST",
@@ -72,7 +81,10 @@ function Profile() {
       })
       .catch((error) => {
         console.error("Error adding exercise to profile:", error);
-      });
+      })
+      .finally(() => {
+        setIsLoading(false);
+      })
   };
 
 
@@ -138,11 +150,18 @@ function Profile() {
 
 
 
-
   return (
     <div className="flex justify-center items-center min-h-screen bg-custom-secondary">
       <div className="w-full max-w-screen-md p-4 border border-solid border-gray-300 rounded-xl bg-custom-primary">
         <h2 className="text-2xl font-semibold mb-4">My Profile</h2>
+      {/* <Logout></Logout>
+       */}
+{/* 
+<button onClick={() => Auth.logout() } disabled={isLoading}>
+       {isLoading ? 'Logging Out...' : 'Logout'}
+      </button> */}
+
+      <Logout></Logout>
         <section className="mb-4">
           <h3 className="text-xl font-semibold mb-2">My Exercises</h3>
           <ul className="space-y-4">
