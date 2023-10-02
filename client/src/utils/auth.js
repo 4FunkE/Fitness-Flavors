@@ -1,5 +1,6 @@
 // use this to decode a token and get the user's information out of it
 import decode from "jwt-decode";
+import { redirect } from "react-router-dom";
 
 // create a new class to instantiate for a user
 class AuthService {
@@ -32,12 +33,12 @@ class AuthService {
 
   login(idToken) {
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/profile');
+    redirect("/profile");
   }
 
   logout() {
     localStorage.removeItem('id_token');
-    window.location.assign('/');
+    redirect("/");
   }
 }
 
