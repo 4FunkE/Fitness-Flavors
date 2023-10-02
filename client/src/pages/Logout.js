@@ -62,7 +62,8 @@ function Logout() {
   };
 
   return (
-    <button onClick={handleLogout} disabled={isLoading}>
+    <button className='bg-blue-600 rounded-xl  px-4 py-2 mb-6 rounded-md transition-transform transform hover:translate-x-2 hover:bg-green-500' 
+    onClick={handleLogout} disabled={isLoading}>
       {isLoading ? 'Logging Out...' : 'Logout'}
     </button>
   );

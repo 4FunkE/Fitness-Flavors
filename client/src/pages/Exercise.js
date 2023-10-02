@@ -13,18 +13,29 @@ import {
 
 function Exercise({ exercise }) {
   const API = "2d3f6a0fecmsh850234d0340ad92p1cdaf5jsnde0fee7b9768";
+
+  
+  const [selectedExercise, setSelectedExercise] = useState(null);
+  const [profileExercises, setProfileExercises] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
   const [workoutData, setWorkoutData] = useState({
     filteredBodyPartSearch: [],
     filteredEquipmentSearch: [],
     filteredGIFSearch: [],
   });
+  // const [workoutData, setWorkoutData] = useState({
+  // exercise: "", duration:"", reps: "", sets:""
+  // });
 
+ 
+ console.log(workoutData)
   const fetchWorkouts = async (muscleGroup) => {
     try {
       console.log("show me this PLEASE");
       const response = await fetch(
-        `https://exercisedb.p.rapidapi.com/exercises?bodyPart=${muscleGroup}?limit=10`,
+        `https://exercisedb.p.rapidapi.com/exercises?bodyPart=${muscleGroup}&limit=10`,
         {
           method: "GET",
           headers: {
@@ -40,7 +51,6 @@ function Exercise({ exercise }) {
 
       const data = await response.json();
 
-      // console.log(data);
 
       const filteredBodyPartSearch = data.filter((excercise) =>
         excercise.bodyPart.toUpperCase().includes(muscleGroup.toUpperCase())
@@ -57,18 +67,17 @@ function Exercise({ exercise }) {
       const filteredWorkoutNameSearch = data.filter((excercise) =>
       excercise.name.toUpperCase().includes(muscleGroup.toUpperCase())
       );
-      // const filteredGIFSearch = data.filter((excercise) =>
-      //   excercise.gifUrl.toUpperCase().includes(muscleGroup.toUpperCase())
-      // );
 
       setWorkoutData({
         filteredBodyPartSearch,
         filteredEquipmentSearch,
-        // filteredGIFSearch,
         filteredInstructionSearch,
         filteredSecondaryMusclesSearch,
         filteredWorkoutNameSearch
       });
+
+  //setWorkoutData({exercise: bodyPart , duration: 10.0, reps: 10, sets:100})
+
     } catch (err) {
       console.error(err);
     }
@@ -83,6 +92,7 @@ function Exercise({ exercise }) {
             {exercises.map((exercise, index) => (
               <li key={index}>
                 <ExerciseCard key={exercise.id} exercise={exercise} />
+
               </li>
             ))}
           </ul>
@@ -90,6 +100,53 @@ function Exercise({ exercise }) {
       );
     }
     return null;
+  };
+
+  const addToProfile = (exercise) => {
+    // API endpoint for adding exercises to a user's profile
+    const endpoint = "http://localhost:3000/api/user/exercise";
+
+    setIsLoading(true);
+    // Make a POST request to add the exercise to the user's profile
+    fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "X-RapidAPI-Key": API,
+        "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ exerciseId: exercise._id }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to add exercise to profile");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setProfileExercises(data.profileExercises);
+        setSelectedExercise(exercise); // Set the selected exercise here
+        console.log(profileExercises)
+        console.log(selectedExercise)
+        console.log("Exercise saved successfully:", data);
+      })
+      .catch((error) => {
+        console.error("Error adding exercise to profile:", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+      return (
+        <button
+        onClick={() => addToProfile(exercise._id)}
+        disabled={isLoading}
+        className={`px-4 py-2 rounded-xl mt-6 transform transition-transform ${
+          isLoading ? "opacity-50 cursor-not-allowed" : "hover:scale-105"
+        }`}
+      >
+        {isLoading ? "Saving..." : "Save to Profile"}
+      </button>
+      )
   };
 
   const handleSubmit = async (e) => {
@@ -123,7 +180,7 @@ function Exercise({ exercise }) {
             <div>
               {workoutData.filteredBodyPartSearch.map((exercise, index) => (
                 <li key={index}>
-                  <ExerciseCard exercise={exercise} />
+                  <ExerciseCard exercise={exercise} addToProfile={addToProfile} />
                 </li>
               ))}
             </div>
