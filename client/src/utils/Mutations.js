@@ -26,6 +26,14 @@ export const LOGIN_USER = gql`
   }
 `;
 
+export const LOGOUT_MUTATION = gql`
+  mutation Logout {
+    logout {
+      logout
+    }
+  }
+`;
+
 export const SAVE_WORKOUT = gql`
   mutation SAVE_WORKOUT($input: WorkoutInput!) {
     addWorkout(input: $input) {

@@ -12,7 +12,8 @@ export function AuthProvider({ children }) {
   };
 
   const logout = () => {
-    
+    localStorage.removeItem('id_token');
+    window.location.reload();
     setLoggedIn(false);
   };
 
