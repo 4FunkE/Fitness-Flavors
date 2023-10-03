@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import "../styles/SignUp.css";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/Mutations.js";
+import { Link } from "react-router-dom";
 
 // import Auth for authentication
 import Auth from "../utils/auth";
 
 export default function Signup() {
   const [formData, setFormData] = useState({ username: "", password: "" });
-  const [registerUser] = useMutation(ADD_USER);
+  const [registerUser, { error, data }] = useMutation(ADD_USER);
 
   const isPasswordValid = (password) => {
     // define password criteria using regex
@@ -51,6 +52,12 @@ export default function Signup() {
         <div>
           <div>
             <h2 className="signUpH ">Let's Get Started!</h2>
+            {data ? (
+            <p>
+              Success! You may now head{" "}
+              <Link to="/login">login.</Link>
+            </p>
+          ) : (
             <form className="login-form" onSubmit={handleInputSubmit}>
               {/* <div className="form-group">
             <label for="email-login">Email:</label>
@@ -90,6 +97,8 @@ export default function Signup() {
                 </div>
               </div>
             </form>
+            )}
+            {error && <div className="my-3 p-3 bg-danger ">{error.message}</div>}
           </div>
         </div>
       </div>
