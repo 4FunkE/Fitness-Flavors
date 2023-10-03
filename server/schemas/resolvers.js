@@ -7,6 +7,11 @@ const bcrypt = require('bcrypt');
 // import the User and Workout models
 const { User, Workout } = require('../models');
 
+const isPasswordValid = (password) => {
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&*!])[0-9a-zA-Z@#$%^&*!]{8,}$/;
+    return passwordRegex.test(password);
+  };
+
 const resolvers = {
     Query: {
         user: async (_, args, context) => {
@@ -79,8 +84,10 @@ const resolvers = {
                 throw new AuthenticationError('User already exists');
             }
 
-            // hash password
-            // const hashedPassword = await bcrypt.hash(password, 10);
+            // validate password
+            if (!isPasswordValid(password)) {
+                throw new AuthenticationError('Password must have 1 number, 1 uppercase, 1 lowercase, 1 special character, and be at least 8 characters long');
+            }
 
             // create user instance
             const newUser = new User({

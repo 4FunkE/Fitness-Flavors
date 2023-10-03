@@ -11,13 +11,26 @@ export default function Signup() {
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [registerUser] = useMutation(ADD_USER);
 
+  const isPasswordValid = (password) => {
+    // define password criteria using regex
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    return passwordRegex.test(password);
+  }
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
+
+
   const handleInputSubmit = async (event) => {
     event.preventDefault();
+    if(!isPasswordValid(formData.password)) {
+      // if password is not valid, alert user
+      alert("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number.");
+      return;
+    }
     try {
       console.log("test submitted", formData);
       //inseert sign up mutation here
