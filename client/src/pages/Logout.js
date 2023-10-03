@@ -1,6 +1,6 @@
 // Logout.js
 // import { gql } from '@apollo/client';
-import { useAuth } from '../utils/auth.js';
+import Auth from '../utils/auth';
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import { useMutation } from '@apollo/client';
@@ -13,6 +13,7 @@ function Logout() {
   const [logoutMutation] = useMutation(LOGOUT_MUTATION);
 
   const handleLogout = async () => {
+    Auth.logout();
     try {
       const confirmed = await Swal.fire({
         title: 'Logout Confirmation',
@@ -39,7 +40,8 @@ function Logout() {
             timerProgressBar: true,
           }).then(() => {
             // Redirect to the home page after successful logout
-            window.location.replace('/');
+            
+            // window.location.replace('/');
           });
         } else {
           Swal.fire({
@@ -63,7 +65,7 @@ function Logout() {
 
   return (
     <button className='bg-blue-600 rounded-xl  px-4 py-2 mb-6 rounded-md transition-transform transform hover:translate-x-2 hover:bg-green-500' 
-    onClick={handleLogout} disabled={isLoading}>
+    onClick={Auth.logout()} disabled={isLoading}>
       {isLoading ? 'Logging Out...' : 'Logout'}
     </button>
   );

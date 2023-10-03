@@ -38,7 +38,7 @@ class AuthService {
 
   logout() {
     localStorage.removeItem('id_token');
-    redirect("/login");
+    redirect("/");
   }
 }
 

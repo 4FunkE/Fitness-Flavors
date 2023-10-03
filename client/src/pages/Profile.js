@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ExerciseCard from "../components/views/ExerciseCard";
-// import Auth from '../utils/auth'
 // import Swal from 'sweetalert2';
 import Logout from './Logout.js';
 import '../styles/Profile.css';
 import { useParams } from 'react-router-dom';
 import Auth from '../utils/auth.js'
+
 
 
 function Profile() {
@@ -125,13 +125,11 @@ function Profile() {
     <div className="flex justify-center items-center min-h-screen bg-custom-secondary">
       <div className="w-full max-w-screen-md p-4 border border-solid border-gray-300 rounded-xl bg-custom-primary">
         <h2 className="text-2xl font-semibold mb-4">My Profile</h2>
-      {/* <Logout></Logout>
-       */}
 {/* 
 <button onClick={() => Auth.logout() } disabled={isLoading}>
        {isLoading ? 'Logging Out...' : 'Logout'}
       </button> */}
-          <button onClick={Auth.logout}
+          <button onClick={() =>{Auth.logout(); window.location.href='/'}}
           className='bg-blue-600 rounded-xl  px-4 py-2 mb-6 rounded-md transition-transform transform hover:translate-x-2 hover:bg-green-500' 
     >Logout
     </button>
