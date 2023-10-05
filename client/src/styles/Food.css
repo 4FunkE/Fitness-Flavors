@@ -1,3 +1,7 @@
 .foodname {
   color: white;
 }
+.food-image {
+  height: 250px; /* Set the desired height for your images */
+  object-fit: cover; /* This property ensures the image retains its aspect ratio */
+}

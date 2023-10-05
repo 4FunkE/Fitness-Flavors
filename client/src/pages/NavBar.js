@@ -80,7 +80,7 @@ export default function NavBar() {
                 Exercise
               </Link>
               <Link to="/food" className="text-white pl-4 pr-4">
-                Food/Shakes
+                Food
               </Link>
             </ul>
           )}
