@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import "../styles/Food.css";
 import GreekSalad from "../../src/components/images/food/GreekSalad.jpg";
 import Kale from "../../src/components/images/food/kale.jpg";
@@ -9,20 +9,20 @@ const Food = () => {
   const [apiData, setApiData] = useState([]);
   const apiKey = "1"; // api key is in the dotenv
 
-  useEffect(() => {
-    axios
-      .get(`https://api.spoonacular.com/food/search?query=apple&number=10`, {
-        headers: {
-          "X-Api-Key": apiKey,
-        },
-      })
-      .then((response) => {
-        setApiData(response.data.searchResults);
-      })
-      .catch((error) => {
-        console.error("Error fetching food data:", error);
-      });
-  }, [apiKey]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://api.spoonacular.com/food/search?query=apple&number=10`, {
+  //       headers: {
+  //         "X-Api-Key": apiKey,
+  //       },
+  //     })
+  //     .then((response) => {
+  //       setApiData(response.data.searchResults);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching food data:", error);
+  //     });
+  // }, [apiKey]);
 
   // Hardcoded food data
   const hardcodedData = [
