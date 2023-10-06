@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/Food.css";
 import GreekSalad from "../../src/components/images/food/GreekSalad.jpg";
-import Banana from "../../src/components/images/food/Banana.jpg";
+import Kale from "../../src/components/images/food/kale.jpg";
 import ChickenSalad from "../../src/components/images/food/Grilledchickensalad.jpg";
 import QuinoaSalad from "../../src/components/images/food/Quinoasalad.jpg";
 const Food = () => {
@@ -30,7 +30,7 @@ const Food = () => {
       name: "Greek Salad",
       image: GreekSalad,
       content: "A delicious and healthy Greek Salad. Perfect for a light meal.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink: "https://downshiftology.com/recipes/greek-salad/",
     },
 
     {
@@ -38,7 +38,7 @@ const Food = () => {
       image: ChickenSalad,
       content:
         "Grilled chicken salad with fresh greens. Ideal for post-workout recovery.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink: "https://www.wholesomeyum.com/grilled-chicken-salad/",
     },
     // Add more items as needed
     {
@@ -46,18 +46,12 @@ const Food = () => {
       image: QuinoaSalad,
       content:
         "A protein-packed quinoa salad with fresh vegetables. Ideal for a pre-workout meal.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink: "https://www.inspiredtaste.net/38096/quinoa-salad-recipe/",
     },
-    {
-      name: "Banana",
-      image: Banana,
-      content:
-        "Bananas are a great source of energy. Perfect for a pre-workout snack.",
-      recipeLink: "https://example.com/greek-salad-recipe",
-    },
+
     {
       name: "Kale and Quinoa Bowl",
-      image: "https://example.com/kale-quinoa-bowl.jpg",
+      image: Kale,
       content:
         "A nutrient-packed kale and quinoa bowl with a lemon-tahini dressing. Perfect for post-workout.",
       recipeLink: "https://example.com/greek-salad-recipe",
@@ -203,7 +197,7 @@ const Food = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Recipe
+              Like it? Try It!
             </a>
           </div>
         ))}
