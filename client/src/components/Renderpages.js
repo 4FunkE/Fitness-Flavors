@@ -15,6 +15,8 @@ function RenderPages() {
         <Route path="/exercise" component={Exercise} />
         <Route path="/login" component={Login} />
         <Route path="/profile" component={Profile} />
+        <Route path="/food" component={Food} />
+        <Route path="/shakes" component={Shakes} />
       </Switch>
     </Router>
   );

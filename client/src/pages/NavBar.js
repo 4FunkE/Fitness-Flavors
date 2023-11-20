@@ -79,6 +79,9 @@ export default function NavBar() {
               <Link to="/exercise" className="text-white pl-4 pr-4">
                 Exercise
               </Link>
+              <Link to="/food" className="text-white pl-4 pr-4">
+                Food
+              </Link>
             </ul>
           )}
         </div>
@@ -102,7 +105,7 @@ export default function NavBar() {
             bmMenu: {
               background: "transparent", // Change the background color as needed
               width: "200px", // Set the width to 200px
-              height: "150px", // Set the height to 400px
+              height: "250px", // Set the height to 400px
               textAlign: "center",
               overflowY: "hidden", // Prevent vertical scrolling
               boxShadow: "none", // Remove the shadow
@@ -139,6 +142,13 @@ export default function NavBar() {
             onClick={closeMenu}
           >
             Exercise
+          </Link>
+          <Link
+            to="/food"
+            className="bg-blue-600 border text-white rounded-2xl pl-4 pr-4 mt-2 mb-2 flex justify-center items-center"
+            onClick={closeMenu}
+          >
+            Food
           </Link>
         </Menu>
       )}

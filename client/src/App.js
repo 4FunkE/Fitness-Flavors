@@ -17,6 +17,8 @@ import Profile from "./pages/Profile.js";
 import Signup from "./pages/SignUp.js";
 import Header from "./pages/Header.js";
 import Footer from "./pages/Footer.js";
+import Food from "./pages/Food.js";
+
 // import 'font-awesome/css/font-awesome.min.css';
 
 // Construct our main GraphQL API endpoint
@@ -59,6 +61,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/Food" element={<Food />} />
             </Routes>
           </div>
           <Footer />
