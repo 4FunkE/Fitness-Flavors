@@ -5,6 +5,7 @@ import GreekSalad from "../../src/components/images/food/GreekSalad.jpg";
 import Kale from "../../src/components/images/food/kale.jpg";
 import ChickenSalad from "../../src/components/images/food/Grilledchickensalad.jpg";
 import QuinoaSalad from "../../src/components/images/food/Quinoasalad.jpg";
+import GrilledSalmon from "../../src/components/images/food/GrilledSalmon.jpg";
 const Food = () => {
   const [apiData, setApiData] = useState([]);
   const apiKey = "1"; // api key is in the dotenv
@@ -65,10 +66,10 @@ const Food = () => {
     // },
     {
       name: "Grilled Salmon",
-      image: "https://example.com/grilled-salmon.jpg",
+      image: GrilledSalmon,
       content:
         "Grilled salmon fillet with asparagus. Perfect for post-workout muscle recovery.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink: "https://www.allrecipes.com/recipe/12720/grilled-salmon-i/",
     },
 
     {
