@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 // Most if not all imagages u see were taken from : https://pixabay.com/
 // Others were taken from pinterest and twitter
+//
 // import axios from "axios";
 import "../styles/Food.css";
 import GreekSalad from "../../src/components/images/food/GreekSalad.jpg";
@@ -9,6 +10,9 @@ import Kale from "../../src/components/images/food/kale.jpg";
 import ChickenSalad from "../../src/components/images/food/Grilledchickensalad.jpg";
 import QuinoaSalad from "../../src/components/images/food/Quinoasalad.jpg";
 import GrilledSalmon from "../../src/components/images/food/GrilledSalmon.jpg";
+import ProteinPancakes from "../../src/components/images/food/ProteinPancakes.jpg";
+import GreenSmoothieBowl from "../../src/components/images/food/GreenSmoothieBowl.jpg";
+import TurkeyWrap from "../../src/components/images/food/TurkeyWrap.jpg";
 const Food = () => {
   const [apiData, setApiData] = useState([]);
   const apiKey = "1"; // api key is in the dotenv
@@ -84,17 +88,19 @@ const Food = () => {
     },
     {
       name: "Green Smoothie Bowl",
-      image: "https://example.com/green-smoothie-bowl.jpg",
+      // IMAGE WAS TAKEN FROM : https://minimalistbaker.com/super-green-smoothie-bowl/
+      image: GreenSmoothieBowl,
       content:
         "A green smoothie bowl topped with fresh fruits and seeds. Energize your morning workout.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink: "https://minimalistbaker.com/super-green-smoothie-bowl/",
     },
     {
       name: "Turkey and Avocado Wrap",
-      image: "https://example.com/turkey-avocado-wrap.jpg",
+      image: TurkeyWrap,
       content:
         "A whole-grain turkey and avocado wrap. A balanced meal for pre or post-workout fuel.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink:
+        "https://www.foodnetwork.com/recipes/food-network-kitchen/turkey-avocado-wrap-recipe-1928232",
     },
     {
       name: "Mixed Nuts",
