@@ -15,6 +15,9 @@ import GreenSmoothieBowl from "../../src/components/images/food/GreenSmoothieBow
 import TurkeyWrap from "../../src/components/images/food/TurkeyWrap.jpg";
 import Nuts from "../../src/components/images/food/NUTS.jpg";
 import CucumberHummus from "../../src/components/images/food/CucumberHummus.jpg";
+import GreekYogurt from "../../src/components/images/food/GreekYogurt.jpg";
+import OatMeal from "../../src/components/images/food/OatMeal.jpg";
+
 const Food = () => {
   const [apiData, setApiData] = useState([]);
   const apiKey = "1"; // api key is in the dotenv
@@ -120,45 +123,22 @@ const Food = () => {
         "Crispy cucumber slices with hummus. A refreshing and nutritious pre-workout option.",
       recipeLink: "https://anothertablespoon.com/cucumber-hummus/",
     },
-    {
-      name: "Greek Yogurt Parfait",
-      image: "https://example.com/greek-yogurt-parfait.jpg",
-      content:
-        "Layered Greek yogurt parfait with berries and granola. Ideal for post-workout recovery.",
-      recipeLink: "https://example.com/greek-salad-recipe",
-    },
-
-    // {
-    //   name: "Sushi Rolls",
-    //   image: "https://example.com/sushi-rolls.jpg",
-    //   content: "Fresh and delicious sushi rolls with various fillings.",
-    // },
 
     {
-      name: "Avocado Toast",
-      image: "https://example.com/avocado-toast.jpg",
-      content:
-        "Avocado toast with a sprinkle of salt and pepper. A healthy breakfast choice.",
-      recipeLink: "https://example.com/greek-salad-recipe",
-    },
-    // {
-    //   name: "Mango Smoothie",
-    //   image: "https://example.com/mango-smoothie.jpg",
-    //   content: "Cool off with a refreshing mango smoothie on a hot day.",
-    // },
-    {
       name: "Greek Yogurt Parfait",
-      image: "https://example.com/greek-yogurt-parfait.jpg",
+      image: GreekYogurt,
       content:
         "A delicious Greek yogurt parfait with layers of fresh berries, honey, and granola. ",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink:
+        "https://www.foodnetwork.com/recipes/best-yogurt-parfait-ever-2138618",
     },
     {
       name: "Oatmeal with Almonds and Bananas",
-      image: "https://example.com/oatmeal-almonds-bananas.jpg",
+      image: OatMeal,
+      // IMAGE FROM: https://www.cookingclassy.com/oatmeal-eight-ways/
       content:
         "Warm and comforting oatmeal topped with sliced almonds and ripe banana.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink: "https://www.cookingclassy.com/oatmeal-eight-ways/",
     },
 
     // Add more items as needed
