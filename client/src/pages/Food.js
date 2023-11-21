@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-// Most if not all imagages u see were taken from : https://pixabay.com/
+// Most if not all imagages u see were taken from : https://pixabay.com/ and https://unsplash.com/
 // Others were taken from pinterest and twitter
 //
 // import axios from "axios";
@@ -13,6 +13,8 @@ import GrilledSalmon from "../../src/components/images/food/GrilledSalmon.jpg";
 import ProteinPancakes from "../../src/components/images/food/ProteinPancakes.jpg";
 import GreenSmoothieBowl from "../../src/components/images/food/GreenSmoothieBowl.jpg";
 import TurkeyWrap from "../../src/components/images/food/TurkeyWrap.jpg";
+import Nuts from "../../src/components/images/food/NUTS.jpg";
+import CucumberHummus from "../../src/components/images/food/CucumberHummus.jpg";
 const Food = () => {
   const [apiData, setApiData] = useState([]);
   const apiKey = "1"; // api key is in the dotenv
@@ -104,17 +106,19 @@ const Food = () => {
     },
     {
       name: "Mixed Nuts",
-      image: "https://example.com/mixed-nuts.jpg",
+      image: Nuts,
       content:
         "A handful of mixed nuts for a quick and healthy pre-workout snack.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink:
+        "https://www.foodnetwork.com/recipes/mixed-nuts-with-rosemary-recipe-1939549",
     },
     {
       name: "Cucumber and Hummus",
-      image: "https://example.com/cucumber-hummus.jpg",
+      // IMAGE IS FROM https://anothertablespoon.com/cucumber-hummus/
+      image: CucumberHummus,
       content:
         "Crispy cucumber slices with hummus. A refreshing and nutritious pre-workout option.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink: "https://anothertablespoon.com/cucumber-hummus/",
     },
     {
       name: "Greek Yogurt Parfait",
