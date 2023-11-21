@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+
+// Most if not all imagages u see were taken from : https://pixabay.com/
+// Others were taken from pinterest and twitter
 // import axios from "axios";
 import "../styles/Food.css";
 import GreekSalad from "../../src/components/images/food/GreekSalad.jpg";
@@ -74,10 +77,10 @@ const Food = () => {
 
     {
       name: "Protein Pancakes",
-      image: "https://example.com/protein-pancakes.jpg",
+      image: ProteinPancakes,
       content:
         "High-protein pancakes made with oats and Greek yogurt. Great for a post-workout breakfast.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink: "https://eatthegains.com/protein-pancakes/",
     },
     {
       name: "Green Smoothie Bowl",
