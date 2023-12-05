@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from "react";
+
+// Most if not all imagages u see were taken from : https://pixabay.com/ and https://unsplash.com/
+// Others were taken from pinterest and twitter
+//
 // import axios from "axios";
 import "../styles/Food.css";
 import GreekSalad from "../../src/components/images/food/GreekSalad.jpg";
 import Kale from "../../src/components/images/food/kale.jpg";
 import ChickenSalad from "../../src/components/images/food/Grilledchickensalad.jpg";
 import QuinoaSalad from "../../src/components/images/food/Quinoasalad.jpg";
+import GrilledSalmon from "../../src/components/images/food/GrilledSalmon.jpg";
+import ProteinPancakes from "../../src/components/images/food/ProteinPancakes.jpg";
+import GreenSmoothieBowl from "../../src/components/images/food/GreenSmoothieBowl.jpg";
+import TurkeyWrap from "../../src/components/images/food/TurkeyWrap.jpg";
+import Nuts from "../../src/components/images/food/NUTS.jpg";
+import CucumberHummus from "../../src/components/images/food/CucumberHummus.jpg";
+import GreekYogurt from "../../src/components/images/food/GreekYogurt.jpg";
+import OatMeal from "../../src/components/images/food/OatMeal.jpg";
+
 const Food = () => {
   const [apiData, setApiData] = useState([]);
   const apiKey = "1"; // api key is in the dotenv
@@ -65,86 +78,67 @@ const Food = () => {
     // },
     {
       name: "Grilled Salmon",
-      image: "https://example.com/grilled-salmon.jpg",
+      image: GrilledSalmon,
       content:
         "Grilled salmon fillet with asparagus. Perfect for post-workout muscle recovery.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink: "https://www.allrecipes.com/recipe/12720/grilled-salmon-i/",
     },
 
     {
       name: "Protein Pancakes",
-      image: "https://example.com/protein-pancakes.jpg",
+      image: ProteinPancakes,
       content:
         "High-protein pancakes made with oats and Greek yogurt. Great for a post-workout breakfast.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink: "https://eatthegains.com/protein-pancakes/",
     },
     {
       name: "Green Smoothie Bowl",
-      image: "https://example.com/green-smoothie-bowl.jpg",
+      // IMAGE WAS TAKEN FROM : https://minimalistbaker.com/super-green-smoothie-bowl/
+      image: GreenSmoothieBowl,
       content:
         "A green smoothie bowl topped with fresh fruits and seeds. Energize your morning workout.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink: "https://minimalistbaker.com/super-green-smoothie-bowl/",
     },
     {
       name: "Turkey and Avocado Wrap",
-      image: "https://example.com/turkey-avocado-wrap.jpg",
+      image: TurkeyWrap,
       content:
         "A whole-grain turkey and avocado wrap. A balanced meal for pre or post-workout fuel.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink:
+        "https://www.foodnetwork.com/recipes/food-network-kitchen/turkey-avocado-wrap-recipe-1928232",
     },
     {
       name: "Mixed Nuts",
-      image: "https://example.com/mixed-nuts.jpg",
+      image: Nuts,
       content:
         "A handful of mixed nuts for a quick and healthy pre-workout snack.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink:
+        "https://www.foodnetwork.com/recipes/mixed-nuts-with-rosemary-recipe-1939549",
     },
     {
       name: "Cucumber and Hummus",
-      image: "https://example.com/cucumber-hummus.jpg",
+      // IMAGE IS FROM https://anothertablespoon.com/cucumber-hummus/
+      image: CucumberHummus,
       content:
         "Crispy cucumber slices with hummus. A refreshing and nutritious pre-workout option.",
-      recipeLink: "https://example.com/greek-salad-recipe",
-    },
-    {
-      name: "Greek Yogurt Parfait",
-      image: "https://example.com/greek-yogurt-parfait.jpg",
-      content:
-        "Layered Greek yogurt parfait with berries and granola. Ideal for post-workout recovery.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink: "https://anothertablespoon.com/cucumber-hummus/",
     },
 
-    // {
-    //   name: "Sushi Rolls",
-    //   image: "https://example.com/sushi-rolls.jpg",
-    //   content: "Fresh and delicious sushi rolls with various fillings.",
-    // },
-
-    {
-      name: "Avocado Toast",
-      image: "https://example.com/avocado-toast.jpg",
-      content:
-        "Avocado toast with a sprinkle of salt and pepper. A healthy breakfast choice.",
-      recipeLink: "https://example.com/greek-salad-recipe",
-    },
-    // {
-    //   name: "Mango Smoothie",
-    //   image: "https://example.com/mango-smoothie.jpg",
-    //   content: "Cool off with a refreshing mango smoothie on a hot day.",
-    // },
     {
       name: "Greek Yogurt Parfait",
-      image: "https://example.com/greek-yogurt-parfait.jpg",
+      image: GreekYogurt,
       content:
         "A delicious Greek yogurt parfait with layers of fresh berries, honey, and granola. ",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink:
+        "https://www.foodnetwork.com/recipes/best-yogurt-parfait-ever-2138618",
     },
     {
       name: "Oatmeal with Almonds and Bananas",
-      image: "https://example.com/oatmeal-almonds-bananas.jpg",
+      image: OatMeal,
+      // IMAGE FROM: https://www.cookingclassy.com/oatmeal-eight-ways/
       content:
         "Warm and comforting oatmeal topped with sliced almonds and ripe banana.",
-      recipeLink: "https://example.com/greek-salad-recipe",
+      recipeLink: "https://www.cookingclassy.com/oatmeal-eight-ways/",
     },
 
     // Add more items as needed
